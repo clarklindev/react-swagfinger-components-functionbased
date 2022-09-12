@@ -1,58 +1,60 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react'
+  // import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
-import './App.css';
+import Button from './components/Button/Button';
+import Accordion from './components/Accordion/Accordion';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
-  );
-}
+  function App() {
 
-export default App;
+    const onButtonClickHandler = () =>{
+      console.log('click');
+    }
+
+    //requires network connection
+    // useEffect( ()=>{    
+    //   async function getAccordionData(url){
+    //     const todos = await fetch(url);  
+    //     setAccordionData(json);
+    //   }
+    //   getAccordionData('https://jsonplaceholder.typicode.com/users/1/posts?_limit=10');
+    // },[]);//called once at start
+
+  useEffect(()=>{
+    const todos =[
+      {
+        title:"hello world",
+        body:"this is my first post"
+      },
+      {
+        title:"rainbow",
+        body:"rainbows are amazing"
+      }
+    ];
+    setAccordionData(todos);
+  },[]);
+  
+  const [accordionData, setAccordionData] = useState([]);
+
+    return (
+      <div className="App">
+        <header className="App-header">
+          {/* <img src={logo} className="App-logo" alt="logo" /> */}
+          
+          {/* counter is using css modules...  */}
+          {/* <h3>Counter</h3> */}
+          {/* <Counter /> */}
+          <hr/>
+
+          <h3>Button</h3>
+          <Button name="myButton" onClick={onButtonClickHandler}>my button</Button>
+          <hr/>
+
+          <h3>Accordion</h3>
+          <Accordion data={accordionData} allowMultiOpen={true}/>
+          <hr/>
+        </header>
+      </div>
+    );
+  }
+
+  export default App;
