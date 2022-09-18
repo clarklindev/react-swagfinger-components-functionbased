@@ -11,7 +11,80 @@ const BUTTON_MODIFIERS = {
   large: ()=>`
     font-size: ${typeScale.h5};
     padding: 16px 24px;
+  `,
+  warning: ()=>`
+    background-color: ${defaultTheme.status.warningColor};
+    color: ${defaultTheme.textColorInverted};
+
+    &:hover, &:focus{
+      background-color:${defaultTheme.status.warningColorHover};
+      outline: 3px solid ${defaultTheme.status.warningColorHover};
+      outline-offset: 2px;
+      border: 2px solid transparent;
+    }
+
+    &:active{
+      background-color: ${defaultTheme.status.warningColorActive};
+    }
+  `,
+
+  secondaryButtonWarning: () => `
+    background: none;
+    border: 2px solid ${defaultTheme.status.warningColor};
+    color: ${defaultTheme.status.warningColor};
+  `,
+
+  tertiaryButtonWarning: () => `
+    background: none;
+    color: ${defaultTheme.status.warningColor};
+  `,
+
+  error: () => `
+    background: none;
+    color: ${defaultTheme.status.errorColor};
+    &:hover, &:focus {
+      background-color: ${defaultTheme.status.errorColorHover};
+      outline: 3px solid ${defaultTheme.status.errorColorHover};
+      outline-offset: 2px;
+      border: 2px solid transparent;
+    }
+    &:active {
+      background-color: ${defaultTheme.status.errorColorActive};
+    }
+  `,
+
+  primaryButtonError: () => `
+    background-color: ${defaultTheme.status.errorColor};
+    color: ${defaultTheme.textColorInverted};
+  `,
+
+  secondaryButtonError: () => `
+    border: 2px solid ${defaultTheme.status.warningColor};
+  `,
+
+  success: () => `
+    background: none;
+    color: ${defaultTheme.status.successColor};
+    &:hover, &:focus {
+      background-color: ${defaultTheme.status.successColorHover};
+      outline: 3px solid ${defaultTheme.status.successColorHover};
+      outline-offset: 2px;
+      border: 2px solid transparent;
+    }
+    &:active {
+      background-color: ${defaultTheme.status.successColorActive};
+    }
+  `,
+
+  primaryButtonSuccess: () => `
+    background-color: ${defaultTheme.status.successColor};
+    color: ${defaultTheme.textColorInverted};
+  `,
+
+  secondaryButtonSuccess: () => `
+    border: 2px solid ${defaultTheme.status.warningColor};
   `
+
 };
 
 const Button = styled.button`
@@ -23,18 +96,18 @@ const Button = styled.button`
   font-family: 'Roboto', sans-serif;
 
   &:hover{
-    background-color:${defaultTheme.primaryHoverColor};
+    background-color:${defaultTheme.primaryColorHover};
     color: ${defaultTheme.textColorOnPrimary};
   }
   
   &:focus{
-    outline: 3px solid ${defaultTheme.primaryHoverColor};
+    outline: 3px solid ${defaultTheme.primaryColorHover};
     outline-offset:2px;
   }
 
   &:active{
-    background-color: ${defaultTheme.primaryActiveColor};
-    border-color:${defaultTheme.primaryActiveColor};
+    background-color: ${defaultTheme.primaryColorActive};
+    border-color:${defaultTheme.primaryColorActive};
     color:${defaultTheme.textColorOnPrimary};
   }
 `;
@@ -50,7 +123,7 @@ const PrimaryButton = styled(Button)`
     cursor: not-allowed;
   }
 
-  ${applyStyleModifiers(BUTTON_MODIFIERS)};
+  ${applyStyleModifiers(BUTTON_MODIFIERS)}; 
 `;
 
 export const SecondaryButton = styled(Button)`

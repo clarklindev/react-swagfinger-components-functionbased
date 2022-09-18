@@ -10,6 +10,7 @@ import Accordion from './components/Accordion/Accordion';
   }
 
   useEffect(()=>{
+    //useEffect specifically for Accordion
     let data =[
       {
         title:"helloworld",
@@ -40,9 +41,9 @@ import Accordion from './components/Accordion/Accordion';
           <hr/>
 
           <h3>Button</h3>
-          <PrimaryButton modifiers="small" onClick={onButtonClickHandler}>my button</PrimaryButton>
-          <SecondaryButton modifiers={["large"]} onClick={onButtonClickHandler}>my button</SecondaryButton>
-          <TertiaryButton onClick={onButtonClickHandler}>my button</TertiaryButton>
+          <PrimaryButton modifiers={['small', 'success', "primaryButtonSuccess"]} onClick={onButtonClickHandler}>my button</PrimaryButton>
+          <SecondaryButton modifiers={["large", 'warning', 'secondaryButtonWarning']} onClick={onButtonClickHandler}>my button</SecondaryButton>
+          <TertiaryButton modifiers={["error", "tertiaryButtonError"]} onClick={onButtonClickHandler}>my button</TertiaryButton>
           <hr/>
 
           <h3>Accordion</h3>
