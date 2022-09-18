@@ -1,7 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import { applyStyleModifiers } from 'styled-components-modifiers';
 import {defaultTheme, typeScale} from '../../utils';
+
+const BUTTON_MODIFIERS = {
+  small: () =>`
+    font-size: ${typeScale.helperText};
+    padding: 8px;
+  `,
+  large: ()=>`
+    font-size: ${typeScale.h5};
+    padding: 16px 24px;
+  `
+};
 
 const Button = styled.button`
   padding: 12px 24px;
@@ -26,10 +37,6 @@ const Button = styled.button`
     border-color:${defaultTheme.primaryActiveColor};
     color:${defaultTheme.textColorOnPrimary};
   }
-
-  &:disabled{
-
-  }
 `;
 
 const PrimaryButton = styled(Button)`
@@ -42,6 +49,8 @@ const PrimaryButton = styled(Button)`
     color: ${defaultTheme.textOnDisabled};
     cursor: not-allowed;
   }
+
+  ${applyStyleModifiers(BUTTON_MODIFIERS)};
 `;
 
 export const SecondaryButton = styled(Button)`
@@ -55,17 +64,22 @@ export const SecondaryButton = styled(Button)`
     border-color: ${defaultTheme.disabled};
     cursor: not-allowed;
   }
+
+  ${applyStyleModifiers(BUTTON_MODIFIERS)};
 `;
 
 export const TertiaryButton = styled(Button)`
   background:none;
   border:none;
   color:${defaultTheme.primaryColor};
-  :disabled{
+
+  &:disabled{
     background: none;
     color: ${defaultTheme.disabled};
     cursor: not-allowed;
   }
+
+  ${applyStyleModifiers(BUTTON_MODIFIERS)};
 `;
 
 export default PrimaryButton;

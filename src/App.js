@@ -40,9 +40,9 @@ import Accordion from './components/Accordion/Accordion';
           <hr/>
 
           <h3>Button</h3>
-          <PrimaryButton disabled onClick={onButtonClickHandler}>my button</PrimaryButton>
-          <SecondaryButton disabled onClick={onButtonClickHandler}>my button</SecondaryButton>
-          <TertiaryButton disabled onClick={onButtonClickHandler}>my button</TertiaryButton>
+          <PrimaryButton modifiers="small" onClick={onButtonClickHandler}>my button</PrimaryButton>
+          <SecondaryButton modifiers={["large"]} onClick={onButtonClickHandler}>my button</SecondaryButton>
+          <TertiaryButton onClick={onButtonClickHandler}>my button</TertiaryButton>
           <hr/>
 
           <h3>Accordion</h3>
