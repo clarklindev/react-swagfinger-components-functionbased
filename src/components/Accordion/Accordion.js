@@ -4,9 +4,10 @@ import styled from 'styled-components';
 
 const Accordion = styled.div`
   display:block;  
+
 `;
 
-export default ({data, allowMultiOpen=false})=> {
+export default ({data, allowMultiOpen=false}) => {
 
   // activeItems holds item indexs to show
   const [activeItems, setActiveItems] = useState([]);//set initial active items

@@ -7,7 +7,7 @@ const AccordionItem = styled.div`
 `;
 
 const AccordionItemTitle = styled.div`
-  background-color:red;
+  background-color:red; 
 `;
 
 const AccordionItemContent = styled.div`
