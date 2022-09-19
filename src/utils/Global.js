@@ -16,7 +16,6 @@ export const GlobalStyle = createGlobalStyle`
   body{
     margin: 0;
     font-family: ${primaryFont};
-    padding: 150px;
   }
 
   main{

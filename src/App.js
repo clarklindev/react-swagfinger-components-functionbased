@@ -1,9 +1,14 @@
 import React, {useEffect, useState} from 'react'
+import { ThemeProvider } from "styled-components";
+
+//theme
+import {GlobalStyle, darkTheme, defaultTheme} from './utils';
+
 // import { Counter } from './features/counter/Counter';
-import PrimaryButton, {SecondaryButton, TertiaryButton} from './components/Button/Button';
+import {PrimaryButton, SecondaryButton, TertiaryButton} from './components/Button/Button';
 import Accordion from './components/Accordion/Accordion';
 
-  function App() {
+const App = () => {
 
   const onButtonClickHandler = () =>{
     console.log('click');
@@ -31,27 +36,47 @@ import Accordion from './components/Accordion/Accordion';
     // getAccordionData();
   },[]);
   
+  const [useDarkTheme, setUseDarkTheme] = useState(false);
   const [accordionData, setAccordionData] = useState([]);
 
-    return (
-      <div className="App">
-        <header className="App-header">
-          {/* <h3>Counter</h3> */}
-          {/* <Counter /> */}
-          <hr/>
+  return (
+    <ThemeProvider theme={useDarkTheme ? darkTheme : defaultTheme}>
+      <button 
+        style={{margin: "0 16px 24px", padding: "8px", background:"none"}}
+        onClick={()=>setUseDarkTheme(true)}
+      >Dark theme
+      </button>
 
-          <h3>Button</h3>
-          <PrimaryButton modifiers={['small', 'success', "primaryButtonSuccess"]} onClick={onButtonClickHandler}>my button</PrimaryButton>
-          <SecondaryButton modifiers={["large", 'warning', 'secondaryButtonWarning']} onClick={onButtonClickHandler}>my button</SecondaryButton>
-          <TertiaryButton modifiers={["error", "tertiaryButtonError"]} onClick={onButtonClickHandler}>my button</TertiaryButton>
-          <hr/>
+      <button 
+        style={{margin: "0 16px 24px", padding: "8px", background:"none"}}
+        onClick={()=>setUseDarkTheme(false)}
+      >Default theme
+      </button>
 
-          <h3>Accordion</h3>
-          <Accordion data={accordionData} allowMultiOpen={true}/>
-          <hr/>
-        </header>
+      <div className="App" 
+        style={{
+          background: useDarkTheme ? darkTheme.backgroundColor : defaultTheme.backgroundColor,
+          color: useDarkTheme ? darkTheme.textColor : defaultTheme.textColor,
+          width: "100vw",
+          height: '100vh'
+        }}
+      >
+        {/* <h3>Counter</h3> */}
+        {/* <Counter /> */}
+        <hr/>
+        <h3>Button</h3>
+        <PrimaryButton onClick={onButtonClickHandler}>my button</PrimaryButton>
+        <SecondaryButton onClick={onButtonClickHandler}>my button</SecondaryButton>
+        <TertiaryButton onClick={onButtonClickHandler}>my button</TertiaryButton>
+        <hr/>
+
+        <h3>Accordion</h3>
+        <Accordion data={accordionData} allowMultiOpen={true}/>
+        <hr/>
       </div>
-    );
-  }
+      <GlobalStyle/>
+    </ThemeProvider>
+  );
+}
 
-  export default App;
+export default App;
