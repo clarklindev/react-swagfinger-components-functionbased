@@ -3,58 +3,52 @@ import AccordionItem from './AccordionItem';
 import styled from 'styled-components';
 
 const Accordion = styled.div`
-  display:block;  
-
+  display: block;
 `;
 
-export default ({data, allowMultiOpen=false}) => {
-
+export default ({ data, allowMultiOpen = false }) => {
   // activeItems holds item indexs to show
-  const [activeItems, setActiveItems] = useState([]);//set initial active items
-  
-  useEffect(()=>{
+  const [activeItems, setActiveItems] = useState([]); //set initial active items
+
+  useEffect(() => {
     console.log('activeItems: ', activeItems);
   }, [activeItems]);
 
-  const trackIsOpen = (index)=>{
-    if(allowMultiOpen === true){
+  const trackIsOpen = (index) => {
+    if (allowMultiOpen === true) {
       //if index is in the activeItems array... remove it
-      if(activeItems.some(item=> item === index)){
-        setActiveItems(activeItems.filter(item=> item !== index));
-      }  
+      if (activeItems.some((item) => item === index)) {
+        setActiveItems(activeItems.filter((item) => item !== index));
+      }
       //add to activeItems
-      else{
+      else {
         setActiveItems([...activeItems, index]);
       }
-    }
-    else{
+    } else {
       setActiveItems([index]);
     }
-  }
+  };
 
   //if its in the activeItems array
-  const shouldShow = (index) =>{
-    return activeItems.some(item=>item === index);
-  }
+  const shouldShow = (index) => {
+    return activeItems.some((item) => item === index);
+  };
 
   return (
     <Accordion className={'Accordion'}>
-      {
-        data.map((item, index)=>{
-          
-          return <AccordionItem 
-            key={`AccordionItem_${index}`} 
-            
+      {data.map((item, index) => {
+        return (
+          <AccordionItem
+            key={`AccordionItem_${index}`}
             info={item}
-            index={index} 
-            render={index=>{
+            index={index}
+            render={(index) => {
               trackIsOpen(index);
-            }} 
-            showing={shouldShow(index)} 
+            }}
+            showing={shouldShow(index)}
           />
-          
-        })
-      }
+        );
+      })}
     </Accordion>
   );
-}
+};

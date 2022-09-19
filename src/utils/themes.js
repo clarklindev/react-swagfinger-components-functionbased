@@ -1,5 +1,5 @@
-import {blue, neutral, yellow, green, red} from './colors';
-import {primaryFont} from './typography';
+import { blue, neutral, yellow, green, red } from './colors';
+import { primaryFont } from './typography';
 
 export const defaultTheme = {
   primaryFont: primaryFont,
@@ -10,11 +10,12 @@ export const defaultTheme = {
 
   formElementBackground: neutral[100],
   textOnFormElementBackground: neutral[600],
+
   textColorOnPrimary: neutral[100],
-  textColor:neutral[600],
+  textColor: neutral[600],
   textColorInverted: neutral[100],
   backgroundColor: neutral[100],
-  
+
   disabled: neutral[400],
   textOnDisabled: neutral[300],
 
@@ -32,8 +33,8 @@ export const defaultTheme = {
 
     successColor: green[100],
     successColorHover: green[200],
-    successColorActive: green[300]
-  }
+    successColorActive: green[300],
+  },
 };
 
 export const darkTheme = {
@@ -45,6 +46,7 @@ export const darkTheme = {
 
   formElementBackground: blue[100],
   textOnFormElementBackground: neutral[100],
+
   textColorOnPrimary: blue[300],
   textColor: neutral[100],
   textColorInverted: neutral[600],
@@ -63,9 +65,9 @@ export const darkTheme = {
     errorColor: red[100],
     errorColorHover: red[200],
     errorColorActive: red[300],
-    
+
     successColor: green[100],
     successColorHover: green[200],
-    successColorActive: green[300]
-  }
+    successColorActive: green[300],
+  },
 };

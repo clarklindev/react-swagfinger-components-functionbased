@@ -1,30 +1,35 @@
-import React, {useEffect, useState} from 'react'
-import { ThemeProvider } from "styled-components";
-
+import React, { useEffect, useState } from 'react';
+import styled, { ThemeProvider } from 'styled-components';
 //theme
-import {GlobalStyle, darkTheme, defaultTheme} from './utils';
+import { GlobalStyle, darkTheme, defaultTheme } from './utils';
 
 // import { Counter } from './features/counter/Counter';
-import {PrimaryButton, SecondaryButton, TertiaryButton} from './components/Button/Button';
+import {
+  PrimaryButton,
+  SecondaryButton,
+  TertiaryButton,
+  SignupModal,
+} from './components';
+
+import { CloseIcon } from './assets';
 import Accordion from './components/Accordion/Accordion';
 
 const App = () => {
-
-  const onButtonClickHandler = () =>{
+  const onButtonClickHandler = () => {
     console.log('click');
-  }
+  };
 
-  useEffect(()=>{
+  useEffect(() => {
     //useEffect specifically for Accordion
-    let data =[
+    let data = [
       {
-        title:"helloworld",
-        body:"this is my first post"
+        title: 'helloworld',
+        body: 'this is my first post',
       },
       {
-        title:"rainbow",
-        body:"rainbows are amazing"
-      }
+        title: 'rainbow',
+        body: 'rainbows are amazing',
+      },
     ];
     setAccordionData(data);
     // async method:
@@ -34,49 +39,61 @@ const App = () => {
     //   setAccordionData(json);
     // }
     // getAccordionData();
-  },[]);
-  
+  }, []);
+
   const [useDarkTheme, setUseDarkTheme] = useState(false);
   const [accordionData, setAccordionData] = useState([]);
 
   return (
     <ThemeProvider theme={useDarkTheme ? darkTheme : defaultTheme}>
-      <button 
-        style={{margin: "0 16px 24px", padding: "8px", background:"none"}}
-        onClick={()=>setUseDarkTheme(true)}
-      >Dark theme
+      <button
+        style={{ margin: '0 16px 24px', padding: '8px', background: 'none' }}
+        onClick={() => setUseDarkTheme(true)}
+      >
+        Dark theme
       </button>
 
-      <button 
-        style={{margin: "0 16px 24px", padding: "8px", background:"none"}}
-        onClick={()=>setUseDarkTheme(false)}
-      >Default theme
+      <button
+        style={{ margin: '0 16px 24px', padding: '8px', background: 'none' }}
+        onClick={() => setUseDarkTheme(false)}
+      >
+        Default theme
       </button>
 
-      <div className="App" 
+      <div
+        className="App"
         style={{
-          background: useDarkTheme ? darkTheme.backgroundColor : defaultTheme.backgroundColor,
+          background: useDarkTheme
+            ? darkTheme.backgroundColor
+            : defaultTheme.backgroundColor,
           color: useDarkTheme ? darkTheme.textColor : defaultTheme.textColor,
-          width: "100vw",
-          height: '100vh'
+          width: '100vw',
+          height: '100vh',
         }}
       >
         {/* <h3>Counter</h3> */}
         {/* <Counter /> */}
-        <hr/>
+        {/* <hr />
         <h3>Button</h3>
         <PrimaryButton onClick={onButtonClickHandler}>my button</PrimaryButton>
-        <SecondaryButton onClick={onButtonClickHandler}>my button</SecondaryButton>
-        <TertiaryButton onClick={onButtonClickHandler}>my button</TertiaryButton>
-        <hr/>
+        <SecondaryButton onClick={onButtonClickHandler}>
+          my button
+        </SecondaryButton>
+        <TertiaryButton onClick={onButtonClickHandler}>
+          my button
+        </TertiaryButton>
+        <hr />
 
+        */}
         <h3>Accordion</h3>
-        <Accordion data={accordionData} allowMultiOpen={true}/>
-        <hr/>
+        <Accordion data={accordionData} allowMultiOpen={true} />
+        <hr />
+
+        <SignupModal />
       </div>
-      <GlobalStyle/>
+      <GlobalStyle />
     </ThemeProvider>
   );
-}
+};
 
 export default App;
