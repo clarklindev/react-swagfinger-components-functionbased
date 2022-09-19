@@ -4,10 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 #### Project JS
 
-- uses for hooks
-- non-class based functions
+- uses hooks
+- non class-based functions
 - simplified components (built by developer for developers)
-- uses polished package to normalize css
+- uses Polished package to normalize css
 
 #### CRA
 
