@@ -2,6 +2,7 @@ import { blue, neutral, yellow, green, red } from './colors';
 import { primaryFont } from './typography';
 
 export const defaultTheme = {
+  name: 'defaultTheme',
   primaryFont: primaryFont,
 
   primaryColor: blue[300],
@@ -33,11 +34,12 @@ export const defaultTheme = {
 
     successColor: green[100],
     successColorHover: green[200],
-    successColorActive: green[300],
-  },
+    successColorActive: green[300]
+  }
 };
 
 export const darkTheme = {
+  name: 'darkTheme',
   primaryFont: primaryFont,
 
   primaryColor: neutral[100],
@@ -48,8 +50,8 @@ export const darkTheme = {
   textOnFormElementBackground: neutral[100],
 
   textColorOnPrimary: blue[300],
-  textColor: neutral[100],
-  textColorInverted: neutral[600],
+  textColor: neutral[600],
+  textColorInverted: neutral[100],
   backgroundColor: neutral[600],
   disabled: neutral[400],
   textOnDisabled: neutral[300],
@@ -68,6 +70,6 @@ export const darkTheme = {
 
     successColor: green[100],
     successColorHover: green[200],
-    successColorActive: green[300],
-  },
+    successColorActive: green[300]
+  }
 };

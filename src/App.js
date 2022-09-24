@@ -4,12 +4,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyle, darkTheme, defaultTheme } from './utils';
 
 // import { Counter } from './features/counter/Counter';
-import {
-  PrimaryButton,
-  SecondaryButton,
-  TertiaryButton,
-  SignupModal,
-} from './components';
+import { Button, SignupModal } from './components';
 
 import { CloseIcon } from './assets';
 import Accordion from './components/Accordion/Accordion';
@@ -24,12 +19,12 @@ const App = () => {
     let data = [
       {
         title: 'helloworld',
-        body: 'this is my first post',
+        body: 'this is my first post'
       },
       {
         title: 'rainbow',
-        body: 'rainbows are amazing',
-      },
+        body: 'rainbows are amazing'
+      }
     ];
     setAccordionData(data);
     // async method:
@@ -68,28 +63,19 @@ const App = () => {
             : defaultTheme.backgroundColor,
           color: useDarkTheme ? darkTheme.textColor : defaultTheme.textColor,
           width: '100vw',
-          height: '100vh',
+          height: '100vh'
         }}
       >
         {/* <h3>Counter</h3> */}
         {/* <Counter /> */}
-        {/* <hr />
-        <h3>Button</h3>
-        <PrimaryButton onClick={onButtonClickHandler}>my button</PrimaryButton>
-        <SecondaryButton onClick={onButtonClickHandler}>
-          my button
-        </SecondaryButton>
-        <TertiaryButton onClick={onButtonClickHandler}>
-          my button
-        </TertiaryButton>
+        <hr />
+        {/* <Button type="primary" label="My Button" /> */}
+
+        {/* <h3>Accordion</h3> */}
+        {/* <Accordion data={accordionData} allowMultiOpen={true} /> */}
         <hr />
 
-        */}
-        <h3>Accordion</h3>
-        <Accordion data={accordionData} allowMultiOpen={true} />
-        <hr />
-
-        <SignupModal />
+        {/* <SignupModal /> */}
       </div>
       <GlobalStyle />
     </ThemeProvider>

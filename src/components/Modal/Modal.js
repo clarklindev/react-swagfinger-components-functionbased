@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { typeScale } from '../../utils/typography';
 import { illustrations, CloseIcon } from '../../assets';
-import { PrimaryButton } from '../Button/Button';
+import { Button } from '../Button/Button';
 
 const ModalWrapper = styled.div`
   width: 800px;
@@ -53,7 +53,7 @@ export const SignupModal = () => {
       <SignupHeader>Sign up</SignupHeader>
       <SignupText>Sign up today to get access</SignupText>
 
-      <PrimaryButton>Sign up!</PrimaryButton>
+      <Button>Sign up!</Button>
 
       <CloseModalButton>
         <CloseIcon>hello</CloseIcon>
