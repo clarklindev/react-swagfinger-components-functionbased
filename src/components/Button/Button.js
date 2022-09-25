@@ -19,7 +19,7 @@ export const Button = styled.button.attrs((props) => ({
 }))`
   padding: 12px 24px;
   font-size: ${typeScale.paragraph};
-  border-radius: 2px;
+  border-radius: 8px;
   min-width: 100px;
   cursor: pointer;
   font-family: 'Roboto', sans-serif;
@@ -90,13 +90,12 @@ export const Button = styled.button.attrs((props) => ({
         return css`
           background-color: ${props.theme.status.warningColor};
           color: ${props.theme.textColorInverted};
-          border: none;
+          border: 2px solid transparent;
           &:hover,
           &:focus {
             background-color: ${props.theme.status.warningColorHover};
             outline: 3px solid ${props.theme.status.warningColorHover};
             outline-offset: 2px;
-            border: 2px solid transparent;
           }
           &:active {
             background-color: ${props.theme.status.warningColorActive};
@@ -107,13 +106,12 @@ export const Button = styled.button.attrs((props) => ({
         return css`
           background-color: ${props.theme.status.errorColor};
           color: ${props.theme.textColorInverted};
-          border: none;
+          border: 2px solid transparent;
           &:hover,
           &:focus {
             background-color: ${props.theme.status.errorColorHover};
             outline: 3px solid ${props.theme.status.errorColorHover};
             outline-offset: 2px;
-            border: 2px solid transparent;
           }
           &:active {
             background-color: ${props.theme.status.errorColorActive};
@@ -124,13 +122,12 @@ export const Button = styled.button.attrs((props) => ({
         return css`
           background: ${props.theme.status.successColor};
           color: ${props.theme.textColorInverted};
-          border: none;
+          border: 2px solid transparent;
           &:hover,
           &:focus {
             background-color: ${props.theme.status.successColorHover};
             outline: 3px solid ${props.theme.status.successColorHover};
             outline-offset: 2px;
-            border: 2px solid transparent;
           }
           &:active {
             background-color: ${props.theme.status.successColorActive};
