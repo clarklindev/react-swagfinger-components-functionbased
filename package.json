@@ -12,7 +12,6 @@
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
     "react-scripts": "5.0.1",
-    "storybook-addon-styled-components-themes": "^0.0.2",
     "styled-components": "^5.3.5",
     "styled-components-modifiers": "^1.2.5",
     "web-vitals": "^2.1.4"
@@ -54,6 +53,7 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-a11y": "^6.5.12",
     "@storybook/addon-actions": "^6.5.12",
     "@storybook/addon-essentials": "^6.5.12",
     "@storybook/addon-interactions": "^6.5.12",
@@ -66,6 +66,7 @@
     "@storybook/testing-library": "^0.0.13",
     "babel-plugin-named-exports-order": "^0.0.2",
     "prop-types": "^15.8.1",
+    "storybook-addon-styled-components-themes": "^0.0.2",
     "webpack": "^5.74.0"
   }
 }

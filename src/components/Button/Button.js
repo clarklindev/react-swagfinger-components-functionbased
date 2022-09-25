@@ -10,7 +10,7 @@ const BUTTON_MODIFIERS = {
 
   large: () => css`
     font-size: ${typeScale.header5};
-    padding: 16px 24px;
+    padding: 20px 24px;
   `
 };
 
