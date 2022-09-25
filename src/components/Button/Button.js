@@ -23,43 +23,46 @@ export const Button = styled.button.attrs((props) => ({
   min-width: 100px;
   cursor: pointer;
   font-family: 'Roboto', sans-serif;
+  outline: none;
 
   ${(props) => {
-    const interactiveStates = css`
+    console.log('here: ', props);
+
+    const interactiveStates = () => css`
       &:hover {
-        background-color: ${({ theme }) => theme.primaryColorHover};
-        color: ${({ theme }) => theme.textColorOnPrimary};
+        background-color: ${props.theme.primaryColorHover};
+        color: ${props.theme.textColorOnPrimary};
       }
 
       &:focus {
-        outline: 3px solid ${({ theme }) => theme.primaryColorHover};
+        outline: 3px solid ${props.theme.primaryColorHover};
         outline-offset: 2px;
       }
 
       &:active {
-        background-color: ${({ theme }) => theme.primaryColorActive};
-        border-color: ${({ theme }) => theme.primaryColorActive};
-        color: ${({ theme }) => theme.textColorOnPrimary};
+        background-color: ${props.theme.primaryColorActive};
+        border-color: ${props.theme.primaryColorActive};
+        color: ${props.theme.textColorOnPrimary};
       }
     `;
 
     switch (props.variation) {
       case 'primary':
         return css`  
-          ${interactiveStates}
           background-color: ${props.theme.primaryColor};
           border: none;
           color: ${props.theme.textColorOnPrimary};
+
           &:disabled{
             background-color ${props.theme.disabled};
             color: ${props.theme.textOnDisabled};
             cursor: not-allowed;
           }
+          ${interactiveStates}
         `;
 
       case 'secondary':
         return css`
-          ${interactiveStates}
           background: none;
           border: 2px solid ${props.theme.primaryColor};
           color: ${props.theme.primaryColor};
@@ -70,11 +73,11 @@ export const Button = styled.button.attrs((props) => ({
             border-color: ${props.theme.disabled};
             cursor: not-allowed;
           }
+          ${interactiveStates}
         `;
 
       case 'tertiary':
         return css`
-          ${interactiveStates}
           background: none;
           border: none;
           color: ${props.theme.primaryColor};
@@ -84,6 +87,7 @@ export const Button = styled.button.attrs((props) => ({
             color: ${props.theme.disabled};
             cursor: not-allowed;
           }
+          ${interactiveStates}
         `;
 
       case 'warning':

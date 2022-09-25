@@ -7,7 +7,7 @@ export const defaultTheme = {
 
   primaryColor: blue[300],
   primaryColorHover: blue[200],
-  primaryActiveColor: blue[100],
+  primaryColorActive: blue[100],
 
   formElementBackground: neutral[100],
   textOnFormElementBackground: neutral[600],
