@@ -1,75 +1,111 @@
 import { blue, neutral, yellow, green, red } from './colors';
-import { primaryFont } from './typography';
+
+const commonStyles = {
+  status: {
+    color: neutral[100],
+    warningBackgroundColor: yellow[100],
+    warningBackgroundColorHover: yellow[200],
+    warningBackgroundColorActive: yellow[300],
+
+    errorBackgroundColor: red[100],
+    errorBackgroundColorHover: red[200],
+    errorBackgroundColorActive: red[300],
+
+    successBackgroundColor: green[100],
+    successBackgroundColorHover: green[200],
+    successBackgroundColorActive: green[300]
+  }
+};
 
 export const defaultTheme = {
   name: 'defaultTheme',
-  primaryFont: primaryFont,
+  ...commonStyles,
 
-  primaryColor: blue[300],
-  primaryColorHover: blue[200],
-  primaryColorActive: blue[100],
-
+  disabledColor: neutral[300],
+  disabledBackgroundColor: neutral[400],
   formElementBackground: neutral[100],
   textOnFormElementBackground: neutral[600],
-
-  textColorOnPrimary: neutral[100],
-  textColor: neutral[600],
-  textColorInverted: neutral[100],
-  backgroundColor: neutral[100],
-
-  disabled: neutral[400],
-  textOnDisabled: neutral[300],
-
   textFieldBackground: neutral[200],
   textFieldLabelColor: neutral[500],
 
-  status: {
-    warningColor: yellow[100],
-    warningColorHover: yellow[200],
-    warningColorActive: yellow[300],
+  default: {
+    color: neutral[400],
+    colorInverted: neutral[100],
+    borderColor: neutral[300],
+    backgroundColor: neutral[100],
+    backgroundColorHover: neutral[200],
+    backgroundColorActive: neutral[300]
+  },
 
-    errorColor: red[100],
-    errorColorHover: red[200],
-    errorColorActive: red[300],
+  primary: {
+    color: neutral[100],
+    colorInverted: neutral[100],
+    borderColor: blue[100],
+    backgroundColor: blue[300],
+    backgroundColorHover: blue[200],
+    backgroundColorActive: blue[100]
+  },
 
-    successColor: green[100],
-    successColorHover: green[200],
-    successColorActive: green[300]
+  secondary: {
+    color: blue[300],
+    colorInverted: neutral[100],
+    borderColor: blue[100],
+    backgroundColor: blue[300],
+    backgroundColorHover: blue[200],
+    backgroundColorActive: blue[100]
+  },
+
+  tertiary: {
+    color: blue[300],
+    colorInverted: neutral[100],
+    borderColor: blue[100],
+    backgroundColor: blue[300],
+    backgroundColorHover: blue[200],
+    backgroundColorActive: blue[100]
   }
 };
 
 export const darkTheme = {
   name: 'darkTheme',
-  primaryFont: primaryFont,
+  ...commonStyles,
 
-  primaryColor: neutral[100],
-  primaryColorHover: neutral[200],
-  primaryColorActive: neutral[300],
-
+  disabledColor: neutral[400],
+  disabledBackgroundColor: neutral[300],
   formElementBackground: blue[100],
   textOnFormElementBackground: neutral[100],
-
-  textColorOnPrimary: blue[300],
-  textColor: neutral[600],
-  textColorInverted: neutral[100],
-  backgroundColor: neutral[600],
-  disabled: neutral[400],
-  textOnDisabled: neutral[300],
-
-  textFieldBackground: neutral[200],
+  textFieldBackground: neutral[600],
   textFieldLabelColor: neutral[100],
 
-  status: {
-    warningColor: yellow[100],
-    warningColorHover: yellow[200],
-    warningColorActive: yellow[300],
+  default: {
+    color: neutral[600],
+    colorInverted: neutral[100],
+    borderColor: neutral[300],
+    backgroundColor: neutral[100],
+    backgroundColorHover: neutral[200],
+    backgroundColorActive: neutral[300]
+  },
 
-    errorColor: red[100],
-    errorColorHover: red[200],
-    errorColorActive: red[300],
+  primary: {
+    color: neutral[100],
+    colorInverted: neutral[600],
+    backgroundColor: blue[300],
+    backgroundColorHover: neutral[200],
+    backgroundColorActive: neutral[300]
+  },
 
-    successColor: green[100],
-    successColorHover: green[200],
-    successColorActive: green[300]
+  secondary: {
+    color: neutral[100],
+    colorInverted: neutral[600],
+    backgroundColor: blue[300],
+    backgroundColorHover: neutral[200],
+    backgroundColorActive: neutral[300]
+  },
+
+  tertiary: {
+    color: neutral[100],
+    colorInverted: neutral[600],
+    backgroundColor: blue[300],
+    backgroundColorHover: neutral[200],
+    backgroundColorActive: neutral[300]
   }
 };

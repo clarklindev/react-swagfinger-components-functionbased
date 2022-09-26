@@ -17,128 +17,191 @@ const BUTTON_MODIFIERS = {
 export const Button = styled.button.attrs((props) => ({
   children: props.label
 }))`
+  background-color: ${(props) => props.theme.default.backgroundColor};
+  border: 1px solid ${(props) => props.theme.default.borderColor};
+  color: ${(props) => props.theme.default.color};
   padding: 12px 24px;
   font-size: ${typeScale.paragraph};
   border-radius: 8px;
   min-width: 100px;
   cursor: pointer;
-  font-family: 'Roboto', sans-serif;
   outline: none;
+  &:hover {
+    background-color: ${(props) => props.theme.default.backgroundColorHover};
+    color: ${(props) => props.theme.default.color};
+  }
+  &:focus {
+    outline: 3px solid ${(props) => props.theme.default.backgroundColorHover};
+    outline-offset: 2px;
+  }
+  &:active {
+    background-color: ${(props) => props.theme.default.backgroundColorActive};
+    border-color: ${(props) => props.theme.default.backgroundColorActive};
+    color: ${(props) => props.theme.default.colorInverted};
+  }
 
   ${(props) => {
-    console.log('here: ', props);
-
-    const interactiveStates = () => css`
-      &:hover {
-        background-color: ${props.theme.primaryColorHover};
-        color: ${props.theme.textColorOnPrimary};
-      }
-
-      &:focus {
-        outline: 3px solid ${props.theme.primaryColorHover};
-        outline-offset: 2px;
-      }
-
-      &:active {
-        background-color: ${props.theme.primaryColorActive};
-        border-color: ${props.theme.primaryColorActive};
-        color: ${props.theme.textColorOnPrimary};
-      }
-    `;
-
     switch (props.variation) {
       case 'primary':
         return css`  
-          background-color: ${props.theme.primaryColor};
+          background-color: ${props.theme[props.variation].backgroundColor};
           border: none;
-          color: ${props.theme.textColorOnPrimary};
+          color: ${props.theme[props.variation].color};
 
           &:disabled{
-            background-color ${props.theme.disabled};
-            color: ${props.theme.textOnDisabled};
+            background-color ${props.theme.disabledBackgroundColor};
+            color: ${props.theme.disabledColor};
             cursor: not-allowed;
           }
-          ${interactiveStates}
+
+          &:hover{
+            background-color: ${
+              props.theme[props.variation].backgroundColorHover
+            };
+            color: ${props.theme[props.variation].colorInverted};
+          }
+          &:focus {
+            outline: 2px solid ${
+              props.theme[props.variation].backgroundColorHover
+            };
+            outline-offset: 2px;
+          }
+          &:active {
+            background-color: ${
+              props.theme[props.variation].backgroundColorActive
+            };
+            border-color: ${props.theme[props.variation].backgroundColorActive};
+            color: ${props.theme[props.variation].color};
+          }
         `;
 
       case 'secondary':
         return css`
           background: none;
-          border: 2px solid ${props.theme.primaryColor};
-          color: ${props.theme.primaryColor};
+          border: 1px solid ${props.theme[props.variation].borderColor};
+          color: ${props.theme[props.variation].color};
 
           &:disabled {
             background: none;
-            color: ${props.theme.disabled};
-            border-color: ${props.theme.disabled};
+            color: ${props.theme.disabledColor};
+            border-color: ${props.theme.disabledBackgroundColor};
             cursor: not-allowed;
           }
-          ${interactiveStates}
+
+          &:hover {
+            background-color: ${props.theme[props.variation]
+              .backgroundColorHover};
+            color: ${props.theme[props.variation].colorInverted};
+          }
+          &:focus {
+            outline: 2px solid
+              ${props.theme[props.variation].backgroundColorHover};
+            outline-offset: 2px;
+          }
+          &:active {
+            background-color: ${props.theme[props.variation]
+              .backgroundColorActive};
+            border-color: ${props.theme[props.variation].backgroundColorActive};
+            color: ${props.theme[props.variation].colorInverted};
+          }
         `;
 
       case 'tertiary':
         return css`
           background: none;
           border: none;
-          color: ${props.theme.primaryColor};
+          color: ${props.theme[props.variation].color};
 
           &:disabled {
             background: none;
-            color: ${props.theme.disabled};
+            color: ${props.theme.disabledColor};
             cursor: not-allowed;
           }
-          ${interactiveStates}
+
+          &:hover {
+            background-color: ${props.theme[props.variation]
+              .backgroundColorHover};
+            color: ${props.theme[props.variation].colorInverted};
+          }
+          &:focus {
+            outline: 2px solid
+              ${props.theme[props.variation].backgroundColorHover};
+            outline-offset: 2px;
+          }
+          &:active {
+            background-color: ${props.theme[props.variation]
+              .backgroundColorActive};
+            border-color: ${props.theme[props.variation].backgroundColorActive};
+            color: ${props.theme[props.variation].colorInverted};
+          }
         `;
 
       case 'warning':
         return css`
-          background-color: ${props.theme.status.warningColor};
-          color: ${props.theme.textColorInverted};
-          border: 2px solid transparent;
-          &:hover,
+          color: ${props.theme.status.color};
+          background-color: ${props.theme.status.warningBackgroundColor};
+          border: 1px solid transparent;
+          outline: none;
+          &:hover {
+            background-color: ${props.theme.status.warningBackgroundColorHover};
+            color: ${props.theme.status.color};
+          }
           &:focus {
-            background-color: ${props.theme.status.warningColorHover};
-            outline: 3px solid ${props.theme.status.warningColorHover};
+            background-color: ${props.theme.status.warningBackgroundColorHover};
+            outline: 2px solid ${props.theme.status.warningBackgroundColorHover};
             outline-offset: 2px;
           }
           &:active {
-            background-color: ${props.theme.status.warningColorActive};
+            background-color: ${props.theme.status
+              .warningBackgroundColorActive};
+            border-color: ${props.theme.status.warningBackgroundColorActive};
           }
         `;
 
       case 'error':
         return css`
-          background-color: ${props.theme.status.errorColor};
-          color: ${props.theme.textColorInverted};
-          border: 2px solid transparent;
-          &:hover,
+          color: ${props.theme.status.color};
+          background-color: ${props.theme.status.errorBackgroundColor};
+          border: 1px solid transparent;
+          outline: none;
+          &:hover {
+            background-color: ${props.theme.status.errorBackgroundColorHover};
+            color: ${props.theme.status.color};
+          }
           &:focus {
-            background-color: ${props.theme.status.errorColorHover};
-            outline: 3px solid ${props.theme.status.errorColorHover};
+            background-color: ${props.theme.status.errorBackgroundColorHover};
+            outline: 2px solid ${props.theme.status.errorBackgroundColorHover};
             outline-offset: 2px;
           }
           &:active {
-            background-color: ${props.theme.status.errorColorActive};
+            background-color: ${props.theme.status.errorBackgroundColorActive};
+            border-color: ${props.theme.status.errorBackgroundColorActive};
           }
         `;
 
       case 'success':
         return css`
-          background: ${props.theme.status.successColor};
-          color: ${props.theme.textColorInverted};
-          border: 2px solid transparent;
-          &:hover,
+          color: ${props.theme.status.color};
+          background: ${props.theme.status.successBackgroundColor};
+          border: 1px solid transparent;
+          outline: none;
+          &:hover {
+            background-color: ${props.theme.status.successBackgroundColorHover};
+            color: ${props.theme.status.color};
+          }
           &:focus {
-            background-color: ${props.theme.status.successColorHover};
-            outline: 3px solid ${props.theme.status.successColorHover};
+            background-color: ${props.theme.status.successBackgroundColorHover};
+            outline: 2px solid ${props.theme.status.successBackgroundColorHover};
             outline-offset: 2px;
           }
           &:active {
-            background-color: ${props.theme.status.successColorActive};
+            background-color: ${props.theme.status
+              .successBackgroundColorActive};
+            border-color: ${props.theme.status.successBackgroundColorActive};
           }
         `;
     }
-  }}
+  }};
 
   ${applyStyleModifiers(BUTTON_MODIFIERS)};
 `;

@@ -7,18 +7,54 @@ export default {
   component: Button,
   parameters: { controls: { sort: 'requiredFirst' } },
   argTypes: {
-    onClick: { action: 'clicked' },
+    onClick: {
+      description: 'click handler function - *Optional',
+      type: {
+        required: false
+      },
+      action: 'clicked',
+      control: { type: 'function' }
+    },  
     label: {
-      description: 'label for the button'
+      description: 'label for the button - *Required',
+      type: {
+        required: true
+      },
+      table: {
+        defaultValue: {
+          summary: 'label',
+          detail: `label text is required for buttons`
+        }
+      },
     },
     variation: {
-      description: '*Optional - style for button',
-      options: ['primary', 'secondary', 'tertiary', 'warning', 'error', 'success'],
+      description: 'style for button - *Optional',
+      options: ['normal', 'primary', 'secondary', 'tertiary', 'warning', 'error', 'success'],
+      type: {
+        required: false
+      },
+      table: {
+        defaultValue: {
+          summary: 'normal',
+          detail: `it is not necessary to specify the default 'normal' state: variation:'normal' in args`
+        }
+      },
       control: { type: 'radio' },
     },
     modifiers: {
-      description: '*Optional - string or array of option values',
+      description: `string or array of option values - *Optional<br/><br/>
+      For the Button component, the modifiers are:<br/>
+      'small', 'large'`,
       options: ['small', 'normal', 'large'],
+      type: {
+        required: false
+      },
+      table: {
+        defaultValue: {
+          summary: 'normal',
+          detail: `it is not necessary to specify the default 'normal' state: modifiers:['normal'] in args`
+        }
+      },
       control: { type: 'radio' },
     }
   },
@@ -30,17 +66,7 @@ const Template = (args) => <Button {...args} />
 export const Default = (args) => {
   return (
     <React.Fragment>
-      
-      <h4>Normal button (default)</h4>
       <Button {...args} />
-
-      
-      <h4>Small button</h4>
-      <Button {...args} modifiers={['small']} />
-      
-      
-      <h4>Large button</h4>
-      <Button {...args} modifiers={['large']} />
     </React.Fragment>
   );
 };
@@ -51,18 +77,19 @@ Default.parameters = {
   docs: {
     source: {
       code: `
-const args = { label: 'label', variation:''};
-
-/* normal - (default) */
+//normal button (default)
+const args = { label: 'label' variation:''};
 <Button {...args} />
 
-/* small button */
-<Button {...args} modifiers={['small']} />
+//small button
+const args = { label: 'label', variation:'', modifiers:{['small']} };
+<Button {...args} />
 
-/* large button */
-<Button {...args} modifiers={['large']} />`,
+//large button
+const args = { label: 'label', variation:'', modifiers:{['large']} };
+<Button {...args} />
+`,
       language: "jsx",
-      type: "auto",
     },
   },
 };
@@ -80,7 +107,6 @@ Primary.parameters = {
 const args = { label: 'label', variation:'primary'};
 < Button {...args} />`,
       language: "jsx",
-      type: "auto",
     },
   },
 };
@@ -95,10 +121,9 @@ Secondary.parameters = {
   docs: {
     source: {
       code: `
-const args = { label: 'label', variation:'secondary'};
+const args = { label: 'label', variation:'secondary' };
 < Button {...args} />`,
       language: "jsx",
-      type: "auto",
     },
   },
 };
@@ -115,7 +140,6 @@ Tertiary.parameters = {
 const args = { label: 'label', variation:'tertiary'};
 < Button {...args} />`,
       language: "jsx",
-      type: "auto",
     },
   },
 };
@@ -132,7 +156,6 @@ Warning.parameters = {
 const args = { label: 'label', variation:'warning'};
 < Button {...args} />`,
       language: "jsx",
-      type: "auto",
     },
   },
 };
@@ -149,7 +172,6 @@ Error.parameters = {
 const args = { label: 'label', variation:'error'};
 < Button {...args} />`,
       language: "jsx",
-      type: "auto",
     },
   },
 };
@@ -163,10 +185,9 @@ Success.parameters = {
   docs: {
     source: {
       code: `
-const args = { label: 'label', variation:'success'};
+const args = { label: 'label', variation:'success' };
 < Button {...args} />`,
       language: "jsx",
-      type: "auto",
     },
   },
 };

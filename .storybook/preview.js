@@ -14,7 +14,7 @@ export const parameters = {
     }
   },
   docs: {
-    source: { type: 'code', language: 'jsx', format: true }
+    source: { type: 'auto', language: 'jsx', format: true }
   },
   styledComponentsThemes: {
     /**
