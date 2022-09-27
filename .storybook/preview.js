@@ -2,7 +2,6 @@
 import { ThemeProvider } from 'styled-components';
 import { WithThemeProvider } from 'storybook-addon-styled-components-themes';
 import { addDecorator } from '@storybook/react';
-import { withA11y } from '@storybook/addon-a11y';
 import { defaultTheme, darkTheme } from '../src/utils';
 
 export const parameters = {
@@ -33,4 +32,3 @@ export const parameters = {
 };
 
 addDecorator((story) => <WithThemeProvider>{story()}</WithThemeProvider>);
-addDecorator(withA11y);
