@@ -20,8 +20,8 @@ export const CheckboxGroupExample = (args) => {
       { label: 'b', value: 'B' },
       { label: 'c', value: 'C' }
     ],
+    
     update: (name, index, newValue) => {
-      
       const newValues = [...groupState];
       newValues[index] = newValue;
       console.log("new Values", newValues.toString());
