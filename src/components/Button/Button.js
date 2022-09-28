@@ -14,7 +14,7 @@ const BUTTON_MODIFIERS = {
   `
 };
 
-export const Button = styled.button.attrs((props) => ({
+const Button = styled.button.attrs((props) => ({
   children: props.label
 }))`
   background-color: ${(props) => props.theme.default.backgroundColor};
@@ -205,3 +205,4 @@ export const Button = styled.button.attrs((props) => ({
 
   ${applyStyleModifiers(BUTTON_MODIFIERS)};
 `;
+export default Button;
