@@ -10,7 +10,7 @@ const BUTTON_MODIFIERS = {
 
   large: () => css`
     font-size: ${typeScale.header5};
-    padding: 20px 24px;
+    padding: 15px 32px;
   `
 };
 
@@ -23,7 +23,9 @@ const Button = styled.button.attrs((props) => ({
   padding: 12px 24px;
   font-size: ${typeScale.paragraph};
   border-radius: 8px;
+  box-sizing: border-box;
   min-width: 100px;
+  over-flow: hidden;
   cursor: pointer;
   outline: none;
   &:hover {

@@ -10,7 +10,7 @@ export default {
 
 export const CheckboxGroupExample = (args) => {
 
-  const [groupState, setGroupState] = useState([true, false, false]);
+  const [savedData, updateData] = useState([true, false, false]);
 
   const configure = {
     name: "Checkbox_ABC",
@@ -21,17 +21,17 @@ export const CheckboxGroupExample = (args) => {
       { label: 'c', value: 'C' }
     ],
     
-    update: (name, index, newValue) => {
-      const newValues = [...groupState];
+    update: (index, newValue) => {
+      const newValues = [...savedData];
       newValues[index] = newValue;
       console.log("new Values", newValues.toString());
 
-      setGroupState(newValues);
+      updateData(newValues);
     }
   }
   
   return (
-    <CheckboxGroup savedData={groupState} configure={configure} className={'CheckboxGroup'} />
+    <CheckboxGroup savedData={savedData} configure={configure} className={'CheckboxGroup'} />
   );
 }
 

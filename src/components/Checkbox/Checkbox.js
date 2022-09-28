@@ -30,9 +30,6 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
 `;
 
 const Icon = styled.div`
-  fill: none;
-  stroke: ${(props) => props.theme.default.color};
-  stroke-width: 3px;
   overflow: hidden;
   width: 40px;
   height: 40px;
@@ -62,6 +59,7 @@ const Svg = styled.svg`
   margin: auto;
   width: 25px;
   height: 25px;
+  fill: ${(props) => props.theme.default.color};
   box-sizing: border-box;
 `;
 
@@ -83,11 +81,12 @@ const Checkbox = ({ className, checked, label, ...props }) => {
               </Svg>
             ) : (
               <Svg
-                viewbox="0 0 20 20"
+                viewBox="0 0 512 512"
                 preserveAspectRatio="xMidYMid meet"
                 aria-hidden="true"
               >
-                <polyline points="20 6 9 17 4 12" />
+                {/* fontawesome */}
+                <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
               </Svg>
             )}
           </Icon>
