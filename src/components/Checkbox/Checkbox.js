@@ -7,7 +7,7 @@ const CheckboxContainer = styled.div`
     align-items: center;
     align-content: center;
 
-    span.text {
+    .CheckboxLabel {
       padding-left: 10px;
       color: ${(props) => props.theme.default.color};
     }
@@ -74,7 +74,7 @@ const Checkbox = ({ className, checked, label, ...props }) => {
             )}
           </Icon>
         </StyledCheckbox>
-        <span className="text">{label}</span>
+        <div className="CheckboxLabel">{label}</div>
       </label>
     </CheckboxContainer>
   );

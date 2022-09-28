@@ -1,4 +1,3 @@
-import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
 
 const AccordionItem = styled.div`

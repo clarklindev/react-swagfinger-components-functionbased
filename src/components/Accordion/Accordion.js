@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import AccordionItem from './AccordionItem';
 import styled from 'styled-components';
 
-const Accordion = styled.div`
+const AccordionContainer = styled.div`
   display: block;
 `;
 
-export default ({ data, allowMultiOpen = false }) => {
+const Accordion = ({ data, allowMultiOpen = false }) => {
   // activeItems holds item indexs to show
   const [activeItems, setActiveItems] = useState([]); //set initial active items
 
@@ -35,7 +35,7 @@ export default ({ data, allowMultiOpen = false }) => {
   };
 
   return (
-    <Accordion className={'Accordion'}>
+    <AccordionContainer className={'Accordion'}>
       {data.map((item, index) => {
         return (
           <AccordionItem
@@ -49,6 +49,8 @@ export default ({ data, allowMultiOpen = false }) => {
           />
         );
       })}
-    </Accordion>
+    </AccordionContainer>
   );
 };
+
+export default Accordion;

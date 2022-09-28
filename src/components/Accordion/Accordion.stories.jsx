@@ -3,7 +3,22 @@ import Accordion from './Accordion';
 
 export default {
   title: 'Examples/Accordion',
-  component: Accordion
+  component: Accordion,
+  argTypes: {
+    allowMultiOpen: {
+      description: 'allow mutiple accordions to be open at same time.',
+      type: {
+        required: false
+      },
+      table: {
+        defaultValue: {
+          summary: true,
+          detail: 'sets whether the component can have multiple accordions open'
+        }
+      },
+      control: 'boolean'
+    }
+  }
 }
 
 export const AccordionExample = ((args) => {
@@ -38,6 +53,6 @@ export const AccordionExample = ((args) => {
 });
   
 AccordionExample.args = {
-  allowMultiOpen: false
+  allowMultiOpen: true
 };
 AccordionExample.storyName = 'Accordion';

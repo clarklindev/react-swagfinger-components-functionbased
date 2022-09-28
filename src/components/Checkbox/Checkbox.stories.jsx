@@ -24,30 +24,43 @@ export default {
           detail: `usually false, unless checkbox is the parent of a set of checkboxes`
         }
       },
-      control: { type: 'boolean' }
+      control: 'boolean'
+    },
+    checked: {
+      description: 'whether component is checked',
+      type: {
+        required: true
+      },
+      table: {
+        defaultValue: {
+          summary: false,
+          detail: `storybook toggle is only for initial state`
+        }
+      },
+      control: 'boolean'
     }
+    
   }
 }
 
-export const CheckboxExample = (args) => {
-  const [checked, setChecked] = useState(args.checked);
+const Template = (args) => {
+  const [isChecked, setChecked] = useState(()=> args.checked);
 
   const handleCheckboxChange = event => {
-    console.log('onChange')
+    console.log('onChange: ', event.target.checked)
     setChecked(event.target.checked);
   }
 
   return (
-    <Checkbox
-      {...args}
-      checked={ checked }
-      onChange={handleCheckboxChange}
-    />
+    <Checkbox {...args} checked={isChecked} onChange={handleCheckboxChange} />
   );
 };
-CheckboxExample.storyName = 'Checkbox';
+
+
+export const CheckboxExample = Template.bind({});
 CheckboxExample.args = {
-  label: "label",
+  label: 'label',
   indeterminate: false,
-  checked: false
+  checked: true
 }
+CheckboxExample.storyName = 'Checkbox';
