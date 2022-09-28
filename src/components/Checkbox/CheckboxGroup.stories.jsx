@@ -31,7 +31,7 @@ export const CheckboxGroupExample = (args) => {
   }
   
   return (
-    <CheckboxGroup savedData={savedData} configure={configure} className={'CheckboxGroup'} />
+    <CheckboxGroup savedData={savedData} configure={configure}/>
   );
 }
 

@@ -20,7 +20,7 @@ const CheckboxGroup = ({ savedData, configure }) => {
   const { name, values, update, groupLabel } = configure;
 
   return (
-    <CheckboxGroupContainer className={CheckboxGroup}>
+    <CheckboxGroupContainer className={'CheckboxGroup'}>
       <div className={'Header'}>{groupLabel}</div>
       {values.map((each, index) => {
         return (
@@ -28,7 +28,7 @@ const CheckboxGroup = ({ savedData, configure }) => {
             className={'Checkbox'}
             key={`CheckboxGroup_${name}` + index}
             label={each.label}
-            onChange={() => update(name, index, !savedData[index])}
+            onChange={() => update(index, !savedData[index])}
             checked={savedData[index]}
           />
         );
