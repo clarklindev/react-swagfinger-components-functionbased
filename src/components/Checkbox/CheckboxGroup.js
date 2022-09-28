@@ -5,6 +5,11 @@ import Checkbox from './Checkbox';
 const CheckboxGroupContainer = styled.div`
   display: block;
 
+  .Header {
+    margin-bottom: 10px;
+    color: ${(props) => props.theme.textFieldLabelColor};
+  }
+
   .Checkbox {
     margin-bottom: 5px;
   }
@@ -12,10 +17,11 @@ const CheckboxGroupContainer = styled.div`
 
 const CheckboxGroup = ({ savedData, configure }) => {
   console.log('savedData: ', savedData);
-  const { name, values, update } = configure;
+  const { name, values, update, groupLabel } = configure;
 
   return (
     <CheckboxGroupContainer className={CheckboxGroup}>
+      <div className={'Header'}>{groupLabel}</div>
       {values.map((each, index) => {
         return (
           <Checkbox

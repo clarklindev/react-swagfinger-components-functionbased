@@ -14,6 +14,7 @@ export const CheckboxGroupExample = (args) => {
 
   const configure = {
     name: "Checkbox_ABC",
+    groupLabel: 'Favorite Alphabet', 
     values: [
       { label: 'a', value: 'A' },
       { label: 'b', value: 'B' },
