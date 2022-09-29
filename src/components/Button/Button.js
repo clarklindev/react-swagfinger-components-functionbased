@@ -2,21 +2,31 @@ import styled, { css } from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 import { typeScale } from '../../utils';
 
-const BUTTON_MODIFIERS = {
+const MODIFIERS = {
   small: () => css`
     font-size: ${typeScale.helperText};
     padding: 8px;
+    height: 30px;
   `,
 
   large: () => css`
     font-size: ${typeScale.header5};
     padding: 15px 32px;
+    height: 50px;
   `
 };
 
-const Button = styled.button.attrs((props) => ({
-  children: props.label
-}))`
+export const DefaultButton = styled.button`
+  cursor: pointer;
+  outline: none;
+  background: none;
+  border: none;
+  padding: 15px;
+  box-sizing: border-box;
+  height: 40px;
+`;
+
+const StyledButton = styled(DefaultButton)`
   background-color: ${(props) => props.theme.default.backgroundColor};
   border: 1px solid ${(props) => props.theme.default.borderColor};
   color: ${(props) => props.theme.default.color};
@@ -26,8 +36,9 @@ const Button = styled.button.attrs((props) => ({
   box-sizing: border-box;
   min-width: 100px;
   over-flow: hidden;
-  cursor: pointer;
-  outline: none;
+`;
+
+const InteractiveButton = styled(StyledButton)`
   &:hover {
     background-color: ${(props) => props.theme.default.backgroundColorHover};
     color: ${(props) => props.theme.default.color};
@@ -41,7 +52,11 @@ const Button = styled.button.attrs((props) => ({
     border-color: ${(props) => props.theme.default.backgroundColorActive};
     color: ${(props) => props.theme.default.colorInverted};
   }
+`;
 
+const Button = styled(InteractiveButton).attrs((props) => ({
+  children: props.label
+}))`
   ${(props) => {
     switch (props.variation) {
       case 'primary':
@@ -205,6 +220,13 @@ const Button = styled.button.attrs((props) => ({
     }
   }};
 
-  ${applyStyleModifiers(BUTTON_MODIFIERS)};
+  ${applyStyleModifiers(MODIFIERS)};
 `;
-export default Button;
+
+const ButtonContainer = (props) => {
+  console.log('props: ', props);
+
+  return <Button {...props} />;
+};
+
+export default ButtonContainer;
