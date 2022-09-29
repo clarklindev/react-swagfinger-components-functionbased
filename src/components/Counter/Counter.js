@@ -53,14 +53,14 @@ const Counter = ({ savedData, configure }) => {
     event.preventDefault();
     event.stopPropagation();
     console.log('decrement');
-    update(parseInt(savedData) - 1);
+    update(parseInt(savedData || 0) - 1);
   };
 
   const increment = (event) => {
     event.preventDefault();
     event.stopPropagation();
     console.log('increment');
-    update(parseInt(savedData) + 1);
+    update(parseInt(savedData || 0) + 1);
   };
 
   return (
