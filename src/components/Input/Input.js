@@ -19,6 +19,27 @@ const MODIFIERS = {
   readonly: () => css`
     cursor: default;
     background-color: ${(props) => props.theme.disabledBackgroundColor};
+  `,
+  search: () => css`
+    /* clears the 'X' from Internet Explorer */
+    &::-ms-clear {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+    &::-ms-reveal {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+
+    /* clears the 'X' from Chrome */
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      display: none;
+    }
   `
 };
 
@@ -48,12 +69,12 @@ const StyledInput = styled.input.attrs((props) => ({
 `;
 
 const Input = ({ configure, savedData, modifiers = [] }) => {
-  console.log('my modifiers: ', modifiers);
-  const { update, placeholder, type = 'text' } = configure;
+  const { onChange, placeholder = 'type something', type = 'text' } = configure;
+
   return (
     <StyledInput
-      onChange={update}
-      defaultValue={savedData}
+      onChange={onChange}
+      value={savedData}
       placeholder={placeholder}
       type={type}
       modifiers={modifiers} //passes modifiers to styled component if any

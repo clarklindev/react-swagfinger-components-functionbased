@@ -15,6 +15,7 @@ const Divider = styled.div`
   width: 1px;
   background-color: ${(props) => props.theme.default.borderColor};
 `;
+
 const ButtonWithIcon = styled.div`
   width: 50px;
   height: 50px;
@@ -41,14 +42,16 @@ const Icon = styled.div`
   }
 `;
 
-const InputWithIcon = ({ configure, savedData, modifiers = [], ...props }) => {
+const InputWithIcon = ({ configure, savedData, modifiers = [], children }) => {
   const {
-    iconPosition,
-    hasDivider,
+    iconPosition = 'right',
+    hasDivider = true,
+    iconClickable = true,
     onClick,
-    iconClickable,
+    onChange,
     type = 'text'
   } = configure;
+
   return (
     <InputWithIconContainer>
       {/* checks if left position */}
@@ -56,16 +59,15 @@ const InputWithIcon = ({ configure, savedData, modifiers = [], ...props }) => {
         // then checks if iconClickable
         iconClickable ? (
           <ButtonWithIcon onClick={onClick}>
-            <Icon>{props.children}</Icon>
+            <Icon>{children}</Icon>
           </ButtonWithIcon>
         ) : (
-          <Icon>{props.children}</Icon>
+          <Icon>{children}</Icon>
         )
       ) : null}
 
-      {hasDivider === 'true' && iconPosition === 'left' ? <Divider /> : null}
+      {hasDivider === true && iconPosition === 'left' ? <Divider /> : null}
       <Input
-        className={'Input'}
         savedData={savedData}
         configure={configure}
         modifiers={[
@@ -74,15 +76,15 @@ const InputWithIcon = ({ configure, savedData, modifiers = [], ...props }) => {
           ...modifiers
         ]}
       />
-      {hasDivider === 'true' && iconPosition === 'right' ? <Divider /> : null}
+      {hasDivider === true && iconPosition === 'right' ? <Divider /> : null}
 
       {iconPosition === 'right' ? (
         iconClickable ? (
           <ButtonWithIcon onClick={onClick}>
-            <Icon>{props.children}</Icon>
+            <Icon>{children}</Icon>
           </ButtonWithIcon>
         ) : (
-          <Icon>{props.children}</Icon>
+          <Icon>{children}</Icon>
         )
       ) : null}
     </InputWithIconContainer>
