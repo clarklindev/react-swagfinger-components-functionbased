@@ -22,7 +22,7 @@ export const defaultTheme = {
   ...commonStyles,
 
   disabledColor: neutral[300],
-  disabledBackgroundColor: neutral[400],
+  disabledBackgroundColor: neutral[200],
   formElementBackground: neutral[100],
   textOnFormElementBackground: neutral[600],
   textFieldBackground: neutral[200],

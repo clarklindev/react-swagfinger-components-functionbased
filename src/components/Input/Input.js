@@ -6,10 +6,25 @@ const MODIFIERS = {
   noborder: () => css`
     border: none;
     outline: none;
+  `,
+
+  embeddedleft: () => css`
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  `,
+  embeddedright: () => css`
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  `,
+  readonly: () => css`
+    cursor: default;
+    background-color: ${(props) => props.theme.disabledBackgroundColor};
   `
 };
 
-const StyledInput = styled.input`
+const StyledInput = styled.input.attrs((props) => ({
+  type: props.type
+}))`
   box-sizing: border-box;
   max-height: 50px;
 
@@ -25,17 +40,24 @@ const StyledInput = styled.input`
   flex-grow: 1;
   outline: none;
 
+  &:read-only {
+    cursor: default;
+    background-color: ${(props) => props.theme.disabledBackgroundColor};
+  }
   ${applyStyleModifiers(MODIFIERS)};
 `;
 
-const Input = ({ configure, savedData, modifiers }) => {
-  const { update, placeholder } = configure;
+const Input = ({ configure, savedData, modifiers = [] }) => {
+  console.log('my modifiers: ', modifiers);
+  const { update, placeholder, type = 'text' } = configure;
   return (
     <StyledInput
       onChange={update}
-      value={savedData}
+      defaultValue={savedData}
       placeholder={placeholder}
+      type={type}
       modifiers={modifiers} //passes modifiers to styled component if any
+      readOnly={modifiers.includes('readonly')}
     />
   );
 };

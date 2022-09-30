@@ -15,7 +15,7 @@ export const InputExample = () => {
     update: (event) => {
       console.log('event: ', event.target.value);    
       updateData(event.target.value);
-    }
+    },
   };
   return (
     <Input savedData={savedData} configure={configure}/>
@@ -23,18 +23,35 @@ export const InputExample = () => {
 }
 InputExample.storyName = 'Input';
 
-export const InputNoBorderExample = () => {
-  const [savedData, updateData] = useState('');
+export const InputReadOnlyExample = () => {
+  
+  const [savedData, updateData] = useState('readonly text');
+  const configure = {
+    name: 'Emptyfield',
+    placeholder: 'this is readonly text', 
+    update: (event) => {
+      console.log('event: ', event.target.value);    
+      updateData(event.target.value);
+    },
+  };
+  return (
+    <Input savedData={savedData} configure={configure} modifiers={['readonly']} />
+  );
+}
+InputReadOnlyExample.storyName = 'Input (modifiers: readonly)';
+
+export const InputNoBorderExample = (props) => {
+  const [savedData, updateData] = useState(props.savedData || '');
   const configure = {
     name: 'Emptyfield',
     placeholder: 'enter your input', 
     update: (event) => {
       console.log('event: ', event.target.value);    
       updateData(event.target.value);
-    }
+    },
   };
   return (
     <Input savedData={savedData} configure={configure} modifiers={['noborder']} />
   );
 }
-InputNoBorderExample.storyName = 'Input (modifier: noborder)';
+InputNoBorderExample.storyName = 'Input (modifiers: noborder)';
