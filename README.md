@@ -21,3 +21,65 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 #### [styled components modifiers](https://www.npmjs.com/package/styled-components-modifiers)
 
 - has support for style modifiers
+
+# React+ReduxToolkit
+
+- https://redux-toolkit.js.org/introduction/getting-started
+
+UPDATES:
+2022-11-25
+
+## add to existing project
+
+```console
+npm install @reduxjs/toolkit
+```
+
+## install as CRA project template
+
+```console
+ <!-- Redux + Plain JS template -->
+
+npx create-react-app my-app --template redux
+
+ <!-- Redux + TypeScript template -->
+
+npx create-react-app my-app --template redux-typescript
+```
+
+## redux toolkit APIs
+
+- configureStore()
+- createReducer()
+- createAction()
+- createSlice()
+- createAsyncThunk()
+- createEntityAdapter()
+- createSelector()
+
+## RTK Query
+
+- an optional addon within the @reduxjs/toolkit package
+- used for data fetching and caching - eliminating the need to hand-write data fetching & caching logic yourself.
+
+```js
+import { createApi } from '@reduxjs/toolkit/query';
+
+/* React-specific entry point that automatically generates
+   hooks corresponding to the defined endpoints */
+import { createApi } from '@reduxjs/toolkit/query/react';
+```
+
+### RTK Query API
+
+- createApi()
+- fetchBaseQuery()
+- <ApiProvider />
+- setupListeners()
+
+---
+
+## Redux Fundamentals, Part 8: Modern Redux with Redux Toolkit
+
+https://redux.js.org/tutorials/fundamentals/part-8-modern-redux
+

@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 //theme
 import { GlobalStyle, darkTheme, defaultTheme } from './utils';
@@ -7,31 +8,59 @@ const App = () => {
 
   return (
     <ThemeProvider theme={useDarkTheme ? darkTheme : defaultTheme}>
-      <button
-        style={{ margin: '0 16px 24px', padding: '8px', background: 'none' }}
-        onClick={() => setUseDarkTheme(true)}
-      >
-        Dark theme
-      </button>
-
-      <button
-        style={{ margin: '0 16px 24px', padding: '8px', background: 'none' }}
-        onClick={() => setUseDarkTheme(false)}
-      >
-        Default theme
-      </button>
-
       <div
         className="App"
         style={{
           background: useDarkTheme
-            ? darkTheme.backgroundColor
-            : defaultTheme.backgroundColor,
+            ? darkTheme.default.backgroundColor
+            : defaultTheme.default.backgroundColor,
           color: useDarkTheme ? darkTheme.textColor : defaultTheme.textColor,
           width: '100vw',
           height: '100vh'
         }}
-      ></div>
+      >
+        <button
+          style={{
+            margin: '0 16px 24px',
+            padding: '8px',
+            color: useDarkTheme
+              ? darkTheme.default.colorInverted
+              : defaultTheme.default.color,
+            backgroundColor: useDarkTheme
+              ? darkTheme.default.backgroundColorInverted
+              : defaultTheme.default.backgroundColor
+          }}
+          onClick={() => {
+            console.log('set to dark theme');
+            setUseDarkTheme(true);
+          }}
+        >
+          Dark theme
+        </button>
+
+        <button
+          style={{
+            margin: '0 16px 24px',
+            padding: '8px',
+            color: useDarkTheme
+              ? darkTheme.default.colorInverted
+              : defaultTheme.default.color,
+            backgroundColor: useDarkTheme
+              ? darkTheme.default.backgroundColorInverted
+              : defaultTheme.default.backgroundColor
+          }}
+          onClick={() => {
+            console.log('set to default theme');
+            setUseDarkTheme(false);
+          }}
+        >
+          Default theme
+        </button>
+
+        <h1 style={{ color: 'red' }}>
+          run command in console: 'npm run storybook' to view components
+        </h1>
+      </div>
       <GlobalStyle />
     </ThemeProvider>
   );

@@ -29,10 +29,11 @@ export const defaultTheme = {
   textFieldLabelColor: neutral[500],
 
   default: {
-    color: neutral[400],
-    colorInverted: neutral[100],
     borderColor: neutral[300],
+    color: neutral[600],
+    colorInverted: neutral[100],
     backgroundColor: neutral[100],
+    backgroundColorInverted: neutral[600],
     backgroundColorHover: neutral[200],
     backgroundColorActive: neutral[300]
   },
@@ -77,10 +78,11 @@ export const darkTheme = {
   textFieldLabelColor: neutral[100],
 
   default: {
-    color: neutral[600],
-    colorInverted: neutral[100],
     borderColor: neutral[300],
-    backgroundColor: neutral[100],
+    color: neutral[100],
+    colorInverted: neutral[600],
+    backgroundColor: neutral[600],
+    backgroundColorInverted: neutral[100],
     backgroundColorHover: neutral[200],
     backgroundColorActive: neutral[300]
   },
