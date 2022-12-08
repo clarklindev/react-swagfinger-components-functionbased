@@ -23,10 +23,16 @@ export const defaultTheme = {
 
   disabledColor: neutral[300],
   disabledBackgroundColor: neutral[200],
-  formElementBackground: neutral[100],
+  formElementBackground: neutral[300],
   textOnFormElementBackground: neutral[600],
   textFieldBackground: neutral[200],
   textFieldLabelColor: neutral[500],
+  neutral100: neutral[100],
+  neutral200: neutral[200],
+  neutral300: neutral[300],
+  neutral400: neutral[400],
+  neutral500: neutral[500],
+  neutral600: neutral[600],
 
   default: {
     borderColor: neutral[300],

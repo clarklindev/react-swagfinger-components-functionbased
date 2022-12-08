@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const CheckboxContainer = styled.div`
+const RadioButtonContainer = styled.div`
   label {
     display: flex;
     align-items: center;
@@ -14,9 +14,9 @@ const CheckboxContainer = styled.div`
   }
 `;
 
-// Hide checkbox visually but remain accessible to screen readers.
+// Hide radioButton visually but remain accessible to screen readers.
 // Source: https://polished.js.org/docs/#hidevisually
-const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
+const HiddenRadioButton = styled.input.attrs({ type: 'radio' })`
   border: 0;
   clip: rect(0 0 0 0);
   clippath: inset(50%);
@@ -39,19 +39,14 @@ const Icon = styled.div`
   align-items: center;
 `;
 
-const StyledCheckbox = styled.div`
+const StyledRadioButton = styled.div`
   display: inline-block;
   position: relative;
   box-sizing: border-box;
   border-radius: 8px;
-  border: 1px solid ${(props) => props.theme.default.borderColor};
   width: 40px;
   height: 40px;
-  background-color: ${(props) => props.theme.default.backgroundColor};
-
-  ${Icon} {
-    visibility: ${(props) => (props.checked ? 'visible' : 'hidden')};
-  }
+  cursor: pointer;
 `;
 
 const Svg = styled.svg`
@@ -61,22 +56,37 @@ const Svg = styled.svg`
   height: 25px;
   fill: ${(props) => props.theme.default.color};
   box-sizing: border-box;
+  path {
+    &.defaultView {
+      fill: ${(props) => props.theme.textFieldBackground};
+      stroke: ${(props) => props.theme.neutral500};
+    }
+    &.checkedView {
+      fill: ${(props) => props.theme.formElementBackground};
+      stroke: ${(props) => props.theme.default.borderColor};
+    }
+  }
 `;
 
-const Checkbox = ({ className, checked, label, ...props }) => {
+const RadioButton = ({ className, checked, label, ...props }) => {
   return (
-    <CheckboxContainer className={className}>
+    <RadioButtonContainer className={className}>
       <label>
-        <HiddenCheckbox checked={checked} {...props} />
-        <StyledCheckbox checked={checked}>
+        <HiddenRadioButton checked={checked} {...props} />
+        <StyledRadioButton checked={checked}>
           <Icon>
-            {props.indeterminate === true ? (
+            {checked === true ? (
               <Svg
-                viewbox="0 0 20 20"
+                viewBox="0 0 512 512"
                 preserveAspectRatio="xMidYMid meet"
                 aria-hidden="true"
               >
-                <polyline points="7 12 18 12" />
+                {/* fontawesome */}
+                <path
+                  className="checkedView"
+                  xmlns="http://www.w3.org/2000/svg"
+                  d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zm0-160c-53 0-96-43-96-96s43-96 96-96s96 43 96 96s-43 96-96 96z"
+                />
               </Svg>
             ) : (
               <Svg
@@ -85,15 +95,18 @@ const Checkbox = ({ className, checked, label, ...props }) => {
                 aria-hidden="true"
               >
                 {/* fontawesome */}
-                <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
+                <path
+                  className="defaultView"
+                  xmlns="http://www.w3.org/2000/svg"
+                  d="M256,512c141.4,0,256-114.6,256-256S397.4,0,256,0S0,114.6,0,256S114.6,512,256,512z"
+                />
               </Svg>
             )}
           </Icon>
-        </StyledCheckbox>
+        </StyledRadioButton>
         <div className="Label">{label}</div>
       </label>
-    </CheckboxContainer>
+    </RadioButtonContainer>
   );
 };
-
-export default Checkbox;
+export default RadioButton;
