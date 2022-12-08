@@ -28,7 +28,8 @@ const App = () => {
               : defaultTheme.default.color,
             backgroundColor: useDarkTheme
               ? darkTheme.default.backgroundColorInverted
-              : defaultTheme.default.backgroundColor
+              : defaultTheme.default.backgroundColor,
+            cursor: 'pointer'
           }}
           onClick={() => {
             console.log('set to dark theme');
@@ -47,7 +48,8 @@ const App = () => {
               : defaultTheme.default.color,
             backgroundColor: useDarkTheme
               ? darkTheme.default.backgroundColorInverted
-              : defaultTheme.default.backgroundColor
+              : defaultTheme.default.backgroundColor,
+            cursor: 'pointer'
           }}
           onClick={() => {
             console.log('set to default theme');
@@ -58,7 +60,10 @@ const App = () => {
         </button>
 
         <h1 style={{ color: 'red' }}>
-          run command in console: 'npm run storybook' to view components
+          to view components, run command in console:
+          <pre>
+            <code>npm run storybook</code>
+          </pre>
         </h1>
       </div>
       <GlobalStyle />
