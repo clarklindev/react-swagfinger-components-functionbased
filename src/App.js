@@ -79,8 +79,8 @@ const App = () => {
 
         {/* <h1 class="font-bold">SWAGFINGER UI</h1> */}
 
-        <h2 className='mb-3 text-4xl'>01. Typography</h2>
-        <h2 className='mb-3 text-4xl'>02. Buttons</h2>
+        <h2 className='my-8 text-4xl'>01. Typography</h2>
+        <h2 className='my-8 text-4xl'>02. Buttons</h2>
 
         <div className='flex flex-col gap-y-3 mb-3'>
           <h3>variation</h3>
@@ -105,7 +105,7 @@ const App = () => {
           </div>
         </div>
 
-        <h2 className='mb-3 text-4xl'>03. Input</h2>
+        <h2 className='my-8 text-4xl'>03. Input</h2>
         <div className='flex flex-col gap-x-3 gap-y-3'>
           <InputExample />
           <InputReadOnlyExample />
@@ -115,6 +115,10 @@ const App = () => {
           <InputWithIconLeftExample />
           <InputSearchExample />
         </div>
+
+        <h2 className='my-8 text-4xl'>04. Select</h2>
+
+        <h2 className='my-8 text-4xl'>05. Radio Button</h2>
       </div>
       <GlobalStyle />
     </ThemeProvider>
