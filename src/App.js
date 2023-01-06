@@ -119,6 +119,24 @@ const App = () => {
         <h2 className='my-8 text-4xl'>04. Select</h2>
 
         <h2 className='my-8 text-4xl'>05. Radio Button</h2>
+        <h2 className='my-8 text-4xl'>06. Checkbox</h2>
+        <h2 className='my-8 text-4xl'>07. Switch</h2>
+        <h2 className='my-8 text-4xl'>08. Card</h2>
+        <h2 className='my-8 text-4xl'>09. Layout</h2>
+        <h2 className='my-8 text-4xl'>10. Accordion</h2>
+        <h2 className='my-8 text-4xl'>11. Table</h2>
+        <h2 className='my-8 text-4xl'>12. Navbar</h2>
+        <h2 className='my-8 text-4xl'>13. Link</h2>
+        <h2 className='my-8 text-4xl'>14. Breadcrumbs</h2>
+        <h2 className='my-8 text-4xl'>15. List</h2>
+        <h2 className='my-8 text-4xl'>16. Dialog (aka Modal)</h2>
+        <h2 className='my-8 text-4xl'>17. Progress</h2>
+        <h2 className='my-8 text-4xl'>18. Loading Button</h2>
+        <h2 className='my-8 text-4xl'>
+          19. DatePicker, TimePicker, DateTimePicker
+        </h2>
+        <h2 className='my-8 text-4xl'>20. DateRangePicker</h2>
+        <h2 className='my-8 text-4xl'>21. Timeline</h2>
       </div>
       <GlobalStyle />
     </ThemeProvider>
