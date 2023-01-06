@@ -83,3 +83,16 @@ import { createApi } from '@reduxjs/toolkit/query/react';
 
 https://redux.js.org/tutorials/fundamentals/part-8-modern-redux
 
+## Button
+
+#### pros
+
+- uses styled components
+- what if you used tailwind?
+
+#### cons
+
+- needs refinement
+- required feature: there is no icon+button variation
+- when icons are stacked next to each other, outline does not form part of the dimensions (box)
+- sometimes a blinking carot for text appears in the button text

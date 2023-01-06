@@ -16,7 +16,7 @@ const MODIFIERS = {
   `
 };
 
-export const DefaultButton = styled.button`
+const DefaultButton = styled.button`
   cursor: pointer;
   outline: none;
   background: none;
@@ -26,6 +26,7 @@ export const DefaultButton = styled.button`
   height: 40px;
 `;
 
+// with theming
 const StyledButton = styled(DefaultButton)`
   background-color: ${(props) => props.theme.default.backgroundColor};
   border: 1px solid ${(props) => props.theme.default.borderColor};
@@ -38,6 +39,7 @@ const StyledButton = styled(DefaultButton)`
   over-flow: hidden;
 `;
 
+// with interaction
 const InteractiveButton = styled(StyledButton)`
   &:hover {
     background-color: ${(props) => props.theme.default.backgroundColorHover};
@@ -54,11 +56,14 @@ const InteractiveButton = styled(StyledButton)`
   }
 `;
 
-const Button = styled(InteractiveButton).attrs((props) => ({
-  children: props.label
+export const Button = styled(InteractiveButton).attrs((props) => ({
+  children: props.label? props.label : `you need to enter a 'label' prop for component`,
+  variation: props.variation? props.variation :'primary'
 }))`
   ${(props) => {
+    console.log('props:', props.theme);
     switch (props.variation) {
+      default:
       case 'primary':
         return css`  
           background-color: ${props.theme[props.variation].backgroundColor};
@@ -106,8 +111,7 @@ const Button = styled(InteractiveButton).attrs((props) => ({
           }
 
           &:hover {
-            background-color: ${props.theme[props.variation]
-              .backgroundColorHover};
+            background-color: ${props.theme[props.variation].backgroundColorHover};
             color: ${props.theme[props.variation].colorInverted};
           }
           &:focus {
@@ -116,8 +120,7 @@ const Button = styled(InteractiveButton).attrs((props) => ({
             outline-offset: 2px;
           }
           &:active {
-            background-color: ${props.theme[props.variation]
-              .backgroundColorActive};
+            background-color: ${props.theme[props.variation].backgroundColorActive};
             border-color: ${props.theme[props.variation].backgroundColorActive};
             color: ${props.theme[props.variation].colorInverted};
           }
@@ -127,6 +130,7 @@ const Button = styled(InteractiveButton).attrs((props) => ({
         return css`
           background: none;
           border: none;
+          outline: none;
           color: ${props.theme[props.variation].color};
 
           &:disabled {
@@ -135,21 +139,18 @@ const Button = styled(InteractiveButton).attrs((props) => ({
             cursor: not-allowed;
           }
 
-          &:hover {
-            background-color: ${props.theme[props.variation]
-              .backgroundColorHover};
-            color: ${props.theme[props.variation].colorInverted};
+          &:focus{
+            outline: none;
           }
-          &:focus {
-            outline: 2px solid
-              ${props.theme[props.variation].backgroundColorHover};
-            outline-offset: 2px;
+
+          &:hover {
+            outline: none;
+            background: none;
+            color: ${props.theme[props.variation].color};
           }
           &:active {
-            background-color: ${props.theme[props.variation]
-              .backgroundColorActive};
-            border-color: ${props.theme[props.variation].backgroundColorActive};
-            color: ${props.theme[props.variation].colorInverted};
+            background: none;
+            color: ${props.theme[props.variation].color};
           }
         `;
 
@@ -217,16 +218,10 @@ const Button = styled(InteractiveButton).attrs((props) => ({
             border-color: ${props.theme.status.successBackgroundColorActive};
           }
         `;
+
+
     }
   }};
 
   ${applyStyleModifiers(MODIFIERS)};
 `;
-
-const ButtonContainer = (props) => {
-  console.log('props: ', props);
-
-  return <Button {...props} />;
-};
-
-export default ButtonContainer;

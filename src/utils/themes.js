@@ -2,6 +2,8 @@ import { blue, neutral, yellow, green, red } from './colors';
 
 const commonStyles = {
   status: {
+    color: neutral[100],
+
     warningBackgroundColor: yellow[100],
     warningBackgroundColorHover: yellow[200],
     warningBackgroundColorActive: yellow[300],
@@ -12,7 +14,11 @@ const commonStyles = {
 
     successBackgroundColor: green[100],
     successBackgroundColorHover: green[200],
-    successBackgroundColorActive: green[300]
+    successBackgroundColorActive: green[300],
+
+    infoBackgroundColor: blue[100],
+    infoBackgroundColorHover: blue[200],
+    infoBackgroundColorActive: blue[300]
   }
 };
 

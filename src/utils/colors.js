@@ -1,9 +1,9 @@
 export const blue = {
-  100: '#3a36e0',
-  200: '#0804b8',
-  300: '#030086',
-  400: '#5f25a4',
-  500: '#050449'
+  100: '#99d6ff',
+  200: '#5cbeff',
+  300: '#0A9DFF',
+  400: '#007ACC',
+  500: '#00568F'
 };
 
 export const green = {
@@ -13,9 +13,9 @@ export const green = {
 };
 
 export const yellow = {
-  100: '#e1c542',
-  200: '#cab23f',
-  300: '#b49e35'
+  100: '#E98A15',
+  200: '#EA8F1F',
+  300: '#CD7A13'
 };
 
 export const red = {
