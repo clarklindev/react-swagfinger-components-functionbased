@@ -9,7 +9,12 @@ export const InputExample = () => {
       updateData(event.target.value);
     },
   };
-  return <Input savedData={savedData} configure={configure} />;
+  return (
+    <>
+      <h3>Input</h3>
+      <Input savedData={savedData} configure={configure} />
+    </>
+  );
 };
 
 //read only
@@ -21,11 +26,14 @@ export const InputReadOnlyExample = () => {
     },
   };
   return (
-    <Input
-      savedData={savedData}
-      configure={configure}
-      modifiers={['readonly']}
-    />
+    <>
+      <h3>Read-only</h3>
+      <Input
+        savedData={savedData}
+        configure={configure}
+        modifiers={['readonly']}
+      />
+    </>
   );
 };
 
@@ -40,10 +48,13 @@ export const InputNoBorderExample = () => {
     },
   };
   return (
-    <Input
-      savedData={savedData}
-      configure={configure}
-      modifiers={['noborder']}
-    />
+    <>
+      <h3>No border</h3>
+      <Input
+        savedData={savedData}
+        configure={configure}
+        modifiers={['noborder']}
+      />
+    </>
   );
 };

@@ -11,5 +11,10 @@ export const InputPasswordExample = () => {
     },
   };
 
-  return <InputPassword savedData={savedData} configure={configure} />;
+  return (
+    <>
+      <h3>Password</h3>
+      <InputPassword savedData={savedData} configure={configure} />
+    </>
+  );
 };

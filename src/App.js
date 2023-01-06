@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { Button } from './components/Button/Button';
+import {
+  ButtonVariationExample,
+  ButtonStatusExample,
+  ButtonModifiersExample,
+} from './components/Button/ButtonExample';
 
 import {
   InputExample,
@@ -81,28 +85,10 @@ const App = () => {
 
         <h2 className='my-8 text-4xl'>01. Typography</h2>
         <h2 className='my-8 text-4xl'>02. Buttons</h2>
-
         <div className='flex flex-col gap-y-3 mb-3'>
-          <h3>variation</h3>
-          <div className='flex gap-x-3 gap-y-3'>
-            <Button label='Button' variation='primary' />
-            <Button label='Button' variation='secondary' />
-            <Button label='Button' variation='tertiary' />
-          </div>
-
-          <h3>color</h3>
-          <div className='flex gap-x-3 gap-y-3'>
-            <Button label='Button' variation='warning' />
-            <Button label='Button' variation='error' />
-            <Button label='Button' variation='success' />
-          </div>
-
-          <h3>size</h3>
-          <div className='flex gap-x-3 gap-y-3'>
-            <Button label='Button' variation='primary' modifiers='small' />
-            <Button label='Button' variation='primary' modifiers='normal' />
-            <Button label='Button' variation='primary' modifiers='large' />
-          </div>
+          <ButtonVariationExample />
+          <ButtonStatusExample />
+          <ButtonModifiersExample />
         </div>
 
         <h2 className='my-8 text-4xl'>03. Input</h2>
@@ -117,7 +103,6 @@ const App = () => {
         </div>
 
         <h2 className='my-8 text-4xl'>04. Select</h2>
-
         <h2 className='my-8 text-4xl'>05. Radio Button</h2>
         <h2 className='my-8 text-4xl'>06. Checkbox</h2>
         <h2 className='my-8 text-4xl'>07. Switch</h2>

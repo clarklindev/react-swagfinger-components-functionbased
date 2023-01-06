@@ -13,5 +13,10 @@ export const InputSearchExample = () => {
     },
   };
 
-  return <InputSearch savedData={searchString} configure={configure} />;
+  return (
+    <>
+      <h3>Search</h3>
+      <InputSearch savedData={searchString} configure={configure} />
+    </>
+  );
 };
