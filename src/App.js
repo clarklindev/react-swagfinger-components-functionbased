@@ -93,7 +93,9 @@ const App = () => {
         </div>
 
         <h2 class="mb-3 text-4xl">03. Input</h2>
-
+        <div class="flex gap-x-3 gap-y-3">
+          <Input/>
+        </div>
       </div>
       <GlobalStyle />
     </ThemeProvider>
