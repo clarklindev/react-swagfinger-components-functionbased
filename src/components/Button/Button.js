@@ -45,10 +45,10 @@ const InteractiveButton = styled(StyledButton)`
     background-color: ${(props) => props.theme.default.backgroundColorHover};
     color: ${(props) => props.theme.default.color};
   }
-  &:focus {
-    outline: 3px solid ${(props) => props.theme.default.backgroundColorHover};
-    outline-offset: 2px;
-  }
+  // &:focus {
+  //   outline: 3px solid ${(props) => props.theme.default.backgroundColorHover};
+  //   outline-offset: 2px;
+  // }
   &:active {
     background-color: ${(props) => props.theme.default.backgroundColorActive};
     border-color: ${(props) => props.theme.default.backgroundColorActive};
@@ -82,12 +82,7 @@ export const Button = styled(InteractiveButton).attrs((props) => ({
             };
             color: ${props.theme[props.variation].colorInverted};
           }
-          &:focus {
-            outline: 2px solid ${
-              props.theme[props.variation].backgroundColorHover
-            };
-            outline-offset: 2px;
-          }
+          
           &:active {
             background-color: ${
               props.theme[props.variation].backgroundColorActive
@@ -114,11 +109,7 @@ export const Button = styled(InteractiveButton).attrs((props) => ({
             background-color: ${props.theme[props.variation].backgroundColorHover};
             color: ${props.theme[props.variation].colorInverted};
           }
-          &:focus {
-            outline: 2px solid
-              ${props.theme[props.variation].backgroundColorHover};
-            outline-offset: 2px;
-          }
+     
           &:active {
             background-color: ${props.theme[props.variation].backgroundColorActive};
             border-color: ${props.theme[props.variation].backgroundColorActive};
@@ -137,10 +128,6 @@ export const Button = styled(InteractiveButton).attrs((props) => ({
             background: none;
             color: ${props.theme.disabledColor};
             cursor: not-allowed;
-          }
-
-          &:focus{
-            outline: none;
           }
 
           &:hover {
@@ -166,8 +153,6 @@ export const Button = styled(InteractiveButton).attrs((props) => ({
           }
           &:focus {
             background-color: ${props.theme.status.warningBackgroundColorHover};
-            outline: 2px solid ${props.theme.status.warningBackgroundColorHover};
-            outline-offset: 2px;
           }
           &:active {
             background-color: ${props.theme.status
@@ -188,8 +173,6 @@ export const Button = styled(InteractiveButton).attrs((props) => ({
           }
           &:focus {
             background-color: ${props.theme.status.errorBackgroundColorHover};
-            outline: 2px solid ${props.theme.status.errorBackgroundColorHover};
-            outline-offset: 2px;
           }
           &:active {
             background-color: ${props.theme.status.errorBackgroundColorActive};
@@ -209,8 +192,6 @@ export const Button = styled(InteractiveButton).attrs((props) => ({
           }
           &:focus {
             background-color: ${props.theme.status.successBackgroundColorHover};
-            outline: 2px solid ${props.theme.status.successBackgroundColorHover};
-            outline-offset: 2px;
           }
           &:active {
             background-color: ${props.theme.status

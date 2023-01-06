@@ -68,7 +68,7 @@ const StyledInput = styled.input.attrs((props) => ({
   ${applyStyleModifiers(MODIFIERS)};
 `;
 
-const Input = ({ configure, savedData, modifiers = [] }) => {
+export const Input = ({ configure, savedData, modifiers = [] }) => {
   const { onChange, placeholder = 'type something', type = 'text' } = configure;
 
   return (
@@ -82,5 +82,3 @@ const Input = ({ configure, savedData, modifiers = [] }) => {
     />
   );
 };
-
-export default Input;
