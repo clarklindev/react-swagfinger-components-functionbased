@@ -1,35 +1,24 @@
-import React, { useState}  from 'react';
-import {Input} from "./Input";
+import React, { useState } from 'react';
+import { Input } from './Input';
 
-export default {
-  title: 'Examples/Input',
-  component: Input
-}
-
+//normal input
 export const InputExample = () => {
-  
   const [savedData, updateData] = useState('');
-  
   const configure = {
     onChange: (event) => {
-      console.log('event: ', event.target.value);    
       updateData(event.target.value);
     },
   };
-  return (
-    <Input savedData={savedData} configure={configure}/>
-  );
-}
-InputExample.storyName = 'Input';
+  return <Input savedData={savedData} configure={configure} />;
+};
 
-///------------------------------------------------------------------------------
-
+//read only
 export const InputReadOnlyExample = () => {
   const [savedData, updateData] = useState('readonly text');
   const configure = {
     onChange: (event) => {
       updateData(event.target.value);
-    }
+    },
   };
   return (
     <Input
@@ -39,12 +28,8 @@ export const InputReadOnlyExample = () => {
     />
   );
 };
-InputReadOnlyExample.storyName = 'Input (modifiers: readonly)';
 
-///------------------------------------------------------------------------------
-
-
-
+// no border
 export const InputNoBorderExample = () => {
   const [savedData, updateData] = useState('');
   const configure = {
@@ -52,7 +37,7 @@ export const InputNoBorderExample = () => {
     onChange: (event) => {
       console.log('event: ', event.target.value);
       updateData(event.target.value);
-    }
+    },
   };
   return (
     <Input
@@ -62,7 +47,3 @@ export const InputNoBorderExample = () => {
     />
   );
 };
-InputNoBorderExample.storyName = 'Input (modifiers: noborder)';
-
-
-///------------------------------------------------------------------------------

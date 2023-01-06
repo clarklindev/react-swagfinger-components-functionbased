@@ -16,9 +16,10 @@ const MODIFIERS = {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   `,
-  readonly: () => css`
+  readonly: (props) => css`
     cursor: default;
-    background-color: ${(props) => props.theme.disabledBackgroundColor};
+    color: ${props.theme.default.color};
+    background-color: ${props.theme.disabledBackgroundColor};
   `,
   search: () => css`
     /* clears the 'X' from Internet Explorer */
@@ -40,11 +41,11 @@ const MODIFIERS = {
     &::-webkit-search-results-decoration {
       display: none;
     }
-  `
+  `,
 };
 
 const StyledInput = styled.input.attrs((props) => ({
-  type: props.type
+  type: props.type,
 }))`
   box-sizing: border-box;
   max-height: 50px;
@@ -56,15 +57,11 @@ const StyledInput = styled.input.attrs((props) => ({
   font-size: ${typeScale.paragraph};
   border-radius: 8px;
   width: 100%;
-  cursor: pointer;
+  cursor: text;
   display: flex;
   flex-grow: 1;
   outline: none;
 
-  &:read-only {
-    cursor: default;
-    background-color: ${(props) => props.theme.disabledBackgroundColor};
-  }
   ${applyStyleModifiers(MODIFIERS)};
 `;
 

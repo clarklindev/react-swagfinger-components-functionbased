@@ -18,8 +18,8 @@ const commonStyles = {
 
     infoBackgroundColor: blue[100],
     infoBackgroundColorHover: blue[200],
-    infoBackgroundColorActive: blue[300]
-  }
+    infoBackgroundColorActive: blue[300],
+  },
 };
 
 export const defaultTheme = {
@@ -33,12 +33,12 @@ export const defaultTheme = {
 
   default: {
     borderColor: neutral[300],
-    color: neutral[600],
+    color: neutral[500],
     colorInverted: neutral[100],
     backgroundColor: neutral[100],
     backgroundColorInverted: neutral[600],
     backgroundColorHover: neutral[200],
-    backgroundColorActive: neutral[300]
+    backgroundColorActive: neutral[300],
   },
 
   primary: {
@@ -47,7 +47,7 @@ export const defaultTheme = {
     borderColor: blue[100],
     backgroundColor: blue[300],
     backgroundColorHover: blue[200],
-    backgroundColorActive: blue[100]
+    backgroundColorActive: blue[100],
   },
 
   secondary: {
@@ -56,7 +56,7 @@ export const defaultTheme = {
     borderColor: blue[100],
     backgroundColor: blue[300],
     backgroundColorHover: blue[200],
-    backgroundColorActive: blue[100]
+    backgroundColorActive: blue[100],
   },
 
   tertiary: {
@@ -65,8 +65,8 @@ export const defaultTheme = {
     borderColor: blue[100],
     backgroundColor: blue[300],
     backgroundColorHover: blue[200],
-    backgroundColorActive: blue[100]
-  }
+    backgroundColorActive: blue[100],
+  },
 };
 
 export const darkTheme = {
@@ -85,7 +85,7 @@ export const darkTheme = {
     backgroundColor: neutral[600],
     backgroundColorInverted: neutral[100],
     backgroundColorHover: neutral[200],
-    backgroundColorActive: neutral[300]
+    backgroundColorActive: neutral[300],
   },
 
   primary: {
@@ -94,7 +94,7 @@ export const darkTheme = {
     borderColor: blue[100],
     backgroundColor: blue[300],
     backgroundColorHover: neutral[200],
-    backgroundColorActive: neutral[300]
+    backgroundColorActive: neutral[300],
   },
 
   secondary: {
@@ -103,7 +103,7 @@ export const darkTheme = {
     borderColor: blue[100],
     backgroundColor: blue[300],
     backgroundColorHover: neutral[200],
-    backgroundColorActive: neutral[300]
+    backgroundColorActive: neutral[300],
   },
 
   tertiary: {
@@ -112,6 +112,6 @@ export const darkTheme = {
     borderColor: blue[100],
     backgroundColor: blue[300],
     backgroundColorHover: neutral[200],
-    backgroundColorActive: neutral[300]
-  }
+    backgroundColorActive: neutral[300],
+  },
 };

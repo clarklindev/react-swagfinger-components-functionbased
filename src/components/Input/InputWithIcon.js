@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import Input from '../Input/Input';
+import { Input } from './Input';
 
 const InputWithIconContainer = styled.div`
   box-sizing: border-box;
@@ -42,14 +42,19 @@ const Icon = styled.div`
   }
 `;
 
-const InputWithIcon = ({ configure, savedData, modifiers = [], children }) => {
+export const InputWithIcon = ({
+  configure,
+  savedData,
+  modifiers = [],
+  children,
+}) => {
   const {
     iconPosition = 'right',
     hasDivider = true,
     iconClickable = true,
     onClick,
     onChange,
-    type = 'text'
+    type = 'text',
   } = configure;
 
   return (
@@ -73,7 +78,7 @@ const InputWithIcon = ({ configure, savedData, modifiers = [], children }) => {
         modifiers={[
           'noborder',
           iconPosition === 'left' ? 'embeddedright' : 'embeddedleft',
-          ...modifiers
+          ...modifiers,
         ]}
       />
       {hasDivider === true && iconPosition === 'right' ? <Divider /> : null}
@@ -90,5 +95,3 @@ const InputWithIcon = ({ configure, savedData, modifiers = [], children }) => {
     </InputWithIconContainer>
   );
 };
-
-export default InputWithIcon;

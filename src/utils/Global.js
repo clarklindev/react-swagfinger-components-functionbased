@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
   ${normalize()}
   html{
     font-size: 16px;
-    box-sizing: border-box;
+    box-sizing: content-box;
   }
   
   *, *:before, *:after{
