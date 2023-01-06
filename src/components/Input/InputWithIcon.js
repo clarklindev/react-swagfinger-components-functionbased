@@ -1,12 +1,25 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { applyStyleModifiers } from 'styled-components-modifiers';
+
 import { Input } from './Input';
+const MODIFIERS = {
+  embeddedleft: () => css`
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  `,
+  embeddedright: () => css`
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  `,
+};
 
 const InputWithIconContainer = styled.div`
   box-sizing: border-box;
   display: flex;
   border: 1px solid ${(props) => props.theme.default.borderColor};
   border-radius: 8px;
+  ${applyStyleModifiers(MODIFIERS)};
 `;
 
 const Divider = styled.div`

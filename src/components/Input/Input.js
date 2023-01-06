@@ -7,40 +7,10 @@ const MODIFIERS = {
     border: none;
     outline: none;
   `,
-
-  embeddedleft: () => css`
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  `,
-  embeddedright: () => css`
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-  `,
   readonly: (props) => css`
     cursor: default;
     color: ${props.theme.default.color};
     background-color: ${props.theme.disabledBackgroundColor};
-  `,
-  search: () => css`
-    /* clears the 'X' from Internet Explorer */
-    &::-ms-clear {
-      display: none;
-      width: 0;
-      height: 0;
-    }
-    &::-ms-reveal {
-      display: none;
-      width: 0;
-      height: 0;
-    }
-
-    /* clears the 'X' from Chrome */
-    &::-webkit-search-decoration,
-    &::-webkit-search-cancel-button,
-    &::-webkit-search-results-button,
-    &::-webkit-search-results-decoration {
-      display: none;
-    }
   `,
 };
 

@@ -1,13 +1,40 @@
-import { render } from '@testing-library/react';
 import React, { useState } from 'react';
+import { render } from '@testing-library/react';
+
+import { applyStyleModifiers } from 'styled-components-modifiers';
 import styled, { css } from 'styled-components';
 import { Input } from './Input';
+
+const MODIFIERS = {
+  search: () => css`
+    /* clears the 'X' from Internet Explorer */
+    &::-ms-clear {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+    &::-ms-reveal {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+
+    /* clears the 'X' from Chrome */
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      display: none;
+    }
+  `,
+};
 
 const InputSearchContainer = styled.div`
   box-sizing: border-box;
   display: flex;
   border: 1px solid ${(props) => props.theme.default.borderColor};
   border-radius: 8px;
+  ${applyStyleModifiers(MODIFIERS)};
 `;
 
 const Divider = styled.div`
