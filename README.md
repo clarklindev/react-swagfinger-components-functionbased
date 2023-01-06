@@ -1,5 +1,11 @@
 # Getting Started with Create React App and Redux
 
+#### test url
+
+https://swagfinger-portfolio-react-components-functionbased.vercel.app/
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 #### Project JS
