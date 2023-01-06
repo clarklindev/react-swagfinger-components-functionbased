@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 //theme
 import { GlobalStyle, darkTheme, defaultTheme } from './utils';
+import './App.css';
 
 const App = () => {
   const [useDarkTheme, setUseDarkTheme] = useState(false);
@@ -58,13 +59,8 @@ const App = () => {
         >
           Default theme
         </button>
-
-        <h1 style={{ color: 'red' }}>
-          to view components, run command in console:
-          <pre>
-            <code>npm run storybook</code>
-          </pre>
-        </h1>
+        
+        <h2 class="text-3xl font-bold underline">Swagfinger UI</h2>
       </div>
       <GlobalStyle />
     </ThemeProvider>

@@ -2,7 +2,6 @@ import { blue, neutral, yellow, green, red } from './colors';
 
 const commonStyles = {
   status: {
-    color: neutral[100],
     warningBackgroundColor: yellow[100],
     warningBackgroundColorHover: yellow[200],
     warningBackgroundColorActive: yellow[300],
@@ -24,15 +23,7 @@ export const defaultTheme = {
   disabledColor: neutral[300],
   disabledBackgroundColor: neutral[200],
   formElementBackground: neutral[300],
-  textOnFormElementBackground: neutral[600],
-  textFieldBackground: neutral[200],
-  textFieldLabelColor: neutral[500],
-  neutral100: neutral[100],
-  neutral200: neutral[200],
-  neutral300: neutral[300],
-  neutral400: neutral[400],
-  neutral500: neutral[500],
-  neutral600: neutral[600],
+  formElementLabel: neutral[600],
 
   default: {
     borderColor: neutral[300],
@@ -79,9 +70,7 @@ export const darkTheme = {
   disabledColor: neutral[400],
   disabledBackgroundColor: neutral[300],
   formElementBackground: blue[100],
-  textOnFormElementBackground: neutral[100],
-  textFieldBackground: neutral[600],
-  textFieldLabelColor: neutral[100],
+  formElementLabel: neutral[100],
 
   default: {
     borderColor: neutral[300],
@@ -96,6 +85,7 @@ export const darkTheme = {
   primary: {
     color: neutral[100],
     colorInverted: neutral[600],
+    borderColor: blue[100],
     backgroundColor: blue[300],
     backgroundColorHover: neutral[200],
     backgroundColorActive: neutral[300]
@@ -104,6 +94,7 @@ export const darkTheme = {
   secondary: {
     color: neutral[100],
     colorInverted: neutral[600],
+    borderColor: blue[100],
     backgroundColor: blue[300],
     backgroundColorHover: neutral[200],
     backgroundColorActive: neutral[300]
@@ -112,6 +103,7 @@ export const darkTheme = {
   tertiary: {
     color: neutral[100],
     colorInverted: neutral[600],
+    borderColor: blue[100],
     backgroundColor: blue[300],
     backgroundColorHover: neutral[200],
     backgroundColorActive: neutral[300]

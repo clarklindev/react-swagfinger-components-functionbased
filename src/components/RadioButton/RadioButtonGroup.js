@@ -7,7 +7,7 @@ const RadioButtonGroupContainer = styled.div`
 
   .Header {
     margin-bottom: 10px;
-    color: ${(props) => props.theme.textFieldLabelColor};
+    color: ${(props) => props.theme.formElementLabel};
   }
 
   .RadioButton {

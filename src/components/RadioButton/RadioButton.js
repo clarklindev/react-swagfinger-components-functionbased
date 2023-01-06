@@ -58,7 +58,7 @@ const Svg = styled.svg`
   box-sizing: border-box;
   path {
     &.defaultView {
-      fill: ${(props) => props.theme.textFieldBackground};
+      fill: ${(props) => props.theme.formElementBackground};
       stroke: ${(props) => props.theme.neutral500};
     }
     &.checkedView {

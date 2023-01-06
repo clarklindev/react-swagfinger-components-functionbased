@@ -36,7 +36,7 @@ const Icon = styled.div`
 
   // whatever is passed through as children
   > * {
-    fill: ${(props) => props.theme.textFieldLabelColor};
+    fill: ${(props) => props.theme.formElementLabel};
     width: 25px;
     height: 25px;
   }
