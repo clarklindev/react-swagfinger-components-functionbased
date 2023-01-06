@@ -13,14 +13,13 @@ import {
 } from './components/Input/InputExample';
 
 import { InputPasswordExample } from './components/Input/InputPasswordExample';
-
 import {
   InputWithIconRightExample,
   InputWithIconLeftExample,
 } from './components/Input/InputWithIconExample';
-
 import { InputSearchExample } from './components/Input/InputSearchExample';
-
+import { RadioButtonExample } from './components/RadioButton/RadioButtonExample';
+import { RadioButtonGroupExample } from './components/RadioButton/RadioButtonGroupExample';
 //theme
 import './App.css';
 import { GlobalStyle, darkTheme, defaultTheme } from './utils';
@@ -104,6 +103,11 @@ const App = () => {
 
         <h2 className='my-8 text-4xl'>04. Select</h2>
         <h2 className='my-8 text-4xl'>05. Radio Button</h2>
+        <div className='flex flex-col gap-x-3 gap-y-8'>
+          <RadioButtonExample />
+          <RadioButtonGroupExample />
+        </div>
+
         <h2 className='my-8 text-4xl'>06. Checkbox</h2>
         <h2 className='my-8 text-4xl'>07. Switch</h2>
         <h2 className='my-8 text-4xl'>08. Card</h2>

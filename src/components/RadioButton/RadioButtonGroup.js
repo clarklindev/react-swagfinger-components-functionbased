@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import RadioButton from './RadioButton';
+import { RadioButton } from './RadioButton';
 
 const RadioButtonGroupContainer = styled.div`
   display: block;
@@ -15,7 +15,7 @@ const RadioButtonGroupContainer = styled.div`
   }
 `;
 
-const RadioButtonGroup = ({ savedData, configure }) => {
+export const RadioButtonGroup = ({ savedData, configure }) => {
   const { name, values, update, groupLabel } = configure;
 
   return (
@@ -36,5 +36,3 @@ const RadioButtonGroup = ({ savedData, configure }) => {
     </RadioButtonGroupContainer>
   );
 };
-
-export default RadioButtonGroup;
