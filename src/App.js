@@ -30,6 +30,7 @@ import { ModalExample } from './components/Modal/ModalExample';
 //theme
 import './App.css';
 import { GlobalStyle, darkTheme, defaultTheme } from './utils';
+import { ToggleSwitchExample } from './components/Switch/ToggleSwitchExample';
 
 const App = () => {
   const [useDarkTheme] = useState(false);
@@ -127,6 +128,10 @@ const App = () => {
         </div>
 
         <h2 className='my-8 text-4xl'>08. Switch / Toggle </h2>
+        <div className='flex flex-col gap-x-3 gap-y-8'>
+          <ToggleSwitchExample />
+        </div>
+
         <h2 className='my-8 text-4xl'>09. Card</h2>
         <h2 className='my-8 text-4xl'>10. Layout</h2>
 
