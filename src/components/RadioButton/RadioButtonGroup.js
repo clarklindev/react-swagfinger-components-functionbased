@@ -16,20 +16,22 @@ const RadioButtonGroupContainer = styled.div`
 `;
 
 export const RadioButtonGroup = ({ savedData, configure }) => {
-  const { name, values, update, groupLabel } = configure;
+  const { name, values, onChange, groupLabel } = configure;
 
   return (
-    <RadioButtonGroupContainer className={'RadioButtonGroup'}>
-      <div className={'Header'}>{groupLabel}</div>
+    <RadioButtonGroupContainer className='RadioButtonGroup'>
+      <div className='Header'>{groupLabel}</div>
+
       {values.map((each, index) => {
         return (
           <RadioButton
-            className={'RadioButton'}
             key={`RadioButtonGroup_${name}` + index}
-            label={each.label}
-            name={name}
-            onChange={() => update(index, !savedData[index])}
-            checked={savedData[index]}
+            savedData={savedData[index]}
+            configure={{
+              label: each.label,
+              name: name,
+              onChange: () => onChange(index, !savedData[index]),
+            }}
           />
         );
       })}

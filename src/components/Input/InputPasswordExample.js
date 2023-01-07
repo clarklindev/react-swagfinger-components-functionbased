@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { InputPassword } from './InputPassword';
 
 export const InputPasswordExample = () => {
-  const [savedData, updateData] = useState('');
+  const [savedData, setSavedData] = useState('');
 
   const configure = {
     onChange: (event) => {
-      console.log('onChange: ', event.target.value);
-      updateData(event.target.value);
+      console.log('password');
+      setSavedData(event.target.value);
     },
   };
 

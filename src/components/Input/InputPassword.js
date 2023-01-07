@@ -1,18 +1,14 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
 import { InputWithIcon } from './InputWithIcon';
 
-export const InputPassword = ({ configure = null }) => {
+export const InputPassword = ({ savedData, configure }) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   const defaults = {
+    modifiers: ['noborder'],
     type: passwordVisible ? 'text' : 'password',
     onClick: () => setPasswordVisible(!passwordVisible),
   };
-
-  // overwrite any props with passed in props from configure
-  //- need to pass down defaults to InputWithIcon...
-  configure = { ...defaults, ...configure };
 
   const icon = passwordVisible ? (
     // hide
@@ -26,5 +22,14 @@ export const InputPassword = ({ configure = null }) => {
     </svg>
   );
 
-  return <InputWithIcon configure={configure}>{icon}</InputWithIcon>;
+  return (
+    // overwrite any props with passed in props from configure
+    //- need to pass down defaults to InputWithIcon...
+    <InputWithIcon
+      savedData={savedData}
+      configure={{ ...defaults, ...configure }}
+    >
+      {icon}
+    </InputWithIcon>
+  );
 };

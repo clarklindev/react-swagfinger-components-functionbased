@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const RadioButtonContainer = styled.div`
   label {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     align-content: center;
 
@@ -31,8 +31,8 @@ const HiddenRadioButton = styled.input.attrs({ type: 'radio' })`
 
 const Icon = styled.div`
   overflow: hidden;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   box-sizing: border-box;
   display: flex;
   align-content: center;
@@ -44,16 +44,15 @@ const StyledRadioButton = styled.div`
   position: relative;
   box-sizing: border-box;
   border-radius: 8px;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
 `;
 
 const Svg = styled.svg`
   display: block;
   margin: auto;
-  width: 25px;
-  height: 25px;
+
   fill: ${(props) => props.theme.default.color};
   box-sizing: border-box;
   path {
@@ -68,11 +67,14 @@ const Svg = styled.svg`
   }
 `;
 
-export const RadioButton = ({ className, checked, label, ...props }) => {
+export const RadioButton = ({ savedData, configure }) => {
+  const checked = savedData;
+  const { name, label, onChange } = configure;
+
   return (
-    <RadioButtonContainer className={className}>
+    <RadioButtonContainer>
       <label>
-        <HiddenRadioButton checked={checked} {...props} />
+        <HiddenRadioButton checked={checked} onChange={onChange} name={name} />
         <StyledRadioButton checked={checked}>
           <Icon>
             {checked === true ? (

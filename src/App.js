@@ -20,6 +20,9 @@ import {
 import { InputSearchExample } from './components/Input/InputSearchExample';
 import { RadioButtonExample } from './components/RadioButton/RadioButtonExample';
 import { RadioButtonGroupExample } from './components/RadioButton/RadioButtonGroupExample';
+import { CheckboxExample } from './components/Checkbox/CheckboxExample';
+import { CheckboxGroupExample } from './components/Checkbox/CheckboxGroupExample';
+
 //theme
 import './App.css';
 import { GlobalStyle, darkTheme, defaultTheme } from './utils';
@@ -109,6 +112,11 @@ const App = () => {
         </div>
 
         <h2 className='my-8 text-4xl'>06. Checkbox</h2>
+        <div className='flex flex-col gap-x-3 gap-y-8'>
+          <CheckboxExample />
+          <CheckboxGroupExample />
+        </div>
+
         <h2 className='my-8 text-4xl'>07. Switch</h2>
         <h2 className='my-8 text-4xl'>08. Card</h2>
         <h2 className='my-8 text-4xl'>09. Layout</h2>

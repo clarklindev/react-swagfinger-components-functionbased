@@ -13,7 +13,7 @@ const MODIFIERS = {
     font-size: ${typeScale.header5};
     padding: 15px 32px;
     height: 50px;
-  `
+  `,
 };
 
 const DefaultButton = styled.button`
@@ -46,7 +46,8 @@ const InteractiveButton = styled(StyledButton)`
     color: ${(props) => props.theme.default.color};
   }
   // &:focus {
-  //   outline: 3px solid ${(props) => props.theme.default.backgroundColorHover};
+  //   outline: 3px solid ${(props) =>
+    props.theme.default.backgroundColorHover};
   //   outline-offset: 2px;
   // }
   &:active {
@@ -57,11 +58,12 @@ const InteractiveButton = styled(StyledButton)`
 `;
 
 export const Button = styled(InteractiveButton).attrs((props) => ({
-  children: props.label? props.label : `you need to enter a 'label' prop for component`,
-  variation: props.variation? props.variation :'primary'
+  children: props.label
+    ? props.label
+    : `you need to enter a 'label' prop for component`,
+  variation: props.variation ? props.variation : 'primary',
 }))`
   ${(props) => {
-    console.log('props:', props.theme);
     switch (props.variation) {
       default:
       case 'primary':
@@ -106,12 +108,14 @@ export const Button = styled(InteractiveButton).attrs((props) => ({
           }
 
           &:hover {
-            background-color: ${props.theme[props.variation].backgroundColorHover};
+            background-color: ${props.theme[props.variation]
+              .backgroundColorHover};
             color: ${props.theme[props.variation].colorInverted};
           }
-     
+
           &:active {
-            background-color: ${props.theme[props.variation].backgroundColorActive};
+            background-color: ${props.theme[props.variation]
+              .backgroundColorActive};
             border-color: ${props.theme[props.variation].backgroundColorActive};
             color: ${props.theme[props.variation].colorInverted};
           }
@@ -199,8 +203,6 @@ export const Button = styled(InteractiveButton).attrs((props) => ({
             border-color: ${props.theme.status.successBackgroundColorActive};
           }
         `;
-
-
     }
   }};
 

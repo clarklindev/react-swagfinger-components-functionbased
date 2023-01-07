@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const CheckboxContainer = styled.div`
   label {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     align-content: center;
 
@@ -31,10 +31,10 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
 
 const Icon = styled.div`
   overflow: hidden;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   box-sizing: border-box;
-  display: flex;
+  display: inline-flex;
   align-content: center;
   align-items: center;
 `;
@@ -43,10 +43,10 @@ const StyledCheckbox = styled.div`
   display: inline-block;
   position: relative;
   box-sizing: border-box;
-  border-radius: 8px;
+  border-radius: 3px;
   border: 1px solid ${(props) => props.theme.default.borderColor};
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   background-color: ${(props) => props.theme.default.backgroundColor};
 
   ${Icon} {
@@ -57,43 +57,43 @@ const StyledCheckbox = styled.div`
 const Svg = styled.svg`
   display: block;
   margin: auto;
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   fill: ${(props) => props.theme.default.color};
   box-sizing: border-box;
 `;
 
-const Checkbox = ({ className, checked, label, ...props }) => {
+export const Checkbox = ({ savedData, configure }) => {
+  const checked = savedData;
+  const { indeterminate = false, label, onChange } = configure;
   return (
-    <CheckboxContainer className={className}>
+    <CheckboxContainer className='Checkbox'>
       <label>
-        <HiddenCheckbox checked={checked} {...props} />
+        <HiddenCheckbox checked={checked} onChange={onChange} />
         <StyledCheckbox checked={checked}>
           <Icon>
-            {props.indeterminate === true ? (
+            {indeterminate === true ? (
               <Svg
-                viewbox="0 0 20 20"
-                preserveAspectRatio="xMidYMid meet"
-                aria-hidden="true"
+                viewbox='0 0 20 20'
+                preserveAspectRatio='xMidYMid meet'
+                aria-hidden='true'
               >
-                <polyline points="7 12 18 12" />
+                <polyline points='7 12 18 12' />
               </Svg>
             ) : (
               <Svg
-                viewBox="0 0 512 512"
-                preserveAspectRatio="xMidYMid meet"
-                aria-hidden="true"
+                viewBox='0 0 512 512'
+                preserveAspectRatio='xMidYMid meet'
+                aria-hidden='true'
               >
                 {/* fontawesome */}
-                <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
+                <path d='M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z' />
               </Svg>
             )}
           </Icon>
         </StyledCheckbox>
-        <div className="Label">{label}</div>
+        <div className='Label'>{label}</div>
       </label>
     </CheckboxContainer>
   );
 };
-
-export default Checkbox;

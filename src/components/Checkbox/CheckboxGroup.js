@@ -1,46 +1,39 @@
 import React from 'react';
 import styled from 'styled-components';
-import Checkbox from './Checkbox';
+import { Checkbox } from './Checkbox';
 
 const CheckboxGroupContainer = styled.div`
+  display: block;
+
   .Header {
     margin-bottom: 10px;
-    color: red
-  }  
+    color: ${(props) => props.theme.formElementLabel};
+  }
 
   .Checkbox {
     margin-bottom: 5px;
   }
-`
+`;
 
-
-
-
-  
-
-const CheckboxGroup = ({ savedData, configure }) => {
-  console.log('savedData: ', savedData);
-  const { name, values, update, groupLabel, style } = configure;
+export const CheckboxGroup = ({ savedData, configure }) => {
+  const { name, values, update, groupLabel } = configure;
 
   return (
     <CheckboxGroupContainer className='CheckboxGroup'>
-      <div className="Hetaader">{groupLabel}</div>
-      <div className="flex flex-row">
-
-        {values.map((each, index) => {
-          return (
-            <Checkbox
-              className={'Checkbox'}
-              key={`CheckboxGroup_${name}` + index}
-              label={each.label}
-              onChange={() => update(index, !savedData[index])}
-              checked={savedData[index]}
-            />
-          );
-        })} 
-      </div>
+      <div className='Header'>{groupLabel}</div>
+      {values.map((each, index) => {
+        return (
+          <Checkbox
+            key={`CheckboxGroup_${name}` + index}
+            savedData={savedData[index]}
+            configure={{
+              label: each.label,
+              name: name,
+              onChange: () => update(index, !savedData[index]),
+            }}
+          />
+        );
+      })}
     </CheckboxGroupContainer>
   );
 };
-
-export default CheckboxGroup;

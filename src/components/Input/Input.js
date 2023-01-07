@@ -1,3 +1,4 @@
+import React from 'react';
 import styled, { css } from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 import { typeScale } from '../../utils';
@@ -35,8 +36,13 @@ const StyledInput = styled.input.attrs((props) => ({
   ${applyStyleModifiers(MODIFIERS)};
 `;
 
-export const Input = ({ configure, savedData, modifiers = [] }) => {
-  const { onChange, placeholder = 'type something', type = 'text' } = configure;
+export const Input = ({ configure, savedData }) => {
+  const {
+    placeholder = 'type something',
+    type = 'text',
+    onChange,
+    modifiers = [],
+  } = configure;
 
   return (
     <StyledInput

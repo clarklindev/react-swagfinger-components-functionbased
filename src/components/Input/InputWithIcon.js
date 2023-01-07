@@ -55,12 +55,7 @@ const Icon = styled.div`
   }
 `;
 
-export const InputWithIcon = ({
-  configure,
-  savedData,
-  modifiers = [],
-  children,
-}) => {
+export const InputWithIcon = ({ configure, savedData, children }) => {
   const {
     iconPosition = 'right',
     hasDivider = true,
@@ -68,10 +63,18 @@ export const InputWithIcon = ({
     onClick,
     onChange,
     type = 'text',
+    modifiers = [],
   } = configure;
 
+  const defaults = {
+    localmodifiers: [
+      iconPosition === 'left' ? 'embeddedright' : 'embeddedleft',
+    ],
+    childmodifiers: ['noborder'],
+  };
+
   return (
-    <InputWithIconContainer>
+    <InputWithIconContainer modifiers={[...defaults.localmodifiers]}>
       {/* checks if left position */}
       {iconPosition === 'left' ? (
         // then checks if iconClickable
@@ -84,17 +87,20 @@ export const InputWithIcon = ({
         )
       ) : null}
 
+      {/* ------------------------------------------------------------------------- */}
+
       {hasDivider === true && iconPosition === 'left' ? <Divider /> : null}
       <Input
         savedData={savedData}
-        configure={configure}
-        modifiers={[
-          'noborder',
-          iconPosition === 'left' ? 'embeddedright' : 'embeddedleft',
-          ...modifiers,
-        ]}
+        configure={{
+          type,
+          onChange,
+          modifiers: [...modifiers, ...defaults.childmodifiers],
+        }}
       />
       {hasDivider === true && iconPosition === 'right' ? <Divider /> : null}
+
+      {/* ------------------------------------------------------------------------- */}
 
       {iconPosition === 'right' ? (
         iconClickable ? (

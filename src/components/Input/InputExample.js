@@ -3,10 +3,11 @@ import { Input } from './Input';
 
 //normal input
 export const InputExample = () => {
-  const [savedData, updateData] = useState('');
+  const [savedData, setSavedData] = useState('');
   const configure = {
     onChange: (event) => {
-      updateData(event.target.value);
+      console.log('normal');
+      setSavedData(event.target.value);
     },
   };
   return (
@@ -19,42 +20,39 @@ export const InputExample = () => {
 
 //read only
 export const InputReadOnlyExample = () => {
-  const [savedData, updateData] = useState('readonly text');
+  const [savedData, setSavedData] = useState('readonly text');
+
   const configure = {
+    modifiers: ['readonly'],
     onChange: (event) => {
-      updateData(event.target.value);
+      console.log('readonly');
+      setSavedData(event.target.value);
     },
   };
+
   return (
     <>
       <h3>Read-only</h3>
-      <Input
-        savedData={savedData}
-        configure={configure}
-        modifiers={['readonly']}
-      />
+      <Input savedData={savedData} configure={configure} />
     </>
   );
 };
 
 // no border
 export const InputNoBorderExample = () => {
-  const [savedData, updateData] = useState('');
+  const [savedData, setSavedData] = useState('');
   const configure = {
-    placeholder: 'helloworld',
+    modifiers: ['noborder'],
+    placeholder: 'placeholder',
     onChange: (event) => {
-      console.log('event: ', event.target.value);
-      updateData(event.target.value);
+      console.log('noborder');
+      setSavedData(event.target.value);
     },
   };
   return (
     <>
       <h3>No border</h3>
-      <Input
-        savedData={savedData}
-        configure={configure}
-        modifiers={['noborder']}
-      />
+      <Input savedData={savedData} configure={configure} />
     </>
   );
 };

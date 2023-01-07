@@ -2,21 +2,22 @@ import React, { useState } from 'react';
 import { InputSearch } from './InputSearch';
 
 export const InputSearchExample = () => {
-  const [searchString, setSearchString] = useState('');
+  const [savedData, setSavedData] = useState('');
+
   const configure = {
     onChange: (event) => {
-      console.log('handle');
-      setSearchString(event.target.value);
+      console.log('InputSearch: ', event.target.value);
+      setSavedData(event.target.value);
     },
-    updateSearch: (newValue) => {
-      setSearchString(newValue);
+    onSet: (newValue) => {
+      setSavedData(newValue);
     },
   };
 
   return (
     <>
       <h3>Search</h3>
-      <InputSearch savedData={searchString} configure={configure} />
+      <InputSearch savedData={savedData} configure={configure} />
     </>
   );
 };

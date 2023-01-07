@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { render } from '@testing-library/react';
+import React from 'react';
 
 import { applyStyleModifiers } from 'styled-components-modifiers';
 import styled, { css } from 'styled-components';
@@ -78,25 +77,26 @@ const Svg = () => {
 };
 
 // no saved data... (*no data to fetch)
-export const InputSearch = ({
-  configure,
-  savedData,
-  modifiers = ['search'],
-}) => {
+export const InputSearch = ({ configure, savedData }) => {
   const {
     iconPosition = 'left',
     hasDivider = true,
-    type = 'search',
-    updateSearch,
+    onChange,
+    onSet,
   } = configure;
 
-  const onClear = () => {
-    console.log('clear');
-    updateSearch('');
+  const defaults = {
+    type: 'search',
+    localmodifiers: ['search'],
+    childmodifiers: ['noborder'],
+  };
+
+  const onResetHandler = (event) => {
+    onSet('');
   };
 
   return (
-    <InputSearchContainer>
+    <InputSearchContainer modifiers={[...defaults.localmodifiers]}>
       {/* checks if left position */}
       {iconPosition === 'left' ? (
         <Icon>
@@ -105,22 +105,24 @@ export const InputSearch = ({
       ) : null}
 
       {hasDivider === true && iconPosition === 'left' ? <Divider /> : null}
+      {/* ------------------------------------------------------------------------- */}
 
       <Input
         savedData={savedData}
-        configure={configure}
-        modifiers={[
-          'noborder',
-          iconPosition === 'left' ? 'embeddedright' : 'embeddedleft',
-          ...modifiers,
-        ]}
+        configure={{
+          onChange: onChange,
+          type: { ...defaults.type },
+          modifiers: [...defaults.childmodifiers],
+        }}
       />
+
+      {/* ------------------------------------------------------------------------- */}
 
       {hasDivider === true && iconPosition === 'right' ? <Divider /> : null}
 
       {/* clear search button */}
       {savedData.length > 0 ? (
-        <ButtonWithIcon onClick={onClear}>
+        <ButtonWithIcon onClick={onResetHandler}>
           <Icon>
             <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'>
               {/* <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --> */}
