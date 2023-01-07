@@ -22,6 +22,7 @@ import { RadioButtonExample } from './components/RadioButton/RadioButtonExample'
 import { RadioButtonGroupExample } from './components/RadioButton/RadioButtonGroupExample';
 import { CheckboxExample } from './components/Checkbox/CheckboxExample';
 import { CheckboxGroupExample } from './components/Checkbox/CheckboxGroupExample';
+import { CounterExample } from './components/Counter/CounterExample';
 
 //theme
 import './App.css';
@@ -117,23 +118,28 @@ const App = () => {
           <CheckboxGroupExample />
         </div>
 
-        <h2 className='my-8 text-4xl'>07. Switch</h2>
-        <h2 className='my-8 text-4xl'>08. Card</h2>
-        <h2 className='my-8 text-4xl'>09. Layout</h2>
-        <h2 className='my-8 text-4xl'>10. Accordion</h2>
-        <h2 className='my-8 text-4xl'>11. Table</h2>
-        <h2 className='my-8 text-4xl'>12. Navbar</h2>
-        <h2 className='my-8 text-4xl'>13. Link</h2>
-        <h2 className='my-8 text-4xl'>14. Breadcrumbs</h2>
-        <h2 className='my-8 text-4xl'>15. List</h2>
-        <h2 className='my-8 text-4xl'>16. Dialog (aka Modal)</h2>
-        <h2 className='my-8 text-4xl'>17. Progress</h2>
-        <h2 className='my-8 text-4xl'>18. Loading Button</h2>
+        <h2 className='my-8 text-4xl'>07. Counter</h2>
+        <div className='flex flex-col gap-x-3 gap-y-8'>
+          <CounterExample />
+        </div>
+
+        <h2 className='my-8 text-4xl'>08. Switch</h2>
+        <h2 className='my-8 text-4xl'>09. Card</h2>
+        <h2 className='my-8 text-4xl'>10. Layout</h2>
+        <h2 className='my-8 text-4xl'>11. Accordion</h2>
+        <h2 className='my-8 text-4xl'>12. Table</h2>
+        <h2 className='my-8 text-4xl'>13. Navbar</h2>
+        <h2 className='my-8 text-4xl'>14. Link</h2>
+        <h2 className='my-8 text-4xl'>15. Breadcrumbs</h2>
+        <h2 className='my-8 text-4xl'>16. List</h2>
+        <h2 className='my-8 text-4xl'>17. Dialog (aka Modal)</h2>
+        <h2 className='my-8 text-4xl'>18. Progress</h2>
+        <h2 className='my-8 text-4xl'>19. Loading Button</h2>
         <h2 className='my-8 text-4xl'>
-          19. DatePicker, TimePicker, DateTimePicker
+          20. DatePicker, TimePicker, DateTimePicker
         </h2>
-        <h2 className='my-8 text-4xl'>20. DateRangePicker</h2>
-        <h2 className='my-8 text-4xl'>21. Timeline</h2>
+        <h2 className='my-8 text-4xl'>21. DateRangePicker</h2>
+        <h2 className='my-8 text-4xl'>22. Timeline</h2>
       </div>
       <GlobalStyle />
     </ThemeProvider>

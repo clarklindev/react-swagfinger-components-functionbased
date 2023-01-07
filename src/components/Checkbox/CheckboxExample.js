@@ -11,5 +11,10 @@ export const CheckboxExample = () => {
     },
   };
 
-  return <Checkbox savedData={savedData} configure={configure} />;
+  return (
+    <>
+      <h3>Checkbox</h3>
+      <Checkbox savedData={savedData} configure={configure} />
+    </>
+  );
 };
