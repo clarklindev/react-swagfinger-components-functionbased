@@ -14,7 +14,7 @@ export const ToggleSwitchExample = () => {
 
   return (
     <>
-      <h3>Switch</h3>
+      <h3>ToggleSwitch</h3>
       <div className='flex flex-row gap-3'>
         <ToggleSwitch savedData={savedData} configure={configure} />
       </div>

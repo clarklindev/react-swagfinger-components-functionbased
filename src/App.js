@@ -127,7 +127,7 @@ const App = () => {
           <CounterExample />
         </div>
 
-        <h2 className='my-8 text-4xl'>08. Switch / Toggle </h2>
+        <h2 className='my-8 text-4xl'>08. ToggleSwitch </h2>
         <div className='flex flex-col gap-x-3 gap-y-8'>
           <ToggleSwitchExample />
         </div>
