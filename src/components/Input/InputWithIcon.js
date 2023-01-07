@@ -62,6 +62,7 @@ export const InputWithIcon = ({ configure, savedData, children }) => {
     iconClickable = true,
     onClick,
     onChange,
+    placeholder = '',
     type = 'text',
     modifiers = [],
   } = configure;
@@ -93,6 +94,7 @@ export const InputWithIcon = ({ configure, savedData, children }) => {
       <Input
         savedData={savedData}
         configure={{
+          placeholder,
           type,
           onChange,
           modifiers: [...modifiers, ...defaults.childmodifiers],

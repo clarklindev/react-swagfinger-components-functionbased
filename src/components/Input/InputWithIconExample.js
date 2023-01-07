@@ -6,6 +6,7 @@ export const InputWithIconRightExample = () => {
 
   const configure = {
     modifiers: ['readonly'],
+    placeholder: 'readonly',
     onClick: () => {
       console.log('hello');
     },
@@ -32,6 +33,7 @@ export const InputWithIconLeftExample = () => {
   const [savedData, setSavedData] = useState('');
 
   const configure = {
+    placeholer: 'type something',
     onClick: () => {
       console.log('hello');
     },
