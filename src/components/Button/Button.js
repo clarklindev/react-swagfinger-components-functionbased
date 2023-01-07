@@ -58,9 +58,12 @@ const InteractiveButton = styled(StyledButton)`
 `;
 
 export const Button = styled(InteractiveButton).attrs((props) => ({
-  children: props.label
+  children: props.children
+    ? props.children
+    : props.label
     ? props.label
     : `you need to enter a 'label' prop for component`,
+
   variation: props.variation ? props.variation : 'primary',
 }))`
   ${(props) => {

@@ -11,7 +11,7 @@ export const CounterExample = () => {
 
   return (
     <>
-      <h3>Counter</h3>
+      <h3>Controlled counter</h3>
       <Counter savedData={savedData} configure={configure} />
     </>
   );

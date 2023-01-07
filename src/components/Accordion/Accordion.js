@@ -1,18 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import AccordionItem from './AccordionItem';
+import React, { useState } from 'react';
+import { AccordionItem } from './AccordionItem';
 import styled from 'styled-components';
 
 const AccordionContainer = styled.div`
   display: block;
 `;
 
-const Accordion = ({ data, allowMultiOpen = false }) => {
+export const Accordion = ({ savedData, configure }) => {
+  const { allowMultiOpen = false } = configure;
+
   // activeItems holds item indexs to show
   const [activeItems, setActiveItems] = useState([]); //set initial active items
-
-  useEffect(() => {
-    console.log('activeItems: ', activeItems);
-  }, [activeItems]);
 
   const trackIsOpen = (index) => {
     if (allowMultiOpen === true) {
@@ -36,21 +34,21 @@ const Accordion = ({ data, allowMultiOpen = false }) => {
 
   return (
     <AccordionContainer className={'Accordion'}>
-      {data.map((item, index) => {
+      {savedData.map((item, index) => {
         return (
           <AccordionItem
             key={`AccordionItem_${index}`}
-            info={item}
-            index={index}
-            render={(index) => {
-              trackIsOpen(index);
+            configure={{
+              index: index,
+              render: (index) => {
+                trackIsOpen(index);
+              },
+              showing: shouldShow(index),
             }}
-            showing={shouldShow(index)}
+            savedData={item}
           />
         );
       })}
     </AccordionContainer>
   );
 };
-
-export default Accordion;

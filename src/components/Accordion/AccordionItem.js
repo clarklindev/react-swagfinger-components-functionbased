@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const AccordionItem = styled.div`
+const AccordionItemContainer = styled.div`
   display: block;
 `;
 
@@ -17,9 +17,12 @@ const AccordionItemContent = styled.div`
   }
 `;
 
-export default ({ info, showing, index, render }) => {
+export const AccordionItem = ({ configure, savedData }) => {
+  const { showing, index, render } = configure;
+  const info = savedData;
+
   return (
-    <AccordionItem className={`AccordionItem`}>
+    <AccordionItemContainer className={`AccordionItem`}>
       <AccordionItemTitle
         className={`AccordionItemTitle`}
         onClick={() => {
@@ -33,6 +36,6 @@ export default ({ info, showing, index, render }) => {
       >
         {info.body}
       </AccordionItemContent>
-    </AccordionItem>
+    </AccordionItemContainer>
   );
 };
