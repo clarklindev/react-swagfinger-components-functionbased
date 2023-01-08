@@ -1,9 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
 import { typeScale } from '../../utils';
+import { Input } from '../Input/Input';
 
 const CounterContainer = styled.div`
   display: flex;
+  min-width: 130px;
+  max-width: 150px;
+  height: 50px;
+
+  Input {
+    text-align: center;
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+  }
+
+  Button[label='increment'] {
+    border-radius: 0;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  Button[label='decrement'] {
+    border-radius: 0;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
 `;
 
 const Svg = styled.svg`
@@ -26,27 +48,6 @@ const Button = styled.button`
   width: 20px;
   align-content: center;
   align-items: center;
-`;
-
-const Input = styled.input`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  margin-left: 5px;
-  margin-right: 5px;
-
-  box-sizing: border-box;
-  background-color: ${(props) => props.theme.default.backgroundColor};
-  border: 1px solid ${(props) => props.theme.default.borderColor};
-  color: ${(props) => props.theme.default.color};
-  padding: 10px;
-  font-size: ${typeScale.paragraph};
-  border-radius: 8px;
-  width: 80px;
-  cursor: pointer;
-  outline: none;
 `;
 
 export const Counter = ({ savedData, configure }) => {
@@ -76,8 +77,13 @@ export const Counter = ({ savedData, configure }) => {
       </Button>
 
       <Input
-        onChange={(event) => !isNaN(event.target.value)}
-        value={savedData}
+        configure={{
+          placeholder: '',
+          // onChange: (event) => !isNaN(event.target.value),
+          onChange: (event) => !isNaN(event.target.value),
+          modifiers: ['nonselectable'],
+        }}
+        savedData={savedData}
       />
 
       <Button label='increment' onClick={increment}>

@@ -13,6 +13,9 @@ const MODIFIERS = {
     color: ${props.theme.default.color};
     background-color: ${props.theme.disabledBackgroundColor};
   `,
+  nonselectable: (props) => css`
+    pointer-events: none;
+  `,
 };
 
 const StyledInput = styled.input.attrs((props) => ({
@@ -37,12 +40,7 @@ const StyledInput = styled.input.attrs((props) => ({
 `;
 
 export const Input = ({ configure, savedData }) => {
-  const {
-    placeholder = 'type something',
-    type = 'text',
-    onChange,
-    modifiers = [],
-  } = configure;
+  const { type = 'text', onChange, modifiers = [], placeholder } = configure;
 
   return (
     <StyledInput
