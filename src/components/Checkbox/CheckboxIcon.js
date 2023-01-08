@@ -37,8 +37,8 @@ const StyledCheckboxIcon = styled.div`
   background-color: ${(props) => props.theme.default.backgroundColor};
   ${Icon} {
     svg {
-      fill: ${(props) => (props.checked ? 'blue' : 'black')};
-      stroke: ${(props) => (props.checked ? 'transparent' : 'black')};
+      fill: ${(props) => (props.checked ? props.activeColor : 'black')};
+      stroke: ${(props) => (props.checked ? props.activeColor : 'black')};
       fill-opacity: ${(props) => (props.checked ? '1' : '0')};
     }
   }
@@ -46,12 +46,12 @@ const StyledCheckboxIcon = styled.div`
 
 export const CheckboxIcon = ({ savedData, configure, children }) => {
   const checked = savedData;
-  const { onChange } = configure;
+  const { onChange, activeColor } = configure;
   return (
     <CheckboxIconContainer className='CheckboxIcon'>
       <label>
         <HiddenCheckbox checked={checked} onChange={onChange} />
-        <StyledCheckboxIcon checked={checked}>
+        <StyledCheckboxIcon checked={checked} activeColor={activeColor}>
           <Icon>{children}</Icon>
         </StyledCheckboxIcon>
       </label>

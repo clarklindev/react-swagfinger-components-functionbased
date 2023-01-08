@@ -24,8 +24,6 @@ import { CounterExample } from './components/Counter/CounterExample';
 import { AccordionExample } from './components/Accordion/AccordionExample';
 import { SelectExample } from './components/Select/SelectExample';
 
-import { ModalExample } from './components/Modal/ModalExample';
-
 //theme
 import './App.css';
 import { GlobalStyle, darkTheme, defaultTheme } from './utils';
