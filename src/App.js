@@ -30,6 +30,7 @@ import { ModalExample } from './components/Modal/ModalExample';
 import './App.css';
 import { GlobalStyle, darkTheme, defaultTheme } from './utils';
 import { ToggleSwitchExample } from './components/Switch/ToggleSwitchExample';
+import { CheckboxIconExample } from './components/Checkbox/CheckboxIconExample';
 
 const App = () => {
   const [useDarkTheme] = useState(false);
@@ -123,6 +124,7 @@ const App = () => {
         <div className='flex flex-col gap-x-3 gap-y-8'>
           <CheckboxExample />
           <CheckboxGroupExample />
+          <CheckboxIconExample />
         </div>
 
         <h2 className='my-8 text-4xl'>07. Counter</h2>
