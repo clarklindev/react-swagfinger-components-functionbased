@@ -26,6 +26,7 @@ export const defaultTheme = {
   name: 'defaultTheme',
   ...commonStyles,
 
+  placeholder: neutral[400],
   disabledColor: neutral[300],
   disabledBackgroundColor: neutral[200],
   formElementBackground: neutral[300],
@@ -72,7 +73,7 @@ export const defaultTheme = {
 export const darkTheme = {
   name: 'darkTheme',
   ...commonStyles,
-
+  placeholder: neutral[400],
   disabledColor: neutral[400],
   disabledBackgroundColor: neutral[300],
   formElementBackground: blue[100],

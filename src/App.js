@@ -5,13 +5,11 @@ import {
   ButtonStatusExample,
   ButtonModifiersExample,
 } from './components/Button/ButtonExample';
-
 import {
   InputExample,
   InputReadOnlyExample,
   InputNoBorderExample,
 } from './components/Input/InputExample';
-
 import { InputPasswordExample } from './components/Input/InputPasswordExample';
 import {
   InputWithIconRightExample,
@@ -24,6 +22,7 @@ import { CheckboxExample } from './components/Checkbox/CheckboxExample';
 import { CheckboxGroupExample } from './components/Checkbox/CheckboxGroupExample';
 import { CounterExample } from './components/Counter/CounterExample';
 import { AccordionExample } from './components/Accordion/AccordionExample';
+import { SelectExample } from './components/Select/SelectExample';
 
 import { ModalExample } from './components/Modal/ModalExample';
 
@@ -110,6 +109,10 @@ const App = () => {
         </div>
 
         <h2 className='my-8 text-4xl'>04. Select</h2>
+        <div className='flex flex-col gap-x-3 gap-y-8'>
+          <SelectExample />
+        </div>
+
         <h2 className='my-8 text-4xl'>05. Radio Button</h2>
         <div className='flex flex-col gap-x-3 gap-y-8'>
           <RadioButtonExample />
@@ -132,24 +135,20 @@ const App = () => {
           <ToggleSwitchExample />
         </div>
 
-        <h2 className='my-8 text-4xl'>09. Card</h2>
-        <h2 className='my-8 text-4xl'>10. Layout</h2>
-
-        <h2 className='my-8 text-4xl'>11. Accordion</h2>
+        <h2 className='my-8 text-4xl'>09. Accordion</h2>
         <div className='flex flex-col gap-x-3 gap-y-8'>
           <AccordionExample />
         </div>
 
-        <h2 className='my-8 text-4xl'>12. Table</h2>
-        <h2 className='my-8 text-4xl'>13. Navbar</h2>
-        <h2 className='my-8 text-4xl'>14. Link</h2>
-        <h2 className='my-8 text-4xl'>15. Breadcrumbs</h2>
-        <h2 className='my-8 text-4xl'>16. List</h2>
-        <h2 className='my-8 text-4xl'>17. Dialog (aka Modal)</h2>
-        <div className='flex flex-col gap-x-3 gap-y-8'>
-          <ModalExample />
-        </div>
+        <h2 className='my-8 text-4xl'>10. List</h2>
 
+        <h2 className='my-8 text-4xl'>11. Card</h2>
+        <h2 className='my-8 text-4xl'>12. Layout</h2>
+        <h2 className='my-8 text-4xl'>13. Table</h2>
+        <h2 className='my-8 text-4xl'>14. Navbar</h2>
+        <h2 className='my-8 text-4xl'>15. Link</h2>
+        <h2 className='my-8 text-4xl'>16. Breadcrumbs</h2>
+        <h2 className='my-8 text-4xl'>17. Dialog (aka Modal)</h2>
         <h2 className='my-8 text-4xl'>18. Progress</h2>
         <h2 className='my-8 text-4xl'>19. Loading Button</h2>
         <h2 className='my-8 text-4xl'>
