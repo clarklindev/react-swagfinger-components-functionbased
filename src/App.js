@@ -144,6 +144,24 @@ const App = () => {
 
         <h2 className='my-8 text-4xl'>11. Card</h2>
         <h2 className='my-8 text-4xl'>12. Layout</h2>
+        <div className='flex items-start flex-col'>
+          <a
+            href='https://swagfinger-component-scss-flexbox-grid.vercel.app/'
+            target='_blank'
+            rel='noreferrer'
+          >
+            sass flexbox-grid -
+            https://swagfinger-component-scss-flexbox-grid.vercel.app/
+          </a>
+          <a
+            href='https://github.com/swagfinger/swagfinger-component-scss-flexbox-grid'
+            target='_blank'
+            rel='noreferrer'
+          >
+            github -
+            https://github.com/swagfinger/swagfinger-component-scss-flexbox-grid
+          </a>
+        </div>
         <h2 className='my-8 text-4xl'>13. Table</h2>
         <h2 className='my-8 text-4xl'>14. Navbar</h2>
         <h2 className='my-8 text-4xl'>15. Link</h2>
