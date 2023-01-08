@@ -5,7 +5,7 @@ export const AccordionExample = () => {
   const [savedData, setSavedData] = useState([]);
 
   const configure = {
-    allowMultiOpen: false,
+    allowMultiOpen: true,
   };
 
   useEffect(() => {
