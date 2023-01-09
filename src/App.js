@@ -107,7 +107,11 @@ const App = () => {
         </Block>
 
         <Block>
-          <Heading4>03. Input</Heading4>
+          <Heading4>03. Icon</Heading4>
+        </Block>
+
+        <Block>
+          <Heading4>04. Input</Heading4>
           <div className='flex flex-col'>
             <InputExample />
             <InputReadOnlyExample />
@@ -118,14 +122,27 @@ const App = () => {
             <InputSearchExample />
           </div>
         </Block>
-
         <Block>
-          <Heading4>04. Select</Heading4>
+          <Heading4>05. Multi-input</Heading4>
+          <div className='flex flex-col'></div>
+        </Block>
+        <Block>
+          <Heading4>06. Multi-input Objects</Heading4>
+          <div className='flex flex-col'></div>
+        </Block>
+        <Block>
+          <Heading4>07. Select</Heading4>
           <SelectExample />
         </Block>
 
         <Block>
-          <Heading4>05. Radio Button</Heading4>
+          <Heading4>08. Multi-select</Heading4>
+        </Block>
+        <Block>
+          <Heading4>09. Multi-select with input</Heading4>
+        </Block>
+        <Block>
+          <Heading4>10. Radio Button</Heading4>
           <div className='flex flex-col'>
             <RadioButtonExample />
             <RadioButtonGroupExample />
@@ -133,7 +150,7 @@ const App = () => {
         </Block>
 
         <Block>
-          <Heading4>06. Checkbox</Heading4>
+          <Heading4>11. Checkbox</Heading4>
           <div className='flex flex-col'>
             <CheckboxExample />
             <CheckboxGroupExample />
@@ -142,32 +159,40 @@ const App = () => {
         </Block>
 
         <Block>
-          <Heading4>07. Counter</Heading4>
+          <Heading4>12. Counter</Heading4>
           <CounterExample />
         </Block>
 
         <Block>
-          <Heading4>08. ToggleSwitch </Heading4>
+          <Heading4>13. ToggleSwitch </Heading4>
           <ToggleSwitchExample />
         </Block>
 
         <Block>
-          <Heading4>09. Accordion</Heading4>
+          <Heading4>14. Slider</Heading4>
+        </Block>
+
+        <Block>
+          <Heading4>15. Multi-range slider</Heading4>
+        </Block>
+
+        <Block>
+          <Heading4>16. Accordion</Heading4>
           <AccordionExample />
         </Block>
 
         <Block>
-          <Heading4>10. List</Heading4>
+          <Heading4>17. List</Heading4>
           <ListExample />
         </Block>
 
         <Block>
-          <Heading4>11. Card</Heading4>
+          <Heading4>18. Card</Heading4>
           <CardExample />
         </Block>
 
         <Block>
-          <Heading4>12. Layout</Heading4>
+          <Heading4>19. Layout</Heading4>
           <div className='flex items-start flex-col'>
             <a
               href='https://swagfinger-component-scss-flexbox-grid.vercel.app/'
@@ -189,35 +214,38 @@ const App = () => {
         </Block>
 
         <Block>
-          <Heading4>13. Table</Heading4>
+          <Heading4>20. Table</Heading4>
           <TableExample />
         </Block>
         <Block>
-          <Heading4>14. Navbar</Heading4>
+          <Heading4>21. Navbar</Heading4>
         </Block>
         <Block>
-          <Heading4>15. Link</Heading4>
+          <Heading4>22. Link</Heading4>
         </Block>
         <Block>
-          <Heading4>16. Breadcrumbs</Heading4>
+          <Heading4>23. Breadcrumbs</Heading4>
         </Block>
         <Block>
-          <Heading4>17. Dialog (aka Modal)</Heading4>
+          <Heading4>24. Dialog (aka Modal)</Heading4>
         </Block>
         <Block>
-          <Heading4>18. Progress</Heading4>
+          <Heading4>25. Progress</Heading4>
         </Block>
         <Block>
-          <Heading4>19. Loading Button</Heading4>
+          <Heading4>26. Loading Button</Heading4>
         </Block>
         <Block>
-          <Heading4>20. DatePicker, TimePicker, DateTimePicker</Heading4>
+          <Heading4>27. Timeline</Heading4>
         </Block>
         <Block>
-          <Heading4>21. DateRangePicker</Heading4>
+          <Heading4>28. Upload</Heading4>
         </Block>
         <Block>
-          <Heading4>22. Timeline</Heading4>
+          <Heading4>29. DatePicker, TimePicker, DateTimePicker</Heading4>
+        </Block>
+        <Block>
+          <Heading4>30. DateRangePicker</Heading4>
         </Block>
       </div>
       <GlobalStyle />
