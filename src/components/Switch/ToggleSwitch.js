@@ -54,7 +54,7 @@ const Slider = styled.span`
 `;
 
 export const ToggleSwitch = ({ savedData, configure }) => {
-  const { onChange, label } = configure;
+  const { onChange } = configure;
   const checked = savedData;
 
   return (
