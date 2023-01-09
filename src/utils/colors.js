@@ -32,3 +32,10 @@ export const neutral = {
   500: '#4a4b53',
   600: '#000000',
 };
+
+export const status = {
+  warning: '#ed6c02',
+  error: '#d32f2f',
+  success: '#2e7d32',
+  info: '#0288d1',
+};

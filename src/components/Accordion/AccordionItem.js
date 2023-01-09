@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { typeScale } from '../../utils';
 
 const AccordionItemContainer = styled.div`
   display: block;
@@ -9,28 +8,25 @@ const AccordionItemContainer = styled.div`
 const AccordionItemTitle = styled.div`
   box-sizing: border-box;
   max-height: 50px;
-
-  background-color: ${(props) => props.theme.default.backgroundColor};
+  background-color: ${(props) => props.theme.backgroundColor};
   padding: 15px;
-  font-size: ${typeScale.paragraph};
   border-radius: 8px;
   cursor: pointer;
-
   display: flex;
   flex-grow: 1;
   justify-content: space-between;
 
   &.show {
-    border-top: 1px solid ${(props) => props.theme.default.borderColor};
-    border-left: 1px solid ${(props) => props.theme.default.borderColor};
-    border-right: 1px solid ${(props) => props.theme.default.borderColor};
+    border-top: 1px solid ${(props) => props.theme.borderColor};
+    border-left: 1px solid ${(props) => props.theme.borderColor};
+    border-right: 1px solid ${(props) => props.theme.borderColor};
     border-bottom: 0px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
   }
 
   &.hide {
-    border: 1px solid ${(props) => props.theme.default.borderColor};
+    border: 1px solid ${(props) => props.theme.borderColor};
   }
 `;
 
@@ -64,7 +60,7 @@ const AccordionItemContent = styled.div`
   padding: 15px;
   &.show {
     display: block;
-    border: 1px solid ${(props) => props.theme.default.borderColor};
+    border: 1px solid ${(props) => props.theme.borderColor};
     border-top: 0px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;

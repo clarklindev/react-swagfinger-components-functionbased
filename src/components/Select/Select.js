@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import styled, { css } from 'styled-components';
-import { typeScale } from '../../utils';
+import React from 'react';
+import styled from 'styled-components';
 
 const SelectContainer = styled.div`
   position: relative;
@@ -21,11 +20,9 @@ const SelectContainer = styled.div`
     max-height: 50px;
     width: 100%;
     height: 50px;
-    color: ${(props) => props.theme.default.color};
-    border: 1px solid ${(props) => props.theme.default.borderColor};
+    color: ${(props) => props.theme.color};
+    border: 1px solid ${(props) => props.theme.borderColor};
     padding: 15px;
-
-    font-size: ${typeScale.paragraph};
     border-radius: 8px;
     display: flex;
     flex-grow: 1;

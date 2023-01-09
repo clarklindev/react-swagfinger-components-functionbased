@@ -9,7 +9,7 @@ const CheckboxContainer = styled.div`
 
     .Label {
       padding-left: 10px;
-      color: ${(props) => props.theme.default.color};
+      color: ${(props) => props.theme.color};
     }
   }
 `;
@@ -44,10 +44,10 @@ const StyledCheckbox = styled.div`
   position: relative;
   box-sizing: border-box;
   border-radius: 3px;
-  border: 1px solid ${(props) => props.theme.default.borderColor};
+  border: 1px solid ${(props) => props.theme.borderColor};
   width: 30px;
   height: 30px;
-  background-color: ${(props) => props.theme.default.backgroundColor};
+  background-color: ${(props) => props.theme.backgroundColor};
 
   ${Icon} {
     visibility: ${(props) => (props.checked ? 'visible' : 'hidden')};
@@ -59,7 +59,7 @@ const Svg = styled.svg`
   margin: auto;
   width: 20px;
   height: 20px;
-  fill: ${(props) => props.theme.default.color};
+  fill: ${(props) => props.theme.color};
   box-sizing: border-box;
 `;
 

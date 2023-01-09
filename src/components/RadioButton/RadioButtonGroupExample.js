@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { RadioButtonGroup } from './RadioButtonGroup';
+import { Heading6 } from '../Typography/Typography';
 
 export const RadioButtonGroupExample = () => {
   // radioOptions: moved outside of configure object - possibility that data is pulled, eg. questions from backend async call
@@ -29,7 +30,7 @@ export const RadioButtonGroupExample = () => {
 
   return (
     <>
-      <h3>RadioButton Group</h3>
+      <Heading6>RadioButton Group</Heading6>
       <RadioButtonGroup savedData={savedData} configure={configure} />
     </>
   );

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Checkbox } from './Checkbox';
+import { Heading6 } from '../Typography/Typography';
 
 export const CheckboxExample = () => {
   const [savedData, setSavedData] = useState(false);
@@ -13,7 +14,7 @@ export const CheckboxExample = () => {
 
   return (
     <>
-      <h3>Checkbox</h3>
+      <Heading6>Checkbox</Heading6>
       <Checkbox savedData={savedData} configure={configure} />
     </>
   );

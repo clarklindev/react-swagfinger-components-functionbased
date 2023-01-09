@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { InputPassword } from './InputPassword';
+import { Heading6 } from '../Typography/Typography';
 
 export const InputPasswordExample = () => {
   const [savedData, setSavedData] = useState('');
@@ -13,7 +14,7 @@ export const InputPasswordExample = () => {
 
   return (
     <>
-      <h3>Password</h3>
+      <Heading6>Password</Heading6>
       <InputPassword savedData={savedData} configure={configure} />
     </>
   );

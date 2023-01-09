@@ -17,7 +17,7 @@ const MODIFIERS = {
 const InputWithIconContainer = styled.div`
   box-sizing: border-box;
   display: flex;
-  border: 1px solid ${(props) => props.theme.default.borderColor};
+  border: 1px solid ${(props) => props.theme.borderColor};
   border-radius: 8px;
   ${applyStyleModifiers(MODIFIERS)};
 `;
@@ -26,7 +26,7 @@ const Divider = styled.div`
   margin-top: 7px;
   margin-bottom: 7px;
   width: 1px;
-  background-color: ${(props) => props.theme.default.borderColor};
+  background-color: ${(props) => props.theme.borderColor};
 `;
 
 const ButtonWithIcon = styled.div`

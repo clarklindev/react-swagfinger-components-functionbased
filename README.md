@@ -76,3 +76,7 @@ import { createApi } from '@reduxjs/toolkit/query/react';
 ## Redux Fundamentals, Part 8: Modern Redux with Redux Toolkit
 
 https://redux.js.org/tutorials/fundamentals/part-8-modern-redux
+
+## Typography
+
+https://type-scale.com/

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { typeScale } from '../../utils';
 import { Input } from '../Input/Input';
 
 const CounterContainer = styled.div`
@@ -32,20 +31,19 @@ const Svg = styled.svg`
   width: 20px;
   height: 20px;
   overflow: hidden;
-  fill: ${(props) => props.theme.default.color};
+  fill: ${(props) => props.theme.color};
 `;
 
 const Button = styled.button`
-  background-color: ${(props) => props.theme.default.backgroundColor};
-  border: 1px solid ${(props) => props.theme.default.borderColor};
-  color: ${(props) => props.theme.default.color};
+  background-color: ${(props) => props.theme.backgroundColor};
+  border: 1px solid ${(props) => props.theme.borderColor};
+  color: ${(props) => props.theme.color};
   padding: 10px 10px;
-  font-size: ${typeScale.paragraph};
   border-radius: 8px;
   cursor: pointer;
   outline: none;
   display: flex;
-  width: 20px;
+  width: 50px;
   align-content: center;
   align-items: center;
 `;

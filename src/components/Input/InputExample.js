@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Input } from './Input';
+import { Heading6 } from '../Typography/Typography';
 
 //normal input
 export const InputExample = () => {
@@ -12,7 +13,7 @@ export const InputExample = () => {
   };
   return (
     <>
-      <h3>Input</h3>
+      <Heading6>Input</Heading6>
       <Input savedData={savedData} configure={configure} />
     </>
   );
@@ -32,7 +33,7 @@ export const InputReadOnlyExample = () => {
 
   return (
     <>
-      <h3>Read-only</h3>
+      <Heading6>Read-only</Heading6>
       <Input savedData={savedData} configure={configure} />
     </>
   );
@@ -51,7 +52,7 @@ export const InputNoBorderExample = () => {
   };
   return (
     <>
-      <h3>No border</h3>
+      <Heading6>No border</Heading6>
       <Input savedData={savedData} configure={configure} />
     </>
   );

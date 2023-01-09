@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+
 import { ThemeProvider } from 'styled-components';
+import { Heading4 } from './components/Typography/Typography';
 import {
   ButtonVariationExample,
-  ButtonStatusExample,
   ButtonModifiersExample,
 } from './components/Button/ButtonExample';
 import {
@@ -24,11 +25,13 @@ import { CounterExample } from './components/Counter/CounterExample';
 import { AccordionExample } from './components/Accordion/AccordionExample';
 import { SelectExample } from './components/Select/SelectExample';
 
+import { Block } from './components/Layout/Block';
 //theme
 import './App.css';
 import { GlobalStyle, darkTheme, defaultTheme } from './utils';
 import { ToggleSwitchExample } from './components/Switch/ToggleSwitchExample';
 import { CheckboxIconExample } from './components/Checkbox/CheckboxIconExample';
+import { TypographyExample } from './components/Typography/TypographyExample';
 
 const App = () => {
   const [useDarkTheme] = useState(false);
@@ -40,9 +43,9 @@ const App = () => {
         className='flex-auto flex-col p-3'
         style={{
           background: useDarkTheme
-            ? darkTheme.default.backgroundColor
-            : defaultTheme.default.backgroundColor,
-          color: useDarkTheme ? darkTheme.textColor : defaultTheme.textColor,
+            ? darkTheme.backgroundColor
+            : defaultTheme.backgroundColor,
+          color: useDarkTheme ? darkTheme.color : defaultTheme.color,
           height: '100vh',
         }}
       >
@@ -87,93 +90,129 @@ const App = () => {
         </button> */}
 
         {/* <h1 class="font-bold">SWAGFINGER UI</h1> */}
+        <Block>
+          <Heading4>01. Typography</Heading4>
+          <TypographyExample />
+        </Block>
 
-        <h2 className='my-8 text-4xl'>01. Typography</h2>
-        <h2 className='my-8 text-4xl'>02. Buttons</h2>
-        <div className='flex flex-col gap-y-3 mb-3'>
-          <ButtonVariationExample />
-          <ButtonStatusExample />
-          <ButtonModifiersExample />
-        </div>
+        <Block>
+          <Heading4>02. Buttons</Heading4>
+          <div className='flex flex-col'>
+            <ButtonVariationExample />
+            <ButtonModifiersExample />
+          </div>
+        </Block>
 
-        <h2 className='my-8 text-4xl'>03. Input</h2>
-        <div className='flex flex-col gap-x-3 gap-y-3'>
-          <InputExample />
-          <InputReadOnlyExample />
-          <InputNoBorderExample />
-          <InputPasswordExample />
-          <InputWithIconRightExample />
-          <InputWithIconLeftExample />
-          <InputSearchExample />
-        </div>
+        <Block>
+          <Heading4>03. Input</Heading4>
+          <div className='flex flex-col'>
+            <InputExample />
+            <InputReadOnlyExample />
+            <InputNoBorderExample />
+            <InputPasswordExample />
+            <InputWithIconRightExample />
+            <InputWithIconLeftExample />
+            <InputSearchExample />
+          </div>
+        </Block>
 
-        <h2 className='my-8 text-4xl'>04. Select</h2>
-        <div className='flex flex-col gap-x-3 gap-y-8'>
+        <Block>
+          <Heading4>04. Select</Heading4>
           <SelectExample />
-        </div>
+        </Block>
 
-        <h2 className='my-8 text-4xl'>05. Radio Button</h2>
-        <div className='flex flex-col gap-x-3 gap-y-8'>
-          <RadioButtonExample />
-          <RadioButtonGroupExample />
-        </div>
+        <Block>
+          <Heading4>05. Radio Button</Heading4>
+          <div className='flex flex-col'>
+            <RadioButtonExample />
+            <RadioButtonGroupExample />
+          </div>
+        </Block>
 
-        <h2 className='my-8 text-4xl'>06. Checkbox</h2>
-        <div className='flex flex-col gap-x-3 gap-y-8'>
-          <CheckboxExample />
-          <CheckboxGroupExample />
-          <CheckboxIconExample />
-        </div>
+        <Block>
+          <Heading4>06. Checkbox</Heading4>
+          <div className='flex flex-col'>
+            <CheckboxExample />
+            <CheckboxGroupExample />
+            <CheckboxIconExample />
+          </div>
+        </Block>
 
-        <h2 className='my-8 text-4xl'>07. Counter</h2>
-        <div className='flex flex-col gap-x-3 gap-y-8'>
+        <Block>
+          <Heading4>07. Counter</Heading4>
           <CounterExample />
-        </div>
+        </Block>
 
-        <h2 className='my-8 text-4xl'>08. ToggleSwitch </h2>
-        <div className='flex flex-col gap-x-3 gap-y-8'>
+        <Block>
+          <Heading4>08. ToggleSwitch </Heading4>
           <ToggleSwitchExample />
-        </div>
+        </Block>
 
-        <h2 className='my-8 text-4xl'>09. Accordion</h2>
-        <div className='flex flex-col gap-x-3 gap-y-8'>
+        <Block>
+          <Heading4>09. Accordion</Heading4>
           <AccordionExample />
-        </div>
+        </Block>
 
-        <h2 className='my-8 text-4xl'>10. List</h2>
+        <Block>
+          <Heading4>10. List</Heading4>
+        </Block>
 
-        <h2 className='my-8 text-4xl'>11. Card</h2>
-        <h2 className='my-8 text-4xl'>12. Layout</h2>
-        <div className='flex items-start flex-col'>
-          <a
-            href='https://swagfinger-component-scss-flexbox-grid.vercel.app/'
-            target='_blank'
-            rel='noreferrer'
-          >
-            sass flexbox-grid -
-            https://swagfinger-component-scss-flexbox-grid.vercel.app/
-          </a>
-          <a
-            href='https://github.com/swagfinger/swagfinger-component-scss-flexbox-grid'
-            target='_blank'
-            rel='noreferrer'
-          >
-            github -
-            https://github.com/swagfinger/swagfinger-component-scss-flexbox-grid
-          </a>
-        </div>
-        <h2 className='my-8 text-4xl'>13. Table</h2>
-        <h2 className='my-8 text-4xl'>14. Navbar</h2>
-        <h2 className='my-8 text-4xl'>15. Link</h2>
-        <h2 className='my-8 text-4xl'>16. Breadcrumbs</h2>
-        <h2 className='my-8 text-4xl'>17. Dialog (aka Modal)</h2>
-        <h2 className='my-8 text-4xl'>18. Progress</h2>
-        <h2 className='my-8 text-4xl'>19. Loading Button</h2>
-        <h2 className='my-8 text-4xl'>
-          20. DatePicker, TimePicker, DateTimePicker
-        </h2>
-        <h2 className='my-8 text-4xl'>21. DateRangePicker</h2>
-        <h2 className='my-8 text-4xl'>22. Timeline</h2>
+        <Block>
+          <Heading4>11. Card</Heading4>
+        </Block>
+
+        <Block>
+          <Heading4>12. Layout</Heading4>
+          <div className='flex items-start flex-col'>
+            <a
+              href='https://swagfinger-component-scss-flexbox-grid.vercel.app/'
+              target='_blank'
+              rel='noreferrer'
+            >
+              sass flexbox-grid -
+              https://swagfinger-component-scss-flexbox-grid.vercel.app/
+            </a>
+            <a
+              href='https://github.com/swagfinger/swagfinger-component-scss-flexbox-grid'
+              target='_blank'
+              rel='noreferrer'
+            >
+              github -
+              https://github.com/swagfinger/swagfinger-component-scss-flexbox-grid
+            </a>
+          </div>
+        </Block>
+
+        <Block>
+          <Heading4>13. Table</Heading4>
+        </Block>
+        <Block>
+          <Heading4>14. Navbar</Heading4>
+        </Block>
+        <Block>
+          <Heading4>15. Link</Heading4>
+        </Block>
+        <Block>
+          <Heading4>16. Breadcrumbs</Heading4>
+        </Block>
+        <Block>
+          <Heading4>17. Dialog (aka Modal)</Heading4>
+        </Block>
+        <Block>
+          <Heading4>18. Progress</Heading4>
+        </Block>
+        <Block>
+          <Heading4>19. Loading Button</Heading4>
+        </Block>
+        <Block>
+          <Heading4>20. DatePicker, TimePicker, DateTimePicker</Heading4>
+        </Block>
+        <Block>
+          <Heading4>21. DateRangePicker</Heading4>
+        </Block>
+        <Block>
+          <Heading4>22. Timeline</Heading4>
+        </Block>
       </div>
       <GlobalStyle />
     </ThemeProvider>

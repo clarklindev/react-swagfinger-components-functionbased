@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { InputSearch } from './InputSearch';
+import { Heading6 } from '../Typography/Typography';
 
 export const InputSearchExample = () => {
   const [savedData, setSavedData] = useState('');
@@ -16,7 +17,7 @@ export const InputSearchExample = () => {
 
   return (
     <>
-      <h3>Search</h3>
+      <Heading6>Search</Heading6>
       <InputSearch savedData={savedData} configure={configure} />
     </>
   );

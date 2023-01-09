@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { InputWithIcon } from './InputWithIcon';
+import { Heading6 } from '../Typography/Typography';
 
 export const InputWithIconRightExample = () => {
   const [savedData, setSavedData] = useState('');
@@ -18,7 +19,7 @@ export const InputWithIconRightExample = () => {
 
   return (
     <>
-      <h3>Input With Icon - Right</h3>
+      <Heading6>Input With Icon - Right</Heading6>
       <InputWithIcon savedData={savedData} configure={configure}>
         {/* whatever icon you want */}
         <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
@@ -47,7 +48,7 @@ export const InputWithIconLeftExample = () => {
 
   return (
     <>
-      <h3>Input With Icon - Left</h3>
+      <Heading6>Input With Icon - Left</Heading6>
       <InputWithIcon savedData={savedData} configure={configure}>
         {/* whatever icon you want */}
         <svg

@@ -34,7 +34,7 @@ const Icon = styled.div`
 
 const StyledCheckboxIcon = styled.div`
   box-sizing: border-box;
-  background-color: ${(props) => props.theme.default.backgroundColor};
+  background-color: ${(props) => props.theme.backgroundColor};
   ${Icon} {
     svg {
       fill: ${(props) => (props.checked ? props.activeColor : 'black')};

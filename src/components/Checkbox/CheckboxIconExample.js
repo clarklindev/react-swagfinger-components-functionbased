@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { CheckboxIcon } from './CheckboxIcon';
+import { Heading6 } from '../Typography/Typography';
 
 export const CheckboxIconExample = () => {
   const [savedData1, setSavedData1] = useState(false);
@@ -23,7 +24,7 @@ export const CheckboxIconExample = () => {
 
   return (
     <>
-      <h3>CheckboxIcon</h3>
+      <Heading6>CheckboxIcon</Heading6>
       <div className='flex flex-row'>
         <CheckboxIcon savedData={savedData1} configure={configure1}>
           <svg

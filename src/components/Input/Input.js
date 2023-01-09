@@ -1,7 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
-import { typeScale } from '../../utils';
 
 const MODIFIERS = {
   noborder: () => css`
@@ -10,7 +9,7 @@ const MODIFIERS = {
   `,
   readonly: (props) => css`
     cursor: default;
-    color: ${props.theme.default.color};
+    color: ${props.theme.color};
     background-color: ${props.theme.disabledBackgroundColor};
   `,
   nonselectable: (props) => css`
@@ -24,11 +23,10 @@ const StyledInput = styled.input.attrs((props) => ({
   box-sizing: border-box;
   max-height: 50px;
 
-  border: 1px solid ${(props) => props.theme.default.borderColor};
-  background-color: ${(props) => props.theme.default.backgroundColor};
-  color: ${(props) => props.theme.default.color};
+  border: 1px solid ${(props) => props.theme.borderColor};
+  background-color: ${(props) => props.theme.backgroundColor};
+  color: ${(props) => props.theme.color};
   padding: 15px;
-  font-size: ${typeScale.paragraph};
   border-radius: 8px;
   width: 100%;
   cursor: text;

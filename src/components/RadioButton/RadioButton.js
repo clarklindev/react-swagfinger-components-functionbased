@@ -9,7 +9,7 @@ const RadioButtonContainer = styled.div`
 
     .Label {
       padding-left: 10px;
-      color: ${(props) => props.theme.default.color};
+      color: ${(props) => props.theme.color};
     }
   }
 `;
@@ -53,7 +53,7 @@ const Svg = styled.svg`
   display: block;
   margin: auto;
 
-  fill: ${(props) => props.theme.default.color};
+  fill: ${(props) => props.theme.color};
   box-sizing: border-box;
   path {
     &.defaultView {
@@ -62,7 +62,7 @@ const Svg = styled.svg`
     }
     &.checkedView {
       fill: ${(props) => props.theme.formElementBackground};
-      stroke: ${(props) => props.theme.default.borderColor};
+      stroke: ${(props) => props.theme.borderColor};
     }
   }
 `;
