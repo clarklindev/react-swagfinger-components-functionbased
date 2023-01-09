@@ -34,6 +34,7 @@ import { CheckboxIconExample } from './components/Checkbox/CheckboxIconExample';
 import { TypographyExample } from './components/Typography/TypographyExample';
 import { ListExample } from './components/List/ListExample';
 import { CardExample } from './components/Card/CardExample';
+import { TableExample } from './components/Table/TableExample';
 
 const App = () => {
   const [useDarkTheme] = useState(false);
@@ -189,6 +190,7 @@ const App = () => {
 
         <Block>
           <Heading4>13. Table</Heading4>
+          <TableExample />
         </Block>
         <Block>
           <Heading4>14. Navbar</Heading4>
