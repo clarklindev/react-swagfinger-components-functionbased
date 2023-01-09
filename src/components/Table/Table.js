@@ -30,7 +30,7 @@ export const Table = ({ headers, data, configure }) => {
                     align={header['alignContent']}
                     key={dataindex}
                   >
-                    {item[header['title']]}
+                    {item[header['mapToDataAttribute']]}
                   </td>
                 );
               })}
