@@ -23,6 +23,7 @@ const BaseButton = styled.button`
   cursor: pointer;
   padding: 15px;
   height: 40px;
+  border-radius: 6px;
   ${applyStyleModifiers(MODIFIERS)};
 `;
 
