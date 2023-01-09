@@ -32,6 +32,7 @@ import { GlobalStyle, darkTheme, defaultTheme } from './utils';
 import { ToggleSwitchExample } from './components/Switch/ToggleSwitchExample';
 import { CheckboxIconExample } from './components/Checkbox/CheckboxIconExample';
 import { TypographyExample } from './components/Typography/TypographyExample';
+import { ListExample } from './components/List/ListExample';
 
 const App = () => {
   const [useDarkTheme] = useState(false);
@@ -155,6 +156,7 @@ const App = () => {
 
         <Block>
           <Heading4>10. List</Heading4>
+          <ListExample />
         </Block>
 
         <Block>
