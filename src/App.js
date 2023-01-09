@@ -33,6 +33,7 @@ import { ToggleSwitchExample } from './components/Switch/ToggleSwitchExample';
 import { CheckboxIconExample } from './components/Checkbox/CheckboxIconExample';
 import { TypographyExample } from './components/Typography/TypographyExample';
 import { ListExample } from './components/List/ListExample';
+import { CardExample } from './components/Card/CardExample';
 
 const App = () => {
   const [useDarkTheme] = useState(false);
@@ -161,6 +162,7 @@ const App = () => {
 
         <Block>
           <Heading4>11. Card</Heading4>
+          <CardExample />
         </Block>
 
         <Block>
