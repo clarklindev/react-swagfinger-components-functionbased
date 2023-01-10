@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 export const Table = ({ headers, data, configure }) => {
   return (
-    <table class='border'>
+    <table className='border'>
       <thead>
         <tr>
           {headers.map((header, headerindex) => {
             return (
               <th
-                class={configure.padding}
+                className={configure.padding}
                 key={headerindex}
                 style={{ width: header['width'] }}
                 align={header['alignHeader']}
@@ -26,7 +26,7 @@ export const Table = ({ headers, data, configure }) => {
               {headers.map((header, dataindex) => {
                 return (
                   <td
-                    class={configure.padding}
+                    className={configure.padding}
                     align={header['alignContent']}
                     key={dataindex}
                   >
