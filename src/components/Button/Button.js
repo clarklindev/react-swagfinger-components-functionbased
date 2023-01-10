@@ -11,6 +11,14 @@ const MODIFIERS = {
     padding: 15px 32px;
     height: 50px;
   `,
+
+  nopadding: () => css`
+    padding: 0px;
+  `,
+  nodimensions: () => css`
+    width: auto;
+    height: auto;
+  `,
 };
 
 const BaseButton = styled.button`
@@ -76,30 +84,34 @@ export const Button = ({
   variation = '',
   label = 'button',
   color = 'blue',
+  modifiers = '',
   size = '',
+  ...rest
 }) => {
-  const modifiers = size;
-
   switch (variation) {
     case 'contained':
       return (
-        <ContainedButton color={color} modifiers={modifiers}>
+        <ContainedButton color={color} modifiers={modifiers || size} {...rest}>
           {label}
         </ContainedButton>
       );
     case 'outlined':
       return (
-        <OutlinedButton color={color} modifiers={modifiers}>
+        <OutlinedButton color={color} modifiers={modifiers || size} {...rest}>
           {label}
         </OutlinedButton>
       );
     case 'text':
       return (
-        <TextButton color={color} modifiers={modifiers}>
+        <TextButton color={color} modifiers={modifiers || size} {...rest}>
           {label}
         </TextButton>
       );
     default:
-      return <BaseButton modifiers={modifiers}>{label}</BaseButton>;
+      return (
+        <BaseButton modifiers={modifiers || size} {...rest}>
+          {label}
+        </BaseButton>
+      );
   }
 };

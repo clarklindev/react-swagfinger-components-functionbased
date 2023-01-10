@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+//theme
+import './App.css';
+import { GlobalStyle, darkTheme, defaultTheme } from './utils';
 
 import { ThemeProvider } from 'styled-components';
 import { Heading4 } from './components/Typography/Typography';
@@ -6,6 +9,8 @@ import {
   ButtonVariationExample,
   ButtonModifiersExample,
 } from './components/Button/ButtonExample';
+import { ButtonWithIconExample } from './components/Button/ButtonWithIconExample';
+import { SnackbarExample } from './components/Snackbar/SnackbarExample';
 import {
   InputExample,
   InputReadOnlyExample,
@@ -24,11 +29,7 @@ import { CheckboxGroupExample } from './components/Checkbox/CheckboxGroupExample
 import { CounterExample } from './components/Counter/CounterExample';
 import { AccordionExample } from './components/Accordion/AccordionExample';
 import { SelectExample } from './components/Select/SelectExample';
-
 import { Block } from './components/Layout/Block';
-//theme
-import './App.css';
-import { GlobalStyle, darkTheme, defaultTheme } from './utils';
 import { ToggleSwitchExample } from './components/Switch/ToggleSwitchExample';
 import { CheckboxIconExample } from './components/Checkbox/CheckboxIconExample';
 import { TypographyExample } from './components/Typography/TypographyExample';
@@ -103,11 +104,15 @@ const App = () => {
           <div className='flex flex-col'>
             <ButtonVariationExample />
             <ButtonModifiersExample />
+            <ButtonWithIconExample />
           </div>
         </Block>
 
         <Block>
-          <Heading4>03. Icon</Heading4>
+          <Heading4>03. Snackbar</Heading4>
+          <div className='flex flex-col'>
+            <SnackbarExample />
+          </div>
         </Block>
 
         <Block>
