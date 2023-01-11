@@ -36,6 +36,8 @@ import { TypographyExample } from './components/Typography/TypographyExample';
 import { ListExample } from './components/List/ListExample';
 import { CardExample } from './components/Card/CardExample';
 import { TableExample } from './components/Table/TableExample';
+import { SliderExample } from './components/Slider/SliderExample';
+import { MultiRangeSliderExample } from './components/Slider/MultiRangeSliderExample';
 
 const App = () => {
   const [useDarkTheme] = useState(false);
@@ -175,10 +177,12 @@ const App = () => {
 
         <Block>
           <Heading4>14. Slider</Heading4>
+          <SliderExample />
         </Block>
 
         <Block>
           <Heading4>15. Multi-range slider</Heading4>
+          <MultiRangeSliderExample />
         </Block>
 
         <Block>
