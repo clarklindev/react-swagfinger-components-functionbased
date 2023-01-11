@@ -46,7 +46,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <div
-        className='flex-auto flex-col p-3'
+        className='App flex-auto flex-col p-3'
         style={{
           background: useDarkTheme
             ? darkTheme.backgroundColor

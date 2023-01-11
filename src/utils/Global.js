@@ -18,7 +18,8 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     line-height: 1.75;
-    padding:0 30px;
+    padding:0;
+    margin:0;
   }
 
   p {margin-bottom: 1rem;}
