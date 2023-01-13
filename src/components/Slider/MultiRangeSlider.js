@@ -1,6 +1,5 @@
-import { rgba } from 'polished';
-import React, { useState, useRef } from 'react';
-import styled, { css } from 'styled-components';
+import React, { useEffect, useRef, useState } from 'react';
+import styled from 'styled-components';
 import { Slider } from './Slider';
 
 const MultiRangeSliderContainer = styled.div`
@@ -19,7 +18,7 @@ const SliderTrack = styled.div.attrs((props) => ({
   },
 }))`
   position: absolute;
-  top: 5px;
+  top: 6px;
   width: 100%;
   height: 4px;
 `;
@@ -38,6 +37,33 @@ export const MultiRangeSlider = ({ sliderValues, configure }) => {
   } = configure;
 
   const containerRef = useRef();
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+
+  const [containerWidth, setContainerWidth] = useState();
+
+  useEffect(() => {
+    // Handler to call on window resize
+    function handleResize() {
+      // Set window width/height to state
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+      setContainerWidth(containerRef.current.offsetWidth);
+      // setContainerWidth(containerRef.current.offsetWidth);
+    }
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+
+    // Call handler right away so state gets updated with initial window size
+    handleResize();
+
+    // Remove event listener on cleanup
+    return () => window.removeEventListener('resize', handleResize);
+  }, []); // Empty array ensures that effect is only run on mount
 
   const restrictBoundaries = (index, value) => {
     //min
@@ -78,8 +104,6 @@ export const MultiRangeSlider = ({ sliderValues, configure }) => {
         <SliderTrack backgroundColor={backgroundColor} />
 
         {(sliderValues || []).map((sliderValue, index) => {
-          const containerWidth = containerRef.current.offsetWidth;
-
           //cater for the width of scrollbar thumbSize
           const extracutoff =
             parseInt(thumbSize) *
