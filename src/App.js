@@ -9,7 +9,7 @@ import {
   ButtonVariationExample,
   ButtonModifiersExample,
 } from './components/Button/ButtonExample';
-import { ButtonWithIconExample } from './components/Button/ButtonWithIconExample';
+import { IconButtonExample } from './components/Button/IconButtonExample';
 import { SnackbarExample } from './components/Snackbar/SnackbarExample';
 import {
   InputExample,
@@ -106,7 +106,7 @@ const App = () => {
           <div className='flex flex-col'>
             <ButtonVariationExample />
             <ButtonModifiersExample />
-            <ButtonWithIconExample />
+            <IconButtonExample />
           </div>
         </Block>
 

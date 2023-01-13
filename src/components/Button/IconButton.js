@@ -6,13 +6,13 @@ const Icon = styled.span`
   height: ${(props) => `${props.size}`};
 `;
 
-const ButtonIconWrapper = styled.div`
+const IconButtonWrapper = styled.div`
   display: inline-block;
 `;
 
-export const ButtonWithIcon = ({ size, children, onClick }) => {
+export const IconButton = ({ size, children, onClick }) => {
   return (
-    <ButtonIconWrapper>
+    <IconButtonWrapper>
       <Button
         label={<Icon size={size}>{children}</Icon>}
         color='#9d4edd'
@@ -20,6 +20,6 @@ export const ButtonWithIcon = ({ size, children, onClick }) => {
         modifiers={['nopadding', 'nodimensions']}
         onClick={onClick}
       />
-    </ButtonIconWrapper>
+    </IconButtonWrapper>
   );
 };
