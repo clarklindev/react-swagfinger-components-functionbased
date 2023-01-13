@@ -27,7 +27,6 @@ export const MultiRangeSliderExample = () => {
   };
 
   const configure2 = {
-    minDifference: 1,
     update: (index, value) => {
       //update by reference is Okay
       let temp = sliderValues2.slice();

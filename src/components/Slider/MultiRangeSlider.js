@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import { rgba } from 'polished';
+import React, { useState, useRef } from 'react';
+import styled, { css } from 'styled-components';
 import { Slider } from './Slider';
 
 const MultiRangeSliderContainer = styled.div`
@@ -23,34 +24,36 @@ const SliderTrack = styled.div.attrs((props) => ({
   height: 4px;
 `;
 
+//===================================================================================================
+
 export const MultiRangeSlider = ({ sliderValues, configure }) => {
   const {
     width = '100%',
     step = 1,
     boundaries = [0, 100],
     update,
-    minDifference = 1,
-    backgroundColor,
+    minDifference = 0,
+    thumbSize = '16px',
+    backgroundColor = 'lightgrey',
   } = configure;
 
-  const [bounds] = useState(boundaries);
-  const [minimumDistanceApart] = useState(minDifference);
+  const containerRef = useRef();
 
   const restrictBoundaries = (index, value) => {
     //min
     let min;
     if (sliderValues.length === 1 || index === 0) {
-      min = bounds[0];
+      min = boundaries[0];
     } else {
-      min = sliderValues[index - 1] + minimumDistanceApart;
+      min = sliderValues[index - 1] + minDifference;
     }
 
     let max;
     //check if single element in sliderValues || if last element in sliderValues
     if (sliderValues.length === 1 || index === sliderValues.length - 1) {
-      max = bounds[1];
+      max = boundaries[1];
     } else {
-      max = sliderValues[index + 1] - minimumDistanceApart;
+      max = sliderValues[index + 1] - minDifference;
     }
 
     if (value <= min) {
@@ -70,24 +73,38 @@ export const MultiRangeSlider = ({ sliderValues, configure }) => {
 
   //----------------------------------------------------------------------------------
   return (
-    <MultiRangeSliderContainer width={width}>
-      <SliderWrapper className='flex align-center'>
+    <MultiRangeSliderContainer ref={containerRef} style={{ width }}>
+      <SliderWrapper className='flex flex-col gap-y-5'>
         <SliderTrack backgroundColor={backgroundColor} />
 
         {(sliderValues || []).map((sliderValue, index) => {
+          const containerWidth = containerRef.current.offsetWidth;
+
+          //cater for the width of scrollbar thumbSize
+          const extracutoff =
+            parseInt(thumbSize) *
+            (sliderValues?.length && sliderValues.length - 1);
+
+          const adjustedWidth = containerWidth - extracutoff;
+
           const configure = {
             step: step,
             index: index,
             onChange: onChangeHandler,
-            min: bounds[0],
-            max: bounds[1],
-            trackClickable: false, //you want to leave this false for multirange input
-            hideTrack: true, //you want to leave this on for multirange input - <SliderTrack /> replaces this
+            min: boundaries[0],
+            max: boundaries[1],
+            width: adjustedWidth + 'px',
+            //x position to place the <Slider/>, you cant see this of each individual slider if <Slider className="absolute">. only when className = "" and hideTrack="false"
+            offset: parseInt(thumbSize) * index + 'px',
+            trackClickable: false, //you want to leave this FALSE for multirange input
+            hideTrack: true, //you want to leave this as TRUE for multirange input - <SliderTrack /> replaces this
+            thumbSize: thumbSize,
+            backgroundColor,
           };
 
           return (
             <Slider
-              className='absolute' //you want to leave this absolute for multirange input
+              className='absolute' //you want to leave this absolute for multirange input so they stack ontop of each other, for testing remove 'absolute class'              key={index}
               key={index}
               savedData={sliderValue}
               index={index}
