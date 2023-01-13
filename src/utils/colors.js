@@ -30,7 +30,7 @@ export const neutral = {
   300: '#d0d0d0',
   400: '#737581',
   500: '#4a4b53',
-  600: '#000000',
+  600: '#1d1d1d',
 };
 
 export const status = {

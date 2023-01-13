@@ -53,7 +53,7 @@ export const darkTheme = {
   name: 'darkTheme',
   ...commonStyles,
   //actual page background
-  color: neutral[100],
+  color: neutral[300],
   backgroundColor: neutral[600],
 
   //neutral component color
