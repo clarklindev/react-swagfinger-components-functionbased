@@ -8,8 +8,8 @@ import { Heading4 } from './components/Typography/Typography';
 import {
   ButtonVariationExample,
   ButtonModifiersExample,
+  ButtonWithIconExample,
 } from './components/Button/ButtonExample';
-import { IconButtonExample } from './components/Button/IconButtonExample';
 import { SnackbarExample } from './components/Snackbar/SnackbarExample';
 import {
   InputExample,
@@ -39,8 +39,10 @@ import { TableExample } from './components/Table/TableExample';
 import { SliderExample } from './components/Slider/SliderExample';
 import { MultiRangeSliderExample } from './components/Slider/MultiRangeSliderExample';
 
+import { ToggleSwitch } from './components/Switch/ToggleSwitch';
+
 const App = () => {
-  const [useDarkTheme] = useState(false);
+  const [useDarkTheme, setUseDarkTheme] = useState(false);
   const [theme] = useState(useDarkTheme ? darkTheme : defaultTheme);
 
   return (
@@ -52,73 +54,45 @@ const App = () => {
             ? darkTheme.backgroundColor
             : defaultTheme.backgroundColor,
           color: useDarkTheme ? darkTheme.color : defaultTheme.color,
-          height: '100vh',
         }}
       >
-        {/* <button
-          style={{
-            margin: '0 16px 24px',
-            padding: '8px',
-            color: useDarkTheme
-              ? darkTheme.default.colorInverted
-              : defaultTheme.default.color,
-            backgroundColor: useDarkTheme
-              ? darkTheme.default.backgroundColorInverted
-              : defaultTheme.default.backgroundColor,
-            cursor: 'pointer'
-          }}
-          onClick={() => {
-            console.log('set to dark theme');
-            setUseDarkTheme(true);
-          }}
-        >
-          Dark theme
-        </button>
-
-        <button
-          style={{
-            margin: '0 16px 24px',
-            padding: '8px',
-            color: useDarkTheme
-              ? darkTheme.default.colorInverted
-              : defaultTheme.default.color,
-            backgroundColor: useDarkTheme
-              ? darkTheme.default.backgroundColorInverted
-              : defaultTheme.default.backgroundColor,
-            cursor: 'pointer'
-          }}
-          onClick={() => {
-            console.log('set to default theme');
-            setUseDarkTheme(false);
-          }}
-        >
-          Default theme
-        </button> */}
-
         {/* <h1 class="font-bold">SWAGFINGER UI</h1> */}
-        <Block className='block'>
-          <Heading4 as='h2'>01. Typography</Heading4>
+        <Block>
+          <Heading4 as='h2'>01. Dark/light mode</Heading4>
+          <ToggleSwitch
+            savedData={useDarkTheme}
+            configure={{
+              label: 'label',
+              onChange: (event) => {
+                setUseDarkTheme(event.target.checked);
+              },
+            }}
+          />
+        </Block>
+
+        <Block>
+          <Heading4 as='h2'>02. Typography</Heading4>
           <TypographyExample />
         </Block>
 
-        <Block className='block'>
-          <Heading4 as='h2'>02. Buttons</Heading4>
+        <Block>
+          <Heading4 as='h2'>03. Buttons</Heading4>
           <div className='flex flex-col'>
             <ButtonVariationExample />
             <ButtonModifiersExample />
-            <IconButtonExample />
+            <ButtonWithIconExample />
           </div>
         </Block>
 
-        <Block className='block'>
-          <Heading4 as='h2'>03. Snackbar</Heading4>
+        <Block>
+          <Heading4 as='h2'>04. Snackbar</Heading4>
           <div className='flex flex-col'>
             <SnackbarExample />
           </div>
         </Block>
 
-        <Block className='block'>
-          <Heading4 as='h2'>04. Input</Heading4>
+        <Block>
+          <Heading4 as='h2'>05. Input</Heading4>
           <div className='flex flex-col'>
             <InputExample />
             <InputReadOnlyExample />
@@ -129,26 +103,22 @@ const App = () => {
             <InputSearchExample />
           </div>
         </Block>
-        <Block className='block'>
-          <Heading4 as='h2'>05. Multi-input</Heading4>
+        <Block>
+          <Heading4 as='h2'>06. Multi-input</Heading4>
           <div className='flex flex-col'></div>
         </Block>
-        <Block className='block'>
-          <Heading4 as='h2'>06. Multi-input Objects</Heading4>
+        <Block>
+          <Heading4 as='h2'>07. Multi-input Objects</Heading4>
           <div className='flex flex-col'></div>
         </Block>
-        <Block className='block'>
-          <Heading4 as='h2'>07. Select</Heading4>
+        <Block>
+          <Heading4 as='h2'>08. Select</Heading4>
           <SelectExample />
         </Block>
-
-        <Block className='block'>
-          <Heading4 as='h2'>08. Multi-select</Heading4>
-        </Block>
-        <Block className='block'>
+        <Block>
           <Heading4 as='h2'>09. Multi-select with input</Heading4>
         </Block>
-        <Block className='block'>
+        <Block>
           <Heading4 as='h2'>10. Radio Button</Heading4>
           <div className='flex flex-col'>
             <RadioButtonExample />
@@ -156,7 +126,7 @@ const App = () => {
           </div>
         </Block>
 
-        <Block className='block'>
+        <Block>
           <Heading4 as='h2'>11. Checkbox</Heading4>
           <div className='flex flex-col'>
             <CheckboxExample />
@@ -165,42 +135,42 @@ const App = () => {
           </div>
         </Block>
 
-        <Block className='block'>
+        <Block>
           <Heading4 as='h2'>12. Counter</Heading4>
           <CounterExample />
         </Block>
 
-        <Block className='block'>
+        <Block>
           <Heading4 as='h2'>13. ToggleSwitch </Heading4>
           <ToggleSwitchExample />
         </Block>
 
-        <Block className='block'>
+        <Block>
           <Heading4 as='h2'>14. Slider</Heading4>
           <SliderExample />
         </Block>
 
-        <Block className='block'>
+        <Block>
           <Heading4 as='h2'>15. Multi-range slider</Heading4>
           <MultiRangeSliderExample />
         </Block>
 
-        <Block className='block'>
+        <Block>
           <Heading4 as='h2'>16. Accordion</Heading4>
           <AccordionExample />
         </Block>
 
-        <Block className='block'>
+        <Block>
           <Heading4 as='h2'>17. List</Heading4>
           <ListExample />
         </Block>
 
-        <Block className='block'>
+        <Block>
           <Heading4 as='h2'>18. Card</Heading4>
           <CardExample />
         </Block>
 
-        <Block className='block'>
+        <Block>
           <Heading4 as='h2'>19. Layout</Heading4>
           <div className='flex items-start flex-col'>
             <a
@@ -222,40 +192,40 @@ const App = () => {
           </div>
         </Block>
 
-        <Block className='block'>
+        <Block>
           <Heading4 as='h2'>20. Table</Heading4>
           <TableExample />
         </Block>
-        <Block className='block'>
+        <Block>
           <Heading4 as='h2'>21. Navbar</Heading4>
         </Block>
-        <Block className='block'>
+        <Block>
           <Heading4 as='h2'>22. Link</Heading4>
         </Block>
-        <Block className='block'>
+        <Block>
           <Heading4 as='h2'>23. Breadcrumbs</Heading4>
         </Block>
-        <Block className='block'>
+        <Block>
           <Heading4 as='h2'>24. Dialog (aka Modal)</Heading4>
         </Block>
-        <Block className='block'>
+        <Block>
           <Heading4 as='h2'>25. Progress</Heading4>
         </Block>
-        <Block className='block'>
+        <Block>
           <Heading4 as='h2'>26. Loading Button</Heading4>
         </Block>
-        <Block className='block'>
+        <Block>
           <Heading4 as='h2'>27. Timeline</Heading4>
         </Block>
-        <Block className='block'>
+        <Block>
           <Heading4 as='h2'>28. Upload</Heading4>
         </Block>
-        <Block className='block'>
+        <Block>
           <Heading4 as='h2'>
             29. DatePicker, TimePicker, DateTimePicker
           </Heading4>
         </Block>
-        <Block className='block'>
+        <Block>
           <Heading4 as='h2'>30. DateRangePicker</Heading4>
         </Block>
       </div>

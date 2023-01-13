@@ -6,13 +6,13 @@ export const GlobalStyle = createGlobalStyle`
   html{
     font-size: font-size: 100%;/*16px*/
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
   }
   
   *, *:before, *:after{
     box-sizing: inherit;
   }
-
-  // typography
 
   body {
     font-family: 'Roboto', sans-serif;
@@ -20,6 +20,7 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.75;
     padding:0;
     margin:0;
+    
   }
 
   p {margin-bottom: 1rem;}

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const HeadingBase = styled.div`
-  margin: 1rem 0 1rem;
+  margin: 0 0 1rem;
   line-height: 1.3;
   font-weight: 400;
   font-family: 'Roboto', sans-serif;
