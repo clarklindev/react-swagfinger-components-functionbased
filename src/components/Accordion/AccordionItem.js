@@ -9,12 +9,13 @@ const AccordionItemTitle = styled.div`
   box-sizing: border-box;
   max-height: 50px;
   background-color: ${(props) => props.theme.backgroundColor};
-  padding: 15px;
+  padding: ${(props) => props.theme.layout.padding};
   border-radius: 8px;
   cursor: pointer;
   display: flex;
   flex-grow: 1;
   justify-content: space-between;
+  align-items: center;
 
   &.show {
     border-top: 1px solid ${(props) => props.theme.borderColor};
@@ -70,25 +71,21 @@ const AccordionItemContent = styled.div`
   }
 `;
 
-export const AccordionItem = ({ configure, savedData }) => {
-  const { showing, index, render } = configure;
-  const info = savedData;
-
+//AccordionItem doesnt know about anything happening on the outside (self contained)
+export const AccordionItem = ({ data, isOpen, onClick }) => {
   return (
     <AccordionItemContainer className={`AccordionItem`}>
       <AccordionItemTitle
-        className={`AccordionItemTitle ${showing ? 'show' : 'hide'}`}
-        onClick={() => {
-          render(index);
-        }}
+        onClick={(index) => onClick(index)}
+        className={['AccordionItemTitle', isOpen ? 'show' : 'hide'].join(' ')}
       >
-        {info.title}
-        {showing ? expandIcon : collapseIcon}
+        {data.title}
+        {isOpen ? expandIcon : collapseIcon}
       </AccordionItemTitle>
       <AccordionItemContent
-        className={`AccordionItemContent ${showing ? 'show' : 'hide'}`}
+        className={['AccordionItemContent', isOpen ? 'show' : 'hide'].join(' ')}
       >
-        {info.body}
+        {data.body}
       </AccordionItemContent>
     </AccordionItemContainer>
   );

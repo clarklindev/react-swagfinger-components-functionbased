@@ -36,10 +36,9 @@ const SelectContainer = styled.div`
 
 export const Select = ({ savedData, configure, children }) => {
   const { onChange } = configure;
-  const value = savedData;
   return (
     <SelectContainer>
-      <select value={value} onChange={onChange}>
+      <select value={savedData} onChange={onChange}>
         {children
           ? children.map((each) => {
               return each;

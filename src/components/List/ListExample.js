@@ -3,7 +3,7 @@ import { List } from './List';
 import { ListItem } from './ListItem';
 
 export const ListExample = () => {
-  const [savedData, setSavedData] = useState([]);
+  const [data, setData] = useState();
 
   useEffect(() => {
     const DATA = [
@@ -26,26 +26,28 @@ export const ListExample = () => {
         email: 'dmartinson2@creativecommons.org',
       },
     ];
-    setSavedData(DATA);
+    setData(DATA);
   }, []);
 
   return (
     <>
-      <List>
-        {savedData.map(({ id, first_name, last_name, email }, index) => {
-          return (
-            <ListItem
-              key={id}
-              data={{
-                index,
-                firstname: first_name,
-                lastname: last_name,
-                email,
-              }}
-            />
-          );
-        })}
-      </List>
+      {data && (
+        <List>
+          {data.map(({ id, first_name, last_name, email }, index) => {
+            return (
+              <ListItem
+                key={id}
+                data={{
+                  index,
+                  firstname: first_name,
+                  lastname: last_name,
+                  email,
+                }}
+              />
+            );
+          })}
+        </List>
+      )}
     </>
   );
 };

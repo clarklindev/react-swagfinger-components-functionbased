@@ -1,15 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Select } from './Select';
 
 export const SelectExample = () => {
+  const [data, setData] = useState([]);
   const [savedData, setSavedData] = useState();
 
-  const data = [
-    { value: 'option0', text: 'Select an option' },
-    { value: 'option1', text: 'Option 1' },
-    { value: 'option2', text: 'Option 2' },
-    { value: 'option3', text: 'Option 3' },
-  ];
+  useEffect(() => {
+    setData([
+      { value: 'option0', text: 'Select an option' },
+      { value: 'option1', text: 'Option 1' },
+      { value: 'option2', text: 'Option 2' },
+      { value: 'option3', text: 'Option 3' },
+    ]);
+  }, []);
 
   const configure = {
     onChange: (event) => {

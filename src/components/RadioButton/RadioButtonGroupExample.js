@@ -3,7 +3,7 @@ import { RadioButtonGroup } from './RadioButtonGroup';
 import { Heading6 } from '../Typography/Typography';
 
 export const RadioButtonGroupExample = () => {
-  // radioOptions: moved outside of configure object - possibility that data is pulled, eg. questions from backend async call
+  // radioOptions: moved outside of configure object - possibility that savedData is pulled, eg. questions from backend async call
   const options = [
     { label: 'a', value: 'A' },
     { label: 'b', value: 'B' },

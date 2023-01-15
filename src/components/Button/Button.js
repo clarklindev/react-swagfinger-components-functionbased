@@ -1,45 +1,26 @@
 import styled, { css } from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
-
-const MODIFIERS = {
-  small: () => css`
-    padding: 8px;
-    height: 30px;
-    font-size: 1rem;
-  `,
-
-  large: () => css`
-    padding: 15px 32px;
-    height: 50px;
-    font-size: 1.5rem;
-  `,
-
-  nopadding: () => css`
-    padding: 0px;
-  `,
-  nodimensions: () => css`
-    width: auto;
-    height: auto;
-  `,
-};
+import { MODIFIERS } from './modifiers';
 
 const Icon = styled.div`
   width: ${(props) => props.iconSize};
   height: ${(props) => props.iconSize};
-  svg {
-    width: ${(props) => props.iconSize};
-    height: ${(props) => props.iconSize};
+  // whatever is passed through as children
+  > * {
+    width: 100%;
+    height: 100%;
   }
 `;
 
 const BaseButton = styled.button`
   box-sizing: border-box;
-  border: 1px solid ${(props) => props.theme.base.componentBorderColor};
-  background-color: ${(props) => props.theme.base.componentBackgroundColor};
-  color: ${(props) => props.theme.base.componentColor};
+  border: 1px solid ${(props) => props.theme.button.base.borderColor};
+  background-color: ${(props) => props.theme.button.base.backgroundColor};
+  color: ${(props) => props.theme.button.base.color};
   outline: none;
   display: flex;
   align-items: center;
+  height: auto;
   cursor: pointer;
   padding: 10px 15px;
   border-radius: 6px;
@@ -49,32 +30,32 @@ const BaseButton = styled.button`
 const ContainedButton = styled(BaseButton)`
   border: none;
   background-color: ${(props) =>
-    props.theme[props.color]
-      ? props.theme[props.color]
+    props.theme.color[props.color]
+      ? props.theme.color[props.color]
       : props.color
       ? props.color
-      : props.theme.button.contained.componentBackgroundColor};
-  color: ${(props) => props.theme.button.contained.componentColor};
+      : props.theme.button.contained.backgroundColor};
+  color: ${(props) => props.theme.button.contained.color};
   ${applyStyleModifiers(MODIFIERS)};
 `;
 
 const OutlinedButton = styled(BaseButton)`
   border: 1px solid
     ${(props) =>
-      props.theme[props.color]
-        ? props.theme[props.color]
+      props.theme.color[props.color]
+        ? props.theme.color[props.color]
         : props.color
         ? props.color
-        : props.theme.button.outlined.componentBorderColor};
+        : props.theme.button.outlined.borderColor};
 
   background-color: transparent;
 
   color: ${(props) =>
-    props.theme[props.color]
-      ? props.theme[props.color]
+    props.theme.color[props.color]
+      ? props.theme.color[props.color]
       : props.color
       ? props.color
-      : props.theme.button.outlined.componentColor};
+      : props.theme.button.outlined.color};
 
   &:disabled {
   }
@@ -91,11 +72,11 @@ const TextButton = styled(BaseButton)`
   border: none;
   background: none;
   color: ${(props) =>
-    props.theme[props.color]
-      ? props.theme[props.color]
+    props.theme.color[props.color]
+      ? props.theme.color[props.color]
       : props.color
       ? props.color
-      : props.theme.button.text.componentColor};
+      : props.theme.button.text.color};
   &:disabled {
   }
 
@@ -110,8 +91,9 @@ const TextButton = styled(BaseButton)`
 export const Button = ({
   variation = '',
   label = '',
+  labelDirection = 'right',
   color = '',
-  modifiers = '',
+  modifiers = [],
   size = '',
   icon = '',
   iconSize = '',
@@ -119,17 +101,34 @@ export const Button = ({
   className = '',
   ...rest
 }) => {
+  let labelClasses = '';
+  switch (labelDirection) {
+    case 'top':
+      labelClasses = 'flex flex-col';
+      break;
+    case 'bottom':
+      labelClasses = 'flex flex-col-reverse';
+      break;
+    case 'left':
+      labelClasses = 'flex flex-row-reverse';
+      break;
+    default:
+    case 'right':
+      labelClasses = 'flex flex-row';
+      break;
+  }
+
   switch (variation) {
     case 'contained':
       return (
         <ContainedButton
           color={color}
           modifiers={[...modifiers, size]}
-          className={className}
+          className={[labelClasses, className].join(' ')}
           {...rest}
         >
           {icon && <Icon iconSize={iconSize}>{icon}</Icon>}
-          {label ? label : null}
+          {label}
         </ContainedButton>
       );
     case 'outlined':
@@ -137,11 +136,11 @@ export const Button = ({
         <OutlinedButton
           color={color}
           modifiers={[...modifiers, size]}
-          className={className}
+          className={[labelClasses, className].join(' ')}
           {...rest}
         >
           {icon && <Icon iconSize={iconSize}>{icon}</Icon>}
-          {label ? label : null}
+          {label}
         </OutlinedButton>
       );
     case 'text':
@@ -149,22 +148,22 @@ export const Button = ({
         <TextButton
           color={color}
           modifiers={[...modifiers, size]}
-          className={className}
+          className={[labelClasses, className].join(' ')}
           {...rest}
         >
           {icon && <Icon iconSize={iconSize}>{icon}</Icon>}
-          {label ? label : null}
+          {label}
         </TextButton>
       );
     default:
       return (
         <BaseButton
-          modifiers={modifiers || size}
-          className={className}
+          modifiers={[...modifiers, size]}
+          className={[labelClasses, className].join(' ')}
           {...rest}
         >
-          {icon ? <Icon iconSize={iconSize}>{icon}</Icon> : null}
-          {label ? label : null}
+          {icon && <Icon iconSize={iconSize}>{icon}</Icon>}
+          {label}
         </BaseButton>
       );
   }

@@ -1,54 +1,42 @@
-import React, { useState } from 'react';
-import { AccordionItem } from './AccordionItem';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const AccordionContainer = styled.div`
   display: block;
 `;
 
-export const Accordion = ({ savedData, configure }) => {
-  const { allowMultiOpen = false } = configure;
+export const Accordion = ({ render, allowMultiOpen }) => {
+  const [activeItems, setActiveItems] = useState(); //set initial active items // activeItems holds item indexs to show
+  useEffect(() => {
+    setActiveItems([]);
+  }, []);
 
-  // activeItems holds item indexs to show
-  const [activeItems, setActiveItems] = useState([]); //set initial active items
+  const handleClick = (index) => {
+    const found = activeItems.some((item) => item === index);
 
-  const trackIsOpen = (index) => {
-    if (allowMultiOpen === true) {
-      //if index is in the activeItems array... remove it
-      if (activeItems.some((item) => item === index)) {
+    if (allowMultiOpen) {
+      if (found) {
+        //if index is in the activeItems array... remove it
         setActiveItems(activeItems.filter((item) => item !== index));
-      }
-      //add to activeItems
-      else {
+      } else {
+        //add to activeItems
         setActiveItems([...activeItems, index]);
       }
     } else {
-      setActiveItems([index]);
+      //only allowed one open at a time
+      if (found) {
+        //remove it
+        setActiveItems([]);
+      } else {
+        //add it
+        setActiveItems([index]);
+      }
     }
-  };
-
-  //if its in the activeItems array
-  const shouldShow = (index) => {
-    return activeItems.some((item) => item === index);
   };
 
   return (
     <AccordionContainer className={'Accordion'}>
-      {savedData.map((item, index) => {
-        return (
-          <AccordionItem
-            key={`AccordionItem_${index}`}
-            configure={{
-              index: index,
-              render: (index) => {
-                trackIsOpen(index);
-              },
-              showing: shouldShow(index),
-            }}
-            savedData={item}
-          />
-        );
-      })}
+      {render({ activeItems, handleClick })}
     </AccordionContainer>
   );
 };

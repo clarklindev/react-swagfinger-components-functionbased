@@ -80,3 +80,31 @@ https://redux.js.org/tutorials/fundamentals/part-8-modern-redux
 ## Typography
 
 https://type-scale.com/
+
+## Component properties
+
+- using configure={} allows stabilizes the properties a component can take in and creates familiarity on structure
+- 'configure' we place all properties/functions we want pass to the component in the configure object
+- 'data' (can be from async call) should pass to data property.
+- 'savedData' is data that we store for this component which is handled outside of the component in state
+
+## updates
+
+2023-01-15
+
+- fixed theme in App.js for dark mode (default) / default mode
+- Accordion - rework to decouple Accordion children using render props
+- Button
+  - moved modifiers outside to its own file (easier to reference)
+  - <Icon> children given size (not only to svg)
+  - with icon - labelDirection
+- Card - added dropshadow example (modifiers="dropshadow")
+  - modifiers={Array.isArray(modifiers) ? [...modifiers] : modifiers}
+- Input - styling reads from theme
+  - child components imported inherit dimensions
+- Radio - moved RadioGroup data outside of configure obj
+  - data initialized inside useEffect()
+- Snackbar - conform to jsx camelCase
+- Typography - moved Header sizes into theme
+- removed default Counter redux code
+- themes moved to utils/themes

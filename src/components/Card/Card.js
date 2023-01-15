@@ -1,6 +1,7 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-
+import styled from 'styled-components';
+import { applyStyleModifiers } from 'styled-components-modifiers';
+import { MODIFIERS } from './modifiers';
 const CardContainer = styled.div`
   border: ${(props) =>
     props.borderColor
@@ -10,12 +11,8 @@ const CardContainer = styled.div`
   border-radius: ${(props) => props.borderRadius};
   width: ${(props) => props.width};
   height: ${(props) => props.height};
-  filter: ${(props) =>
-    props.shadow &&
-    css`
-      drop-shadow(0px 0px 5px #DDD);
-    `};
   padding: 15px;
+  ${applyStyleModifiers(MODIFIERS)};
 `;
 
 export const Card = ({
@@ -24,8 +21,8 @@ export const Card = ({
   borderRadius = '10px',
   width = '250px',
   height = '300px',
-  shadow = false,
   children,
+  modifiers = [],
 }) => {
   return (
     <>
@@ -35,7 +32,7 @@ export const Card = ({
         borderRadius={borderRadius}
         width={width}
         height={height}
-        shadow={shadow}
+        modifiers={Array.isArray(modifiers) ? [...modifiers] : modifiers}
       >
         {children}
       </CardContainer>

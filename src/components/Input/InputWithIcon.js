@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 
@@ -15,6 +15,7 @@ const MODIFIERS = {
 };
 
 const InputWithIconContainer = styled.div`
+  max-height: ${(props) => props.maxHeight};
   box-sizing: border-box;
   display: flex;
   border: 1px solid ${(props) => props.theme.borderColor};
@@ -30,8 +31,8 @@ const Divider = styled.div`
 `;
 
 const ButtonWithIcon = styled.div`
-  width: 50px;
-  height: 50px;
+  width: inherit;
+  height: inherit;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,12 +41,13 @@ const ButtonWithIcon = styled.div`
 `;
 
 const Icon = styled.div`
-  width: 50px;
-  height: 50px;
+  width: inherit;
+  height: inherit;
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
+  padding: ${(props) => props.theme.layout.padding};
 
   // whatever is passed through as children
   > * {
@@ -57,6 +59,7 @@ const Icon = styled.div`
 
 export const InputWithIcon = ({ configure, savedData, children }) => {
   const {
+    size = '40px',
     iconPosition = 'right',
     hasDivider = true,
     iconClickable = true,
@@ -67,6 +70,11 @@ export const InputWithIcon = ({ configure, savedData, children }) => {
     modifiers = [],
   } = configure;
 
+  const [maxHeight, setMaxHeight] = useState();
+  useEffect(() => {
+    setMaxHeight(size);
+  }, [size]);
+
   const defaults = {
     localmodifiers: [
       iconPosition === 'left' ? 'embeddedright' : 'embeddedleft',
@@ -75,7 +83,10 @@ export const InputWithIcon = ({ configure, savedData, children }) => {
   };
 
   return (
-    <InputWithIconContainer modifiers={[...defaults.localmodifiers]}>
+    <InputWithIconContainer
+      modifiers={[...defaults.localmodifiers]}
+      maxHeight={maxHeight}
+    >
       {/* checks if left position */}
       {iconPosition === 'left' ? (
         // then checks if iconClickable

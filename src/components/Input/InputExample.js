@@ -12,10 +12,10 @@ export const InputExample = () => {
     },
   };
   return (
-    <>
+    <div className='flex flex-col mb-10'>
       <Heading6>Input</Heading6>
       <Input savedData={savedData} configure={configure} />
-    </>
+    </div>
   );
 };
 
@@ -32,10 +32,10 @@ export const InputReadOnlyExample = () => {
   };
 
   return (
-    <>
+    <div className='flex flex-col mb-10'>
       <Heading6>Read-only</Heading6>
       <Input savedData={savedData} configure={configure} />
-    </>
+    </div>
   );
 };
 
@@ -51,9 +51,9 @@ export const InputNoBorderExample = () => {
     },
   };
   return (
-    <>
+    <div className='flex flex-col mb-10'>
       <Heading6>No border</Heading6>
       <Input savedData={savedData} configure={configure} />
-    </>
+    </div>
   );
 };

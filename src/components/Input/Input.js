@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 
@@ -21,13 +21,12 @@ const StyledInput = styled.input.attrs((props) => ({
   type: props.type,
 }))`
   box-sizing: border-box;
-  max-height: 50px;
-
-  border: 1px solid ${(props) => props.theme.borderColor};
-  background-color: ${(props) => props.theme.backgroundColor};
-  color: ${(props) => props.theme.color};
-  padding: 15px;
-  border-radius: 8px;
+  max-height: 40px;
+  border: 1px solid ${(props) => props.theme.input.borderColor};
+  background-color: ${(props) => props.theme.input.backgroundColor};
+  color: ${(props) => props.theme.input.color};
+  padding: ${(props) => props.theme.layout.padding};
+  border-radius: ${(props) => props.theme.borderRadius};
   width: 100%;
   cursor: text;
   display: flex;

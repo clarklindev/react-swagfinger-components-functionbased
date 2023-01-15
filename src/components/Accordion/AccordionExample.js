@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Accordion } from './Accordion';
+import { AccordionItem } from './AccordionItem';
 
 export const AccordionExample = () => {
-  const [savedData, setSavedData] = useState([]);
-
-  const configure = {
-    allowMultiOpen: true,
-  };
+  const [data, setData] = useState([]); //savedData is when we are saving data, 'data' is presented data that is not updated, we 'setData' on init with useEffect()
+  const [allowMultiOpen, setAllowMultiOpen] = useState();
 
   useEffect(() => {
-    //useEffect specifically for Accordion
-    let data = [
+    setData([
       {
         title: 'helloworld',
         body: 'this is my first post',
@@ -19,17 +16,36 @@ export const AccordionExample = () => {
         title: 'rainbow',
         body: 'rainbows are amazing',
       },
-    ];
+    ]);
 
-    setSavedData(data);
+    setAllowMultiOpen(true);
+
     // async method:
     // const getAccordionData = async ()=>{
     //   let data = await fetch('https://jsonplaceholder.typicode.com/users/1/posts?_limit=10');
     //   const json = await data.json();
-    //   setAccordionData(json);
+    //   setData(json);
     // }
     // getAccordionData();
   }, []);
 
-  return <Accordion savedData={savedData} configure={configure} />;
+  return (
+    <Accordion
+      allowMultiOpen={allowMultiOpen}
+      render={({ activeItems, handleClick }) => {
+        return data.map((item, index) => {
+          return (
+            <AccordionItem
+              key={`AccordionItem_${index}`}
+              onClick={() => {
+                handleClick(index);
+              }}
+              data={item}
+              isOpen={activeItems.some((item) => item === index)}
+            />
+          );
+        });
+      }}
+    />
+  );
 };

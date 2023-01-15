@@ -71,12 +71,86 @@ export const ButtonWithIconExample = () => {
     <div className='flex flex-col'>
       <Heading6>Button with icon</Heading6>
 
-      <div className='flex flex-row mb-3 gap-x-3'>
+      {/* aligned with tailwindcss - flex-row items are auto-stretch so for them to be variable height, need to use items-end or items-start */}
+      <div className='flex flex-row items-end mb-3 gap-x-3'>
         <Button
           variation='contained'
           label='Contained'
           iconSize='30px'
           color='red'
+          labelDirection='right'
+          icon={
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              strokeWidth={1.5}
+              stroke='currentColor'
+              className='w-6 h-6'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                d='M4.5 12.75l6 6 9-13.5'
+              />
+            </svg>
+          }
+        />
+
+        <Button
+          variation='contained'
+          label='Contained'
+          iconSize='30px'
+          color='red'
+          labelDirection='top'
+          icon={
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              strokeWidth={1.5}
+              stroke='currentColor'
+              className='w-6 h-6'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                d='M4.5 12.75l6 6 9-13.5'
+              />
+            </svg>
+          }
+        />
+
+        <Button
+          variation='contained'
+          label='Contained'
+          iconSize='30px'
+          color='red'
+          labelDirection='bottom'
+          icon={
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              strokeWidth={1.5}
+              stroke='currentColor'
+              className='w-6 h-6'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                d='M4.5 12.75l6 6 9-13.5'
+              />
+            </svg>
+          }
+        />
+
+        <Button
+          variation='contained'
+          label='Contained'
+          iconSize='30px'
+          color='red'
+          labelDirection='left'
           icon={
             <svg
               xmlns='http://www.w3.org/2000/svg'

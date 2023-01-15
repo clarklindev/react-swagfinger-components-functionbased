@@ -76,7 +76,7 @@ const Svg = () => {
   );
 };
 
-// no saved data... (*no data to fetch)
+// no saved savedData... (*no savedData to fetch)
 export const InputSearch = ({ configure, savedData }) => {
   const {
     iconPosition = 'left',

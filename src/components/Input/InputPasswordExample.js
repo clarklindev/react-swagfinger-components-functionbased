@@ -13,9 +13,9 @@ export const InputPasswordExample = () => {
   };
 
   return (
-    <>
+    <div className='flex flex-col mb-10'>
       <Heading6>Password</Heading6>
       <InputPassword savedData={savedData} configure={configure} />
-    </>
+    </div>
   );
 };
