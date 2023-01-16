@@ -8,20 +8,20 @@ const HeadingBase = styled.div`
 `;
 
 export const Heading1 = styled(HeadingBase)`
-  font-size: ${(props) => props.theme.typography.h1};
+  font-size: ${(props) => props.theme.typography.h1.fontSize};
 `;
 export const Heading2 = styled(HeadingBase)`
-  font-size: ${(props) => props.theme.typography.h2};
+  font-size: ${(props) => props.theme.typography.h2.fontSize};
 `;
 export const Heading3 = styled(HeadingBase)`
-  font-size: ${(props) => props.theme.typography.h3};
+  font-size: ${(props) => props.theme.typography.h3.fontSize};
 `;
 export const Heading4 = styled(HeadingBase)`
-  font-size: ${(props) => props.theme.typography.h4};
+  font-size: ${(props) => props.theme.typography.h4.fontSize};
 `;
 export const Heading5 = styled(HeadingBase)`
-  font-size: ${(props) => props.theme.typography.h5};
+  font-size: ${(props) => props.theme.typography.h5.fontSize};
 `;
 export const Heading6 = styled(HeadingBase)`
-  font-size: ${(props) => props.theme.typography.h6};
+  font-size: ${(props) => props.theme.typography.h6.fontSize};
 `;
