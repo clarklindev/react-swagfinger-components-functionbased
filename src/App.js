@@ -110,23 +110,19 @@ const App = () => {
               <InputSearchExample />
             </div>
           </Block>
+
           <Block>
-            <Heading4 as='h2'>06. Multi-input</Heading4>
-            <div className='flex flex-col'></div>
-          </Block>
-          <Block>
-            <Heading4 as='h2'>07. Multi-input Objects</Heading4>
-            <div className='flex flex-col'></div>
-          </Block>
-          <Block>
-            <Heading4 as='h2'>08. Select</Heading4>
+            <Heading4 as='h2'>06. Select</Heading4>
             <SelectExample />
           </Block>
+
           <Block>
-            <Heading4 as='h2'>09. Multi-select with input</Heading4>
+            <Heading4 as='h2'>07. Counter</Heading4>
+            <CounterExample />
           </Block>
+
           <Block>
-            <Heading4 as='h2'>10. Radio Button</Heading4>
+            <Heading4 as='h2'>08. Radio Button</Heading4>
             <div className='flex flex-col'>
               <RadioButtonExample />
               <RadioButtonGroupExample />
@@ -134,7 +130,7 @@ const App = () => {
           </Block>
 
           <Block>
-            <Heading4 as='h2'>11. Checkbox</Heading4>
+            <Heading4 as='h2'>09. Checkbox</Heading4>
             <div className='flex flex-col'>
               <CheckboxExample />
               <CheckboxGroupExample />
@@ -143,37 +139,32 @@ const App = () => {
           </Block>
 
           <Block>
-            <Heading4 as='h2'>12. Counter</Heading4>
-            <CounterExample />
-          </Block>
-
-          <Block>
-            <Heading4 as='h2'>13. ToggleSwitch </Heading4>
+            <Heading4 as='h2'>10. ToggleSwitch </Heading4>
             <ToggleSwitchExample />
           </Block>
 
           <Block>
-            <Heading4 as='h2'>14. Slider</Heading4>
+            <Heading4 as='h2'>11. Slider</Heading4>
             <SliderExample />
           </Block>
 
           <Block>
-            <Heading4 as='h2'>15. Multi-range slider</Heading4>
+            <Heading4 as='h2'>12. Multi-range slider</Heading4>
             <MultiRangeSliderExample />
           </Block>
 
           <Block>
-            <Heading4 as='h2'>16. Accordion</Heading4>
+            <Heading4 as='h2'>13. Accordion</Heading4>
             <AccordionExample />
           </Block>
 
           <Block>
-            <Heading4 as='h2'>17. List</Heading4>
+            <Heading4 as='h2'>14. List</Heading4>
             <ListExample />
           </Block>
 
           <Block>
-            <Heading4 as='h2'>18. Card</Heading4>
+            <Heading4 as='h2'>15. Card</Heading4>
             <div className='flex flex-col'>
               <CardExample />
               <CardWithDropshadowExample />
@@ -181,7 +172,7 @@ const App = () => {
           </Block>
 
           <Block>
-            <Heading4 as='h2'>19. Layout</Heading4>
+            <Heading4 as='h2'>16. Layout</Heading4>
             <div className='flex items-start flex-col'>
               <a
                 href='https://swagfinger-component-scss-flexbox-grid.vercel.app/'
@@ -203,29 +194,41 @@ const App = () => {
           </Block>
 
           <Block>
-            <Heading4 as='h2'>20. Table</Heading4>
+            <Heading4 as='h2'>17. Table</Heading4>
             <TableExample />
           </Block>
           <Block>
-            <Heading4 as='h2'>21. Navbar</Heading4>
+            <Heading4 as='h2'>18. Navbar</Heading4>
           </Block>
           <Block>
-            <Heading4 as='h2'>22. Link</Heading4>
+            <Heading4 as='h2'>19. Link</Heading4>
           </Block>
           <Block>
-            <Heading4 as='h2'>23. Breadcrumbs</Heading4>
+            <Heading4 as='h2'>20. Breadcrumbs</Heading4>
           </Block>
           <Block>
-            <Heading4 as='h2'>24. Dialog (aka Modal)</Heading4>
+            <Heading4 as='h2'>21. Dialog (aka Modal)</Heading4>
           </Block>
           <Block>
-            <Heading4 as='h2'>25. Progress</Heading4>
+            <Heading4 as='h2'>22. Progress</Heading4>
           </Block>
           <Block>
-            <Heading4 as='h2'>26. Loading Button</Heading4>
+            <Heading4 as='h2'>23. Loading Button</Heading4>
           </Block>
           <Block>
-            <Heading4 as='h2'>27. Timeline</Heading4>
+            <Heading4 as='h2'>24. Timeline</Heading4>
+          </Block>
+
+          <Block>
+            <Heading4 as='h2'>25. Multi-input</Heading4>
+            <div className='flex flex-col'></div>
+          </Block>
+          <Block>
+            <Heading4 as='h2'>26. Multi-input Objects</Heading4>
+            <div className='flex flex-col'></div>
+          </Block>
+          <Block>
+            <Heading4 as='h2'>27. Multi-select with input</Heading4>
           </Block>
           <Block>
             <Heading4 as='h2'>28. Upload</Heading4>

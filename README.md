@@ -88,6 +88,9 @@ https://type-scale.com/
 - 'data' (can be from async call) should pass to data property.
 - 'savedData' is data that we store for this component which is handled outside of the component in state
 
+- links are for redirecting outside/url changes
+- buttons are for navigating within site
+
 ## Roadmap
 
 - multi-range slider - add mouseclick for track - closest slider moves to track position
