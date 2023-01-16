@@ -17,7 +17,8 @@ const SliderTrack = styled.div.attrs((props) => ({
   style: {
     borderRadius: '2px',
     display: props.hideTrack ? 'none' : 'block',
-    background: props.backgroundColor || props.theme.formElementBackground,
+    background:
+      props.backgroundColor || props.theme.global.formElementBackground,
   },
 }))`
   height: 4px;
