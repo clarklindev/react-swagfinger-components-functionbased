@@ -1,4 +1,7 @@
+import React, { useEffect } from 'react';
+
 import styled from 'styled-components';
+import { useUID } from '../../utils/helpers/UseUID';
 
 const SwitchWrapper = styled.label`
   position: relative;
@@ -37,34 +40,42 @@ const Slider = styled.span`
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }
-
-  ${SwitchInput}:checked + & {
-    background-color: #2196f3;
+  &.${(props) => props.className} {
+    input[type='checkbox']:checked + & {
+    background-color: ${(props) => props.color};
   }
 
-  ${SwitchInput}:focus + & {
-    box-shadow: 0 0 1px #2196f3;
-  }
-
-  ${SwitchInput}:checked + &:before {
+  &.${(props) => props.className} {
+    input[type='checkbox']:checked + &:before {
     -webkit-transform: translateX(30px);
     -ms-transform: translateX(30px);
     transform: translateX(30px);
   }
 `;
 
-export const ToggleSwitch = ({ savedData, configure }) => {
-  const { onChange } = configure;
-  const checked = savedData;
+export const ToggleSwitch = React.memo(
+  ({ configure, savedData }) => {
+    const { color, onChange } = configure;
 
-  return (
-    <SwitchWrapper>
-      <SwitchInput
-        type='checkbox'
-        defaultChecked={checked}
-        onChange={onChange}
-      />
-      <Slider />
-    </SwitchWrapper>
-  );
-};
+    const uniqueClassName = useUID('ToggleSwitch');
+
+    useEffect(() => {
+      console.log(`ToggleSwitch [${uniqueClassName}]: ${savedData}`);
+    }, [savedData]);
+
+    return (
+      <SwitchWrapper>
+        <SwitchInput
+          type='checkbox'
+          defaultChecked={savedData}
+          onChange={onChange}
+        />
+        <Slider className={uniqueClassName} color={color} />
+      </SwitchWrapper>
+    );
+  },
+  // what will cause this component to re-render - excludes onChange function
+  (prev, next) => {
+    return prev.savedData === next.savedData && prev.color === next.color;
+  }
+);

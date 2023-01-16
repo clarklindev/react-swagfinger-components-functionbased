@@ -1,57 +1,55 @@
-import React, { useEffect, useState } from 'react';
-import styled, { css } from 'styled-components';
+import React from 'react';
 import { applyStyleModifiers } from 'styled-components-modifiers';
+import styled, { css } from 'styled-components';
+
+import { MODIFIERS } from './modifiers';
 
 import { Input } from './Input';
-const MODIFIERS = {
-  embeddedleft: () => css`
-    // border-top-right-radius: 0;
-    // border-bottom-right-radius: 0;
-  `,
-  embeddedright: () => css`
-    // border-top-left-radius: 0;
-    // border-bottom-left-radius: 0;
-  `,
-};
 
 const InputWithIconContainer = styled.div`
-  max-height: ${(props) => props.maxHeight};
   box-sizing: border-box;
+  height: ${(props) => props.theme.global.inputHeight};
+  border-radius: ${(props) => props.theme.global.borderRadius};
+  border: ${(props) => props.theme.global.borderWidth} solid
+    ${(props) => props.theme.global.borderColor};
+
+  background: none;
   display: flex;
-  border: 1px solid ${(props) => props.theme.borderColor};
-  border-radius: 8px;
+
+  overflow: hidden;
+
   ${applyStyleModifiers(MODIFIERS)};
 `;
 
-const Divider = styled.div`
-  margin-top: 7px;
-  margin-bottom: 7px;
-  width: 1px;
-  background-color: ${(props) => props.theme.borderColor};
-`;
-
 const ButtonWithIcon = styled.div`
-  width: inherit;
-  height: inherit;
+  max-width: ${(props) => props.theme.global.inputHeight};
+  max-height: ${(props) => props.theme.global.inputHeight};
+  width: 100%;
+  height: 100%;
+  background: ${(props) => props.theme.icon.backgroundColor};
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   box-sizing: border-box;
+  border: none;
+  overflow: hidden;
 `;
 
 const Icon = styled.div`
   width: inherit;
   height: inherit;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
-  align-content: center;
   align-items: center;
-  padding: ${(props) => props.theme.layout.padding};
+
+  overflow: hidden;
+  border: none;
 
   // whatever is passed through as children
   > * {
-    fill: ${(props) => props.theme.formElementLabel};
+    fill: ${(props) => props.theme.icon.fill};
     width: 25px;
     height: 25px;
   }
@@ -59,10 +57,7 @@ const Icon = styled.div`
 
 export const InputWithIcon = ({ configure, savedData, children }) => {
   const {
-    size = '40px',
     iconPosition = 'right',
-    hasDivider = true,
-    iconClickable = true,
     onClick,
     onChange,
     placeholder = '',
@@ -70,59 +65,33 @@ export const InputWithIcon = ({ configure, savedData, children }) => {
     modifiers = [],
   } = configure;
 
-  const [maxHeight, setMaxHeight] = useState();
-  useEffect(() => {
-    setMaxHeight(size);
-  }, [size]);
-
-  const defaults = {
-    localmodifiers: [
-      iconPosition === 'left' ? 'embeddedright' : 'embeddedleft',
-    ],
-    childmodifiers: ['noborder'],
-  };
-
   return (
-    <InputWithIconContainer
-      modifiers={[...defaults.localmodifiers]}
-      maxHeight={maxHeight}
-    >
+    <InputWithIconContainer modifiers={modifiers}>
       {/* checks if left position */}
       {iconPosition === 'left' ? (
-        // then checks if iconClickable
-        iconClickable ? (
-          <ButtonWithIcon onClick={onClick}>
-            <Icon>{children}</Icon>
-          </ButtonWithIcon>
-        ) : (
+        <ButtonWithIcon onClick={onClick}>
           <Icon>{children}</Icon>
-        )
+        </ButtonWithIcon>
       ) : null}
 
       {/* ------------------------------------------------------------------------- */}
 
-      {hasDivider === true && iconPosition === 'left' ? <Divider /> : null}
       <Input
         savedData={savedData}
         configure={{
           placeholder,
           type,
           onChange,
-          modifiers: [...modifiers, ...defaults.childmodifiers],
+          modifiers: ['noborder', 'noborderradius', ...modifiers],
         }}
       />
-      {hasDivider === true && iconPosition === 'right' ? <Divider /> : null}
 
       {/* ------------------------------------------------------------------------- */}
 
       {iconPosition === 'right' ? (
-        iconClickable ? (
-          <ButtonWithIcon onClick={onClick}>
-            <Icon>{children}</Icon>
-          </ButtonWithIcon>
-        ) : (
+        <ButtonWithIcon onClick={onClick}>
           <Icon>{children}</Icon>
-        )
+        </ButtonWithIcon>
       ) : null}
     </InputWithIconContainer>
   );

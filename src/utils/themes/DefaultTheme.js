@@ -11,13 +11,6 @@ import {
 export const defaultTheme = {
   name: 'defaultTheme',
 
-  borderColor: neutral[300],
-  placeholder: neutral[400],
-  formElementBackground: neutral[300],
-  formElementLabel: neutral[600],
-  disabledColor: neutral[300],
-  disabledBackgroundColor: neutral[200],
-
   color: {
     warning: status.warning,
     success: status.success,
@@ -25,10 +18,19 @@ export const defaultTheme = {
     error: status.error,
   },
 
-  layout: {
+  global: {
     inputHeight: '40px',
     padding: '10px',
+    borderWidth: '1px',
     borderRadius: '5px',
+    borderColor: neutral[300],
+    placeholder: neutral[400],
+
+    formElementColor: neutral[600],
+    formElementBackground: neutral[300],
+
+    disabledColor: neutral[300],
+    disabledBackgroundColor: neutral[200],
   },
 
   typography: {
@@ -38,24 +40,30 @@ export const defaultTheme = {
     h4: '1.777rem',
     h5: '1.333rem',
     h6: '1.2rem',
-    fontfamily: "'Roboto', 'sans-serif'",
+    fontFamily: "'Roboto', 'sans-serif'",
     header: {
       margin: '0 0 1rem',
-      lineheight: '1.3',
-      fontweight: '400',
+      lineHeight: '1.3',
+      fontWeight: '400',
     },
   },
 
   //actual page background
   background: {
     color: neutral[500],
-    backgroundColor: neutral[100],
+    backgroundColor: green[100],
   },
 
   input: {
     color: neutral[400],
-    backgroundColor: neutral[200] + transparency[3],
+    backgroundColor: neutral[200] + transparency[50],
     borderColor: neutral[400],
+  },
+
+  icon: {
+    backgroundColor: neutral[200] + transparency[50],
+    fill: neutral[600],
+    stroke: neutral[600],
   },
 
   button: {
@@ -65,7 +73,6 @@ export const defaultTheme = {
       backgroundColor: neutral[200],
       borderColor: neutral[100],
     },
-
     contained: {
       color: neutral[100],
       backgroundColor: neutral[400],

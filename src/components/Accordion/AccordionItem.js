@@ -9,7 +9,7 @@ const AccordionItemTitle = styled.div`
   box-sizing: border-box;
   max-height: 50px;
   background-color: ${(props) => props.theme.backgroundColor};
-  padding: ${(props) => props.theme.layout.padding};
+  padding: ${(props) => props.theme.global.padding};
   border-radius: 8px;
   cursor: pointer;
   display: flex;
@@ -18,16 +18,16 @@ const AccordionItemTitle = styled.div`
   align-items: center;
 
   &.show {
-    border-top: 1px solid ${(props) => props.theme.borderColor};
-    border-left: 1px solid ${(props) => props.theme.borderColor};
-    border-right: 1px solid ${(props) => props.theme.borderColor};
+    border-top: 1px solid ${(props) => props.theme.global.borderColor};
+    border-left: 1px solid ${(props) => props.theme.global.borderColor};
+    border-right: 1px solid ${(props) => props.theme.global.borderColor};
     border-bottom: 0px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
   }
 
   &.hide {
-    border: 1px solid ${(props) => props.theme.borderColor};
+    border: 1px solid ${(props) => props.theme.global.borderColor};
   }
 `;
 
@@ -58,10 +58,10 @@ const collapseIcon = (
 );
 
 const AccordionItemContent = styled.div`
-  padding: 15px;
+  padding: ${(props) => props.theme.global.padding};
   &.show {
     display: block;
-    border: 1px solid ${(props) => props.theme.borderColor};
+    border: 1px solid ${(props) => props.theme.global.borderColor};
     border-top: 0px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;

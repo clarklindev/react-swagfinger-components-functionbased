@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 const HeadingBase = styled.div`
   margin: ${(props) => props.theme.typography.header.margin};
-  line-height: ${(props) => props.theme.typography.header.lineheight};
-  font-weight: ${(props) => props.theme.typography.header.fontweight};
-  font-family: ${(props) => props.theme.typography.header.fontfamily};
+  line-height: ${(props) => props.theme.typography.header.lineHeight};
+  font-weight: ${(props) => props.theme.typography.header.fontWeight};
+  font-family: ${(props) => props.theme.typography.header.fontFamily};
 `;
 
 export const Heading1 = styled(HeadingBase)`

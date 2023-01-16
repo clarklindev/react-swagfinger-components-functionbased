@@ -1,11 +1,22 @@
 import React, { useState } from 'react';
 import { InputWithIcon } from './InputWithIcon';
+import styled from 'styled-components';
+
+const InputPasswordContainer = styled.div`
+  border-radius: ${(props) => props.theme.global.borderRadius};
+  border: ${(props) => props.theme.global.borderWidth} solid
+    ${(props) => props.theme.global.borderColor};
+  overflow: hidden;
+  background: none;
+`;
 
 export const InputPassword = ({ savedData, configure }) => {
+  const { onChange } = configure;
+
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   const defaults = {
-    modifiers: ['noborder'],
+    onChange: onChange,
     type: passwordVisible ? 'text' : 'password',
     onClick: () => setPasswordVisible(!passwordVisible),
   };
@@ -25,11 +36,16 @@ export const InputPassword = ({ savedData, configure }) => {
   return (
     // overwrite any props with passed in props from configure
     //- need to pass down defaults to InputWithIcon...
-    <InputWithIcon
-      savedData={savedData}
-      configure={{ ...defaults, ...configure }}
-    >
-      {icon}
-    </InputWithIcon>
+    <InputPasswordContainer>
+      <InputWithIcon
+        savedData={savedData}
+        configure={{
+          ...defaults,
+          modifiers: ['noborder', 'noborderradius'],
+        }}
+      >
+        {icon}
+      </InputWithIcon>
+    </InputPasswordContainer>
   );
 };

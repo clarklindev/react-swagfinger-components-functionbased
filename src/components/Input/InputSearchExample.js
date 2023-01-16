@@ -16,9 +16,9 @@ export const InputSearchExample = () => {
   };
 
   return (
-    <>
+    <div className='flex flex-col mb-10'>
       <Heading6>Search</Heading6>
       <InputSearch savedData={savedData} configure={configure} />
-    </>
+    </div>
   );
 };

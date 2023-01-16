@@ -3,21 +3,30 @@ import { ToggleSwitch } from './ToggleSwitch';
 import { Heading6 } from '../Typography/Typography';
 
 export const ToggleSwitchExample = () => {
-  const [savedData, setSavedData] = useState(false);
+  const [savedData1, setSavedData1] = useState(false);
+  const [savedData2, setSavedData2] = useState(true);
 
-  const configure = {
-    label: 'label',
-    onChange: (event) => {
-      console.log('event.target.checked:', event.target.checked);
-      setSavedData(event.target.checked);
-    },
-  };
+  // ----------------------------------------------------------------
 
   return (
     <>
       <Heading6>ToggleSwitch</Heading6>
       <div className='flex flex-row gap-3'>
-        <ToggleSwitch savedData={savedData} configure={configure} />
+        <ToggleSwitch
+          savedData={savedData1}
+          configure={{
+            color: 'grey',
+            onChange: (event) => setSavedData1(event.target.checked),
+          }}
+        />
+
+        <ToggleSwitch
+          savedData={savedData2}
+          configure={{
+            color: 'dimgrey',
+            onChange: (event) => setSavedData2(event.target.checked),
+          }}
+        />
       </div>
     </>
   );

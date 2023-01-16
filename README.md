@@ -88,9 +88,61 @@ https://type-scale.com/
 - 'data' (can be from async call) should pass to data property.
 - 'savedData' is data that we store for this component which is handled outside of the component in state
 
+## Roadmap
+
+- multi-range slider - add mouseclick for track - closest slider moves to track position
+  - optimize renders
+  - colors for track from amount slided
+- Switch/Toggle
+  - give background color
+- standardize (hover/active state) outline for all components
+- select is themable
+- checkbox intermediate state
+
+- refactor InputWithIcon -> allow buttons on both ends with event handlers for both
+- refactor InputSearch -> InputWithIcon so you can use a InputWithIcon
+
 ## updates
 
+2023-01-16
+
+## Roadmap
+
+## Updates
+
+- AccordionItem layout/padding and theme references
+- Inputs - moved modifiers into its own file in same directory
+  Composition of components:
+  Input
+  InputWithIcon -> Input
+  InputSearch -> Input
+  InputPassword -> InputWithIcon -> Input
+- Icons inside components referenced as a variable instead of between Styled component tags as its children
+- ToggleSwitch given ids with UID: import { useUID } from '../../utils/helpers/UseUID';
+  - optimised with React.memo
+  - React.memo check exclude onChange function what will cause this component to re-render as it always stays the same
+- theme structure change (moved icons to its own section)
+
+The outermost component should have the border.
+Input components using other input components pass-in "noborder" and "noborderradius" or "noborderleftradius" or "noborderleftradius" modifier so the inner components dont have borders
+
+you may get confused with what to change and where to change theme colors
+
+1. first, code needs to link to an attribute of a theme
+2. changes are only made to theme (which will ripple on to the code/components)
+3. if you dont like colors in the theme, you only change the utils/colors (which will ripple on to the theme -> then to the code/components)
+
 2023-01-15
+
+- ToggleSwitch uses useUID() a custom hook in utils/helpers/UseUID to generate unique id classses so colors dont get overridden otherwise they are all using the same class and when color updates, they all update
+- ToggleSwitch DOES NOT USE React.memo to optimize rerenders only when props change
+- ToggleSwitch does not use React.useCallback to memoize onChange function as it is ignored in the React.memo() second prop function check
+- theme structure change - added 'global' properties
+
+  2023-01-15
+
+- Hook - useUID() utils/helpers/UseUID
+-
 
 - fixed theme in App.js for dark mode (default) / default mode
 - Accordion - rework to decouple Accordion children using render props

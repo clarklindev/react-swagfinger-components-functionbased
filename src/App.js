@@ -49,12 +49,7 @@ const App = () => {
   const [theme, setTheme] = useState();
 
   useEffect(() => {
-    setTheme(darkTheme);
-  }, []);
-
-  useEffect(() => {
     let newTheme = useDarkTheme === true ? darkTheme : defaultTheme;
-    console.log('theme change: ', newTheme);
     setTheme(newTheme);
   }, [useDarkTheme]);
 
@@ -74,7 +69,7 @@ const App = () => {
             <ToggleSwitch
               savedData={useDarkTheme}
               configure={{
-                label: 'label',
+                color: 'grey',
                 onChange: (event) => {
                   setUseDarkTheme(event.target.checked);
                 },
@@ -109,9 +104,9 @@ const App = () => {
               <InputExample />
               <InputReadOnlyExample />
               <InputNoBorderExample />
-              <InputPasswordExample />
               <InputWithIconRightExample />
               <InputWithIconLeftExample />
+              <InputPasswordExample />
               <InputSearchExample />
             </div>
           </Block>

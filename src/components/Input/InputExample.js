@@ -21,7 +21,7 @@ export const InputExample = () => {
 
 //read only
 export const InputReadOnlyExample = () => {
-  const [savedData, setSavedData] = useState('readonly text');
+  const [savedData, setSavedData] = useState('this is readonly');
 
   const configure = {
     modifiers: ['readonly'],

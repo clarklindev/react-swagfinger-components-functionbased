@@ -11,13 +11,6 @@ import {
 export const darkTheme = {
   name: 'darkTheme',
 
-  borderColor: neutral[300],
-  placeholder: neutral[400],
-  formElementBackground: blue[100],
-  formElementLabel: neutral[100],
-  disabledColor: neutral[400],
-  disabledBackgroundColor: neutral[300],
-
   color: {
     warning: status.warning,
     success: status.success,
@@ -25,10 +18,19 @@ export const darkTheme = {
     error: status.error,
   },
 
-  layout: {
+  global: {
     inputHeight: '40px',
     padding: '10px',
+    borderWidth: '1px',
     borderRadius: '5px',
+    borderColor: neutral[300],
+    placeholder: neutral[400],
+
+    formElementColor: neutral[200],
+    formElementBackground: blue[100],
+
+    disabledColor: neutral[400],
+    disabledBackgroundColor: neutral[300],
   },
 
   typography: {
@@ -38,24 +40,30 @@ export const darkTheme = {
     h4: '1.777rem',
     h5: '1.333rem',
     h6: '1.2rem',
-    fontfamily: "'Roboto', 'sans-serif'",
+    fontFamily: "'Roboto', 'sans-serif'",
     header: {
       margin: '0 0 1rem',
-      lineheight: '1.3',
-      fontweight: '400',
+      lineHeight: '1.3',
+      fontWeight: '400',
     },
   },
 
   //actual page background
   background: {
-    color: neutral[300],
+    color: 'hotpink',
     backgroundColor: neutral[600],
   },
 
   input: {
     color: neutral[300],
-    backgroundColor: neutral[400] + transparency[10],
-    borderColor: neutral[100],
+    backgroundColor: '#000000',
+    borderColor: neutral[400] + transparency[10],
+  },
+
+  icon: {
+    backgroundColor: 'red',
+    fill: 'yellow',
+    stroke: neutral[600],
   },
 
   button: {
