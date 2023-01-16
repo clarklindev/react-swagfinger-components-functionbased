@@ -3,6 +3,23 @@ import { Button } from './Button';
 import { Heading6 } from '../Typography/Typography';
 
 export const ButtonVariationExample = () => {
+  const icon = (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      fill='none'
+      viewBox='0 0 24 24'
+      stroke-width='1.5'
+      stroke='currentColor'
+      class='w-6 h-6'
+    >
+      <path
+        stroke-linecap='round'
+        stroke-linejoin='round'
+        d='M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z'
+      />
+    </svg>
+  );
+
   return (
     <div className='flex flex-col mb-10'>
       {/* using status colors */}
@@ -10,29 +27,61 @@ export const ButtonVariationExample = () => {
 
       <div className='flex flex-row mb-3 gap-x-3'>
         <Button label='Contained' color='success' variation='contained' />
-        <Button label='Outlined' color='success' variation='outlined' />
-        <Button label='Text' color='success' variation='text' />
-      </div>
-      <div className='flex flex-row mb-3 gap-x-3'>
         <Button label='Contained' color='warning' variation='contained' />
-        <Button label='Outlined' color='warning' variation='outlined' />
-        <Button label='Text' color='warning' variation='text' />
-      </div>
-      <div className='flex flex-row mb-3 gap-x-3'>
         <Button label='Contained' color='error' variation='contained' />
-        <Button label='Outlined' color='error' variation='outlined' />
-        <Button label='Text' color='error' variation='text' />
-      </div>
-      <div className='flex flex-row mb-3 gap-x-3'>
         <Button label='Contained' color='info' variation='contained' />
-        <Button label='Outlined' color='info' variation='outlined' />
-        <Button label='Text' color='info' variation='text' />
-      </div>
-      {/* using hex string */}
-      <div className='flex flex-row mb-3 gap-x-3'>
         <Button label='Contained' color='#9d4edd' variation='contained' />
+      </div>
+      <div className='flex flex-row mb-3 gap-x-3'>
+        <Button label='Outlined' color='success' variation='outlined' />
+        <Button label='Outlined' color='warning' variation='outlined' />
+        <Button label='Outlined' color='error' variation='outlined' />
+        <Button label='Outlined' color='info' variation='outlined' />
         <Button label='Outlined' color='#9d4edd' variation='outlined' />
+      </div>
+      <div className='flex flex-row mb-3 gap-x-3'>
+        <Button label='Text' color='success' variation='text' />
+        <Button label='Text' color='warning' variation='text' />
+        <Button label='Text' color='error' variation='text' />
+        <Button label='Text' color='info' variation='text' />
         <Button label='Text' color='#9d4edd' variation='text' />
+      </div>
+      <div className='flex flex-row mb-3 gap-x-3'>
+        <Button
+          variation='text'
+          modifiers={['nopadding']}
+          iconSize='30px'
+          color='success'
+          icon={icon}
+        />
+        <Button
+          variation='text'
+          modifiers={['nopadding']}
+          iconSize='30px'
+          color='warning'
+          icon={icon}
+        />
+        <Button
+          variation='text'
+          modifiers={['nopadding']}
+          iconSize='30px'
+          color='error'
+          icon={icon}
+        />
+        <Button
+          variation='text'
+          modifiers={['nopadding']}
+          iconSize='30px'
+          color='info'
+          icon={icon}
+        />
+        <Button
+          variation='text'
+          modifiers={['nopadding']}
+          iconSize='30px'
+          color='#9d4edd'
+          icon={icon}
+        />
       </div>
     </div>
   );
@@ -90,6 +139,7 @@ export const ButtonWithIconExample = () => {
 
       {/* aligned with tailwindcss - flex-row items are auto-stretch so for them to be variable height, need to use items-end or items-start */}
       <div className='flex flex-row items-end mb-3 gap-x-3'>
+        {/* contained */}
         <Button
           className='gap-2'
           variation='contained'
@@ -131,6 +181,7 @@ export const ButtonWithIconExample = () => {
         />
       </div>
 
+      {/* outlined */}
       <div className='flex flex-row items-end mb-3 gap-x-3'>
         <Button
           className='gap-2'
@@ -173,6 +224,7 @@ export const ButtonWithIconExample = () => {
         />
       </div>
 
+      {/* text */}
       <div className='flex flex-row items-end mb-3 gap-x-3'>
         <Button
           className='gap-2'
