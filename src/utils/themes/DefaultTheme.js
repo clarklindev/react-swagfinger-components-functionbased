@@ -10,8 +10,12 @@ import {
 
 export const defaultTheme = {
   name: 'defaultTheme',
-
+  //actual page background
+  background: {
+    backgroundColor: green[100],
+  },
   color: {
+    DEFAULT: neutral[700],
     warning: status.warning,
     success: status.success,
     info: status.info,
@@ -58,12 +62,6 @@ export const defaultTheme = {
       lineHeight: '1.3',
       fontWeight: '400',
     },
-  },
-
-  //actual page background
-  background: {
-    color: neutral[700],
-    backgroundColor: green[100],
   },
 
   input: {

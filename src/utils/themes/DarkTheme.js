@@ -10,8 +10,12 @@ import {
 
 export const darkTheme = {
   name: 'darkTheme',
-
+  //actual page background
+  background: {
+    backgroundColor: neutral[800],
+  },
   color: {
+    DEFAULT: 'hotpink',
     warning: status.warning,
     success: status.success,
     info: status.info,
@@ -22,7 +26,7 @@ export const darkTheme = {
     inputHeight: '40px',
     padding: '10px',
     borderWidth: '1px',
-    borderRadius: '5px',
+    borderRadius: '0px',
     borderColor: neutral[300],
     placeholder: neutral[400],
 
@@ -58,12 +62,6 @@ export const darkTheme = {
       lineHeight: '1.3',
       fontWeight: '400',
     },
-  },
-
-  //actual page background
-  background: {
-    color: 'hotpink',
-    backgroundColor: neutral[800],
   },
 
   input: {

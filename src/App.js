@@ -60,7 +60,7 @@ const App = () => {
           className='App flex-auto flex-col p-3'
           style={{
             background: theme.background.backgroundColor,
-            color: theme.background.color,
+            color: theme.color.DEFAULT,
           }}
         >
           <Block>
@@ -196,7 +196,7 @@ const App = () => {
             <Heading variation='h4'>17. Table</Heading>
             <TableExample />
           </Block>
-          <Block>
+          {/* <Block>
             <Heading variation='h4'>18. Navbar</Heading>
           </Block>
           <Block>
@@ -239,7 +239,7 @@ const App = () => {
           </Block>
           <Block>
             <Heading variation='h4'>30. DateRangePicker</Heading>
-          </Block>
+          </Block> */}
         </div>
         <GlobalStyle />
       </ThemeProvider>
