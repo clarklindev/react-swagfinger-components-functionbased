@@ -1,16 +1,7 @@
 import styled from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 import { MODIFIERS } from './modifiers';
-
-const Icon = styled.div`
-  width: ${(props) => props.iconSize};
-  height: ${(props) => props.iconSize};
-  // whatever is passed through as children
-  > * {
-    width: 100%;
-    height: 100%;
-  }
-`;
+import { Icon } from '../Icon/Icon';
 
 const BaseButton = styled.button`
   box-sizing: border-box;
@@ -23,7 +14,7 @@ const BaseButton = styled.button`
   height: auto;
   cursor: pointer;
   padding: 10px 15px;
-  border-radius: 6px;
+  border-radius: ${(props) => props.theme.global.borderRadius};
   ${applyStyleModifiers(MODIFIERS)};
 `;
 
@@ -65,6 +56,7 @@ const OutlinedButton = styled(BaseButton)`
 
   &:active {
   }
+
   ${applyStyleModifiers(MODIFIERS)};
 `;
 

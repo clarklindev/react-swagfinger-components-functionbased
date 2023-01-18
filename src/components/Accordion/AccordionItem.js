@@ -10,7 +10,7 @@ const AccordionItemTitle = styled.div`
   max-height: 50px;
   background-color: ${(props) => props.theme.backgroundColor};
   padding: ${(props) => props.theme.global.padding};
-  border-radius: 8px;
+  border-radius: ${(props) => props.theme.global.borderRadius};
   cursor: pointer;
   display: flex;
   flex-grow: 1;
@@ -35,9 +35,7 @@ const expandIcon = (
   <svg
     className='h-4 w-4 rotate-180'
     fill='currentColor'
-    height='10'
     viewBox='0 0 16 16'
-    width='10'
     xmlns='http://www.w3.org/2000/svg'
   >
     <path d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'></path>
@@ -48,9 +46,7 @@ const collapseIcon = (
   <svg
     className='h-4 w-4'
     fill='currentColor'
-    height='10'
     viewBox='0 0 16 16'
-    width='10'
     xmlns='http://www.w3.org/2000/svg'
   >
     <path d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'></path>
@@ -74,17 +70,15 @@ const AccordionItemContent = styled.div`
 //AccordionItem doesnt know about anything happening on the outside (self contained)
 export const AccordionItem = ({ data, isOpen, onClick }) => {
   return (
-    <AccordionItemContainer className={`AccordionItem`}>
+    <AccordionItemContainer>
       <AccordionItemTitle
         onClick={(index) => onClick(index)}
-        className={['AccordionItemTitle', isOpen ? 'show' : 'hide'].join(' ')}
+        className={isOpen ? 'show' : 'hide'}
       >
         {data.title}
         {isOpen ? expandIcon : collapseIcon}
       </AccordionItemTitle>
-      <AccordionItemContent
-        className={['AccordionItemContent', isOpen ? 'show' : 'hide'].join(' ')}
-      >
+      <AccordionItemContent className={isOpen ? 'show' : 'hide'}>
         {data.body}
       </AccordionItemContent>
     </AccordionItemContainer>
