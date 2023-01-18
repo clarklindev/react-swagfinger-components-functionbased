@@ -26,7 +26,7 @@ const Heading6 = styled(HeadingBase)`
   font-size: ${(props) => props.theme.typography.h6.fontSize};
 `;
 
-export const Heading = ({ variation, ...rest }) => {
+export const Heading = ({ variation, children, ...rest }) => {
   const headingMap = {
     h1: Heading1,
     h2: Heading2,
@@ -37,5 +37,12 @@ export const Heading = ({ variation, ...rest }) => {
   };
 
   const Component = headingMap[variation];
-  return <Component as={variation} {...rest} />;
+  if (Component) {
+    return (
+      <Component as={variation} {...rest}>
+        {children}
+      </Component>
+    );
+  }
+  return children;
 };
