@@ -8,8 +8,8 @@ import {
   transparency,
 } from '../colors';
 
-export const defaultTheme = {
-  name: 'defaultTheme',
+export const lightTheme = {
+  name: 'lightTheme',
   //actual page background
   background: {
     backgroundColor: green[100],

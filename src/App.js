@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 //theme
 import './App.css';
-import { GlobalStyle, darkTheme, defaultTheme } from './utils';
+import { GlobalStyle, darkTheme, lightTheme } from './utils';
 
 import { ThemeProvider } from 'styled-components';
 import { Heading } from './components/Typography/Typography';
+
 import {
   ButtonVariationExample,
   ButtonModifiersExample,
@@ -42,16 +43,12 @@ import { TableExample } from './components/Table/TableExample';
 import { SliderExample } from './components/Slider/SliderExample';
 import { MultiRangeSliderExample } from './components/Slider/MultiRangeSliderExample';
 
-import { ToggleSwitch } from './components/Switch/ToggleSwitch';
-
 const App = () => {
-  const [useDarkTheme, setUseDarkTheme] = useState(true);
   const [theme, setTheme] = useState();
 
   useEffect(() => {
-    let newTheme = useDarkTheme === true ? darkTheme : defaultTheme;
-    setTheme(newTheme);
-  }, [useDarkTheme]);
+    setTheme(darkTheme);
+  }, []);
 
   return (
     theme && (
@@ -64,16 +61,11 @@ const App = () => {
           }}
         >
           <Block>
-            <Heading variation='h4'>01. Dark/light mode</Heading>
-            <ToggleSwitch
-              savedData={useDarkTheme}
-              configure={{
-                color: 'grey',
-                onChange: (event) => {
-                  setUseDarkTheme(event.target.checked);
-                },
-              }}
-            />
+            <Heading variation='h4'>01. Dark/Light mode</Heading>
+            <div className='flex flex-col items-start gap-2'>
+              <button onClick={() => setTheme(lightTheme)}>light</button>
+              <button onClick={() => setTheme(darkTheme)}>dark</button>
+            </div>
           </Block>
 
           <Block>
@@ -139,7 +131,9 @@ const App = () => {
 
           <Block>
             <Heading variation='h4'>10. ToggleSwitch </Heading>
-            <ToggleSwitchExample />
+            <div className='flex flex-col'>
+              <ToggleSwitchExample />
+            </div>
           </Block>
 
           <Block>
