@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import styled from 'styled-components';
 import { useUID } from '../../utils/helpers/UseUID';
@@ -58,10 +58,6 @@ export const ToggleSwitch = React.memo(
     const { color, onChange } = configure;
 
     const uniqueClassName = useUID('ToggleSwitch');
-
-    useEffect(() => {
-      console.log(`ToggleSwitch [${uniqueClassName}]: ${savedData}`);
-    }, [savedData]);
 
     return (
       <SwitchWrapper>
