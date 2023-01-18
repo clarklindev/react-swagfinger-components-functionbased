@@ -7,21 +7,35 @@ const HeadingBase = styled.div`
   font-family: ${(props) => props.theme.typography.header.fontFamily};
 `;
 
-export const Heading1 = styled(HeadingBase)`
+const Heading1 = styled(HeadingBase)`
   font-size: ${(props) => props.theme.typography.h1.fontSize};
 `;
-export const Heading2 = styled(HeadingBase)`
+const Heading2 = styled(HeadingBase)`
   font-size: ${(props) => props.theme.typography.h2.fontSize};
 `;
-export const Heading3 = styled(HeadingBase)`
+const Heading3 = styled(HeadingBase)`
   font-size: ${(props) => props.theme.typography.h3.fontSize};
 `;
-export const Heading4 = styled(HeadingBase)`
+const Heading4 = styled(HeadingBase)`
   font-size: ${(props) => props.theme.typography.h4.fontSize};
 `;
-export const Heading5 = styled(HeadingBase)`
+const Heading5 = styled(HeadingBase)`
   font-size: ${(props) => props.theme.typography.h5.fontSize};
 `;
-export const Heading6 = styled(HeadingBase)`
+const Heading6 = styled(HeadingBase)`
   font-size: ${(props) => props.theme.typography.h6.fontSize};
 `;
+
+export const Heading = ({ variation, ...rest }) => {
+  const headingMap = {
+    h1: Heading1,
+    h2: Heading2,
+    h3: Heading3,
+    h4: Heading4,
+    h5: Heading5,
+    h6: Heading6,
+  };
+
+  const Component = headingMap[variation];
+  return <Component as={variation} {...rest} />;
+};

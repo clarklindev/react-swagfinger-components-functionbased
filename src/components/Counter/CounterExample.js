@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Counter } from './Counter';
-import { Heading6 } from '../Typography/Typography';
+import { Heading } from '../Typography/Typography';
 
 export const CounterExample = () => {
   const [savedData, setSavedData] = useState('0');
@@ -12,7 +12,7 @@ export const CounterExample = () => {
 
   return (
     <>
-      <Heading6>Controlled counter</Heading6>
+      <Heading variation='h6'>Controlled counter</Heading>
       <Counter savedData={savedData} configure={configure} />
     </>
   );

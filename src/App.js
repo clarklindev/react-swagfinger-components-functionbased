@@ -4,7 +4,7 @@ import './App.css';
 import { GlobalStyle, darkTheme, defaultTheme } from './utils';
 
 import { ThemeProvider } from 'styled-components';
-import { Heading4 } from './components/Typography/Typography';
+import { Heading } from './components/Typography/Typography';
 import {
   ButtonVariationExample,
   ButtonModifiersExample,
@@ -63,9 +63,8 @@ const App = () => {
             color: theme.background.color,
           }}
         >
-          {/* <h1 class="font-bold">SWAGFINGER UI</h1> */}
           <Block>
-            <Heading4 as='h2'>01. Dark/light mode</Heading4>
+            <Heading variation='h4'>01. Dark/light mode</Heading>
             <ToggleSwitch
               savedData={useDarkTheme}
               configure={{
@@ -78,12 +77,12 @@ const App = () => {
           </Block>
 
           <Block>
-            <Heading4 as='h2'>02. Typography</Heading4>
+            <Heading variation='h4'>02. Typography</Heading>
             <TypographyExample />
           </Block>
 
           <Block>
-            <Heading4 as='h2'>03. Buttons</Heading4>
+            <Heading variation='h4'>03. Buttons</Heading>
             <div className='flex flex-col'>
               <ButtonVariationExample />
               <ButtonModifiersExample />
@@ -92,14 +91,14 @@ const App = () => {
           </Block>
 
           <Block>
-            <Heading4 as='h2'>04. Snackbar</Heading4>
+            <Heading variation='h4'>04. Snackbar</Heading>
             <div className='flex flex-col'>
               <SnackbarExample />
             </div>
           </Block>
 
           <Block>
-            <Heading4 as='h2'>05. Input</Heading4>
+            <Heading variation='h4'>05. Input</Heading>
             <div className='flex flex-col'>
               <InputExample />
               <InputReadOnlyExample />
@@ -112,17 +111,17 @@ const App = () => {
           </Block>
 
           <Block>
-            <Heading4 as='h2'>06. Select</Heading4>
+            <Heading variation='h4'>06. Select</Heading>
             <SelectExample />
           </Block>
 
           <Block>
-            <Heading4 as='h2'>07. Counter</Heading4>
+            <Heading variation='h4'>07. Counter</Heading>
             <CounterExample />
           </Block>
 
           <Block>
-            <Heading4 as='h2'>08. Radio Button</Heading4>
+            <Heading variation='h4'>08. Radio Button</Heading>
             <div className='flex flex-col'>
               <RadioButtonExample />
               <RadioButtonGroupExample />
@@ -130,7 +129,7 @@ const App = () => {
           </Block>
 
           <Block>
-            <Heading4 as='h2'>09. Checkbox</Heading4>
+            <Heading variation='h4'>09. Checkbox</Heading>
             <div className='flex flex-col'>
               <CheckboxExample />
               <CheckboxGroupExample />
@@ -139,32 +138,32 @@ const App = () => {
           </Block>
 
           <Block>
-            <Heading4 as='h2'>10. ToggleSwitch </Heading4>
+            <Heading variation='h4'>10. ToggleSwitch </Heading>
             <ToggleSwitchExample />
           </Block>
 
           <Block>
-            <Heading4 as='h2'>11. Slider</Heading4>
+            <Heading variation='h4'>11. Slider</Heading>
             <SliderExample />
           </Block>
 
           <Block>
-            <Heading4 as='h2'>12. Multi-range slider</Heading4>
+            <Heading variation='h4'>12. Multi-range slider</Heading>
             <MultiRangeSliderExample />
           </Block>
 
           <Block>
-            <Heading4 as='h2'>13. Accordion</Heading4>
+            <Heading variation='h4'>13. Accordion</Heading>
             <AccordionExample />
           </Block>
 
           <Block>
-            <Heading4 as='h2'>14. List</Heading4>
+            <Heading variation='h4'>14. List</Heading>
             <ListExample />
           </Block>
 
           <Block>
-            <Heading4 as='h2'>15. Card</Heading4>
+            <Heading variation='h4'>15. Card</Heading>
             <div className='flex flex-col'>
               <CardExample />
               <CardWithDropshadowExample />
@@ -172,7 +171,7 @@ const App = () => {
           </Block>
 
           <Block>
-            <Heading4 as='h2'>16. Layout</Heading4>
+            <Heading variation='h4'>16. Layout</Heading>
             <div className='flex items-start flex-col'>
               <a
                 href='https://swagfinger-component-scss-flexbox-grid.vercel.app/'
@@ -194,52 +193,52 @@ const App = () => {
           </Block>
 
           <Block>
-            <Heading4 as='h2'>17. Table</Heading4>
+            <Heading variation='h4'>17. Table</Heading>
             <TableExample />
           </Block>
           <Block>
-            <Heading4 as='h2'>18. Navbar</Heading4>
+            <Heading variation='h4'>18. Navbar</Heading>
           </Block>
           <Block>
-            <Heading4 as='h2'>19. Link</Heading4>
+            <Heading variation='h4'>19. Link</Heading>
           </Block>
           <Block>
-            <Heading4 as='h2'>20. Breadcrumbs</Heading4>
+            <Heading variation='h4'>20. Breadcrumbs</Heading>
           </Block>
           <Block>
-            <Heading4 as='h2'>21. Dialog (aka Modal)</Heading4>
+            <Heading variation='h4'>21. Dialog (aka Modal)</Heading>
           </Block>
           <Block>
-            <Heading4 as='h2'>22. Progress</Heading4>
+            <Heading variation='h4'>22. Progress</Heading>
           </Block>
           <Block>
-            <Heading4 as='h2'>23. Loading Button</Heading4>
+            <Heading variation='h4'>23. Loading Button</Heading>
           </Block>
           <Block>
-            <Heading4 as='h2'>24. Timeline</Heading4>
+            <Heading variation='h4'>24. Timeline</Heading>
           </Block>
 
           <Block>
-            <Heading4 as='h2'>25. Multi-input</Heading4>
+            <Heading variation='h4'>25. Multi-input</Heading>
             <div className='flex flex-col'></div>
           </Block>
           <Block>
-            <Heading4 as='h2'>26. Multi-input Objects</Heading4>
+            <Heading variation='h4'>26. Multi-input Objects</Heading>
             <div className='flex flex-col'></div>
           </Block>
           <Block>
-            <Heading4 as='h2'>27. Multi-select with input</Heading4>
+            <Heading variation='h4'>27. Multi-select with input</Heading>
           </Block>
           <Block>
-            <Heading4 as='h2'>28. Upload</Heading4>
+            <Heading variation='h4'>28. Upload</Heading>
           </Block>
           <Block>
-            <Heading4 as='h2'>
+            <Heading variation='h4'>
               29. DatePicker, TimePicker, DateTimePicker
-            </Heading4>
+            </Heading>
           </Block>
           <Block>
-            <Heading4 as='h2'>30. DateRangePicker</Heading4>
+            <Heading variation='h4'>30. DateRangePicker</Heading>
           </Block>
         </div>
         <GlobalStyle />

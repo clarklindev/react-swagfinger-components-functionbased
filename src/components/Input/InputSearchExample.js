@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { InputSearch } from './InputSearch';
-import { Heading6 } from '../Typography/Typography';
+import { Heading } from '../Typography/Typography';
 
 export const InputSearchExample = () => {
   const [savedData, setSavedData] = useState('');
@@ -17,7 +17,7 @@ export const InputSearchExample = () => {
 
   return (
     <div className='flex flex-col mb-10'>
-      <Heading6>Search</Heading6>
+      <Heading variation='h6'>Search</Heading>
       <InputSearch savedData={savedData} configure={configure} />
     </div>
   );

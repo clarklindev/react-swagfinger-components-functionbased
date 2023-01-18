@@ -1,10 +1,10 @@
-import { Heading6 } from '../Typography/Typography';
+import { Heading } from '../Typography/Typography';
 import { Card } from './Card';
 
 export const CardExample = () => {
   return (
     <div className='flex flex-col mb-10'>
-      <Heading6>no drop shadow</Heading6>
+      <Heading variation='h6'>no drop shadow</Heading>
       <Card
         color='white'
         borderColor='#DDD'
@@ -19,7 +19,7 @@ export const CardExample = () => {
 export const CardWithDropshadowExample = () => {
   return (
     <div className='flex flex-col mb-10'>
-      <Heading6>drop shadow</Heading6>
+      <Heading variation='h6'>drop shadow</Heading>
       <Card
         color='white'
         borderColor='#DDD'

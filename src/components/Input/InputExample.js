@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Input } from './Input';
-import { Heading6 } from '../Typography/Typography';
+import { Heading } from '../Typography/Typography';
 
 //normal input
 export const InputExample = () => {
@@ -13,7 +13,7 @@ export const InputExample = () => {
   };
   return (
     <div className='flex flex-col mb-10'>
-      <Heading6>Input</Heading6>
+      <Heading variation='h6'>Input</Heading>
       <Input savedData={savedData} configure={configure} />
     </div>
   );
@@ -33,7 +33,7 @@ export const InputReadOnlyExample = () => {
 
   return (
     <div className='flex flex-col mb-10'>
-      <Heading6>Read-only</Heading6>
+      <Heading variation='h6'>Read-only</Heading>
       <Input savedData={savedData} configure={configure} />
     </div>
   );
@@ -52,7 +52,7 @@ export const InputNoBorderExample = () => {
   };
   return (
     <div className='flex flex-col mb-10'>
-      <Heading6>No border</Heading6>
+      <Heading variation='h6'>No border</Heading>
       <Input savedData={savedData} configure={configure} />
     </div>
   );

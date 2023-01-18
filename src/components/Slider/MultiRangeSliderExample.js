@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { MultiRangeSlider } from './MultiRangeSlider';
-import { Heading6 } from '../Typography/Typography';
+import { Heading } from '../Typography/Typography';
 
 //NOTE: track is non clickable... so use <Slider> if only single slider
 export const MultiRangeSliderExample = () => {
@@ -40,7 +40,7 @@ export const MultiRangeSliderExample = () => {
     <>
       <div className='flex flex-col mb-10'>
         <div className='flex flex-col'>
-          <Heading6>fixed-width / Multi-range slider</Heading6>
+          <Heading variation='h6'>fixed-width / Multi-range slider</Heading>
           <MultiRangeSlider
             sliderValues={sliderValues1}
             configure={configure1}
@@ -50,7 +50,7 @@ export const MultiRangeSliderExample = () => {
 
       <div className='flex flex-col mb-10'>
         <div className='flex flex-col'>
-          <Heading6>default / Multi-range slider</Heading6>
+          <Heading variation='h6'>default / Multi-range slider</Heading>
           <MultiRangeSlider
             sliderValues={sliderValues2}
             configure={configure2}

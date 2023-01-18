@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ToggleSwitch } from './ToggleSwitch';
-import { Heading6 } from '../Typography/Typography';
+import { Heading } from '../Typography/Typography';
 
 export const ToggleSwitchExample = () => {
   const [savedData1, setSavedData1] = useState(false);
@@ -10,7 +10,7 @@ export const ToggleSwitchExample = () => {
 
   return (
     <>
-      <Heading6>ToggleSwitch</Heading6>
+      <Heading variation='h6'>ToggleSwitch</Heading>
       <div className='flex flex-row gap-3'>
         <ToggleSwitch
           savedData={savedData1}

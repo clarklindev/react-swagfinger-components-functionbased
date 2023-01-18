@@ -1,22 +1,15 @@
-import {
-  Heading1,
-  Heading2,
-  Heading3,
-  Heading4,
-  Heading5,
-  Heading6,
-} from './Typography';
+import { Heading } from './Typography';
 
 export const TypographyExample = () => {
   return (
     <div className='flex flex-col'>
       <div className='flex flex-row gap-x-8 items-end'>
-        <Heading1 as='h1'>H1 Heading</Heading1>
-        <Heading2 as='h2'>H2 Heading</Heading2>
-        <Heading3 as='h3'>H3 Heading</Heading3>
-        <Heading4 as='h4'>H4 Heading</Heading4>
-        <Heading5 as='h5'>H5 Heading</Heading5>
-        <Heading6 as='h6'>H6 Heading</Heading6>
+        <Heading variation='h1'>H1 heading</Heading>
+        <Heading variation='h2'>H2 heading</Heading>
+        <Heading variation='h3'>H3 heading</Heading>
+        <Heading variation='h4'>H4 heading</Heading>
+        <Heading variation='h5'>H5 heading</Heading>
+        <Heading variation='h6'>H6 heading</Heading>
       </div>
       <p>
         this is paragraph text - Lorem ipsum dolor sit amet, consectetur

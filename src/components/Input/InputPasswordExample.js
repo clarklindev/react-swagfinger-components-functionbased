@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { InputPassword } from './InputPassword';
-import { Heading6 } from '../Typography/Typography';
+import { Heading } from '../Typography/Typography';
 
 export const InputPasswordExample = () => {
   const [savedData, setSavedData] = useState('');
@@ -14,7 +14,7 @@ export const InputPasswordExample = () => {
 
   return (
     <div className='flex flex-col mb-10'>
-      <Heading6>Password</Heading6>
+      <Heading variation='h6'>Password</Heading>
       <InputPassword savedData={savedData} configure={configure} />
     </div>
   );

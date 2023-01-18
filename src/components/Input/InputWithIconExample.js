@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { InputWithIcon } from './InputWithIcon';
-import { Heading6 } from '../Typography/Typography';
+import { Heading } from '../Typography/Typography';
 
 export const InputWithIconRightExample = () => {
   const [savedData, setSavedData] = useState('this is readonly');
@@ -19,7 +19,7 @@ export const InputWithIconRightExample = () => {
 
   return (
     <div className='flex flex-col mb-10'>
-      <Heading6>Input With Icon - Right</Heading6>
+      <Heading variation='h6'>Input With Icon - Right</Heading>
       <InputWithIcon savedData={savedData} configure={configure}>
         {/* whatever icon you want */}
         {icon}
@@ -63,7 +63,7 @@ export const InputWithIconLeftExample = () => {
 
   return (
     <div className='flex flex-col mb-10'>
-      <Heading6>Input With Icon - Left</Heading6>
+      <Heading variation='h6'>Input With Icon - Left</Heading>
       <InputWithIcon savedData={savedData} configure={configure}>
         {/* whatever icon you want */}
         {icon}

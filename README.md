@@ -137,7 +137,7 @@ you may get confused with what to change and where to change theme colors
 
 2023-01-15
 
-- ToggleSwitch uses useUID() a custom hook in utils/helpers/UseUID to generate unique id classses so colors dont get overridden otherwise they are all using the same class and when color updates, they all update
+- ToggleSwitch uses useUID() a custom hook in utils/helpers/UseUID to generate unique id classses so colors dont get overridden otherwise they are all using the same className and when color updates, they all update
 - ToggleSwitch DOES NOT USE React.memo to optimize rerenders only when props change
 - ToggleSwitch does not use React.useCallback to memoize onChange function as it is ignored in the React.memo() second prop function check
 - theme structure change - added 'global' properties
