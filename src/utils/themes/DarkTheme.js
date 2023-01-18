@@ -63,7 +63,7 @@ export const darkTheme = {
   //actual page background
   background: {
     color: 'hotpink',
-    backgroundColor: neutral[600],
+    backgroundColor: neutral[800],
   },
 
   input: {
