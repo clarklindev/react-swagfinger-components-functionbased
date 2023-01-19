@@ -16,7 +16,7 @@ export const InputSearchExample = () => {
 
   const leftIcon = (
     <Button
-      className='ml-2 mr-2'
+      className='ml-4'
       modifiers={['nopointer']}
       variation='icon'
       label={
@@ -28,7 +28,7 @@ export const InputSearchExample = () => {
   );
   const rightIcon = (
     <Button
-      className='ml-2 mr-2'
+      className='ml-2 mr-4'
       variation='icon'
       modifiers={['noborderrightradius']}
       onClick={clearHandler}
@@ -40,11 +40,12 @@ export const InputSearchExample = () => {
     />
   );
   return (
-    <div className='flex flex-col mb-10'>
+    <div className='flex flex-col'>
       <Heading variation='h6'>Search</Heading>
       <InputWrapper>
         {leftIcon}
         <Input
+          className='px-25'
           savedData={savedData}
           configure={{
             modifiers: [

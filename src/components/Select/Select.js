@@ -1,50 +1,57 @@
 import React from 'react';
+
 import styled from 'styled-components';
+import { Icon } from '../Icon/Icon';
+import { ChevronDown } from '../../icons/ChevronDown';
 
-const SelectContainer = styled.div`
+const SelectWrapper = styled.div`
   position: relative;
-
-  &::after {
-    content: '▼';
-    font-size: 1rem;
-    top: 15px;
-    right: 20px;
-    position: absolute;
-  }
-
-  select {
-    box-sizing: border-box;
-    appearance: none;
-    display: block;
-    margin: 0;
-    max-height: 50px;
-    width: 100%;
-    height: 50px;
-    color: ${(props) => props.theme.color};
-    border: 1px solid ${(props) => props.theme.borderColor};
-    padding: 15px;
-    border-radius: 8px;
-    display: flex;
-    flex-grow: 1;
-    outline: none;
-
-    option:first-child {
-      color: ${(props) => props.theme.placeholder};
-    }
-  }
 `;
+
+const SelectContainer = styled.select`
+  box-sizing: border-box;
+  appearance: none;
+  margin: 0;
+  max-height: 50px;
+  width: 100%;
+  height: ${(props) => props.theme.global.inputHeight};
+  color: ${(props) => props.theme.select.color};
+  border: 1px solid ${(props) => props.theme.select.borderColor};
+  background: ${(props) => props.theme.select.backgroundColor};
+  padding: 0 15px;
+  border-radius: 8px;
+  outline: none;
+  
+  &:after {
+    content: "V";
+  }
+
+
+}`;
 
 export const Select = ({ savedData, configure, children }) => {
   const { onChange } = configure;
+
+  const onChangeHandler = (event) => {
+    onChange(event);
+  };
+
   return (
-    <SelectContainer>
-      <select value={savedData} onChange={onChange}>
+    <SelectWrapper>
+      <SelectContainer value={savedData} onChange={onChangeHandler}>
         {children
           ? children.map((each) => {
               return each;
             })
           : null}
-      </select>
-    </SelectContainer>
+      </SelectContainer>
+      <Icon
+        className='absolute right-4 top-2 pointer-events-none'
+        iconSize='30px'
+        color='white'
+      >
+        {ChevronDown}
+      </Icon>
+    </SelectWrapper>
   );
 };

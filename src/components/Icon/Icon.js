@@ -15,9 +15,9 @@ export const IconContainer = styled.div`
   }
 `;
 
-export const Icon = ({ iconSize = '', color = '', children }) => {
+export const Icon = ({ iconSize = '', color = '', className, children }) => {
   return (
-    <IconContainer iconSize={iconSize} color={color}>
+    <IconContainer iconSize={iconSize} color={color} className={className}>
       {children}
     </IconContainer>
   );

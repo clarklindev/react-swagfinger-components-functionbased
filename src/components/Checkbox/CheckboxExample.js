@@ -13,9 +13,9 @@ export const CheckboxExample = () => {
   };
 
   return (
-    <>
+    <div className='flex flex-col mb-10'>
       <Heading variation='h6'>Checkbox</Heading>
       <Checkbox savedData={savedData} configure={configure} />
-    </>
+    </div>
   );
 };

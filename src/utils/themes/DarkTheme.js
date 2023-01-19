@@ -26,7 +26,7 @@ export const darkTheme = {
 
   global: {
     inputHeight: '50px',
-    padding: '15px',
+    padding: '1rem',
     borderWidth: '1px',
     borderRadius: '5px',
     borderColor: neutral[300],
@@ -67,6 +67,12 @@ export const darkTheme = {
   },
 
   input: {
+    color: neutral[300],
+    backgroundColor: neutral[900],
+    borderColor: neutral[400] + transparency[10],
+  },
+
+  select: {
     color: neutral[300],
     backgroundColor: neutral[900],
     borderColor: neutral[400] + transparency[10],

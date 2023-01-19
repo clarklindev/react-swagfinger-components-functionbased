@@ -96,14 +96,8 @@ https://type-scale.com/
 - multi-range slider - add mouseclick for track - closest slider moves to track position
   - optimize renders
   - colors for track from amount slided
-- Switch/Toggle
-  - give background color
 - standardize (hover/active state) outline for all components
-- select is themable
 - checkbox intermediate state
-
-- refactor InputWithIcon -> allow buttons on both ends with event handlers for both
-- refactor InputSearch -> InputWithIcon so you can use a InputWithIcon
 
 ## updates
 
@@ -119,6 +113,11 @@ https://type-scale.com/
 - colors added
 - themes with adjustments and additions
 - Button - Button content/label can be received as children
+- Theme tweak to padding 1rem , add select defaults
+- chevron icon
+- Select styling
+- Relook margins on all inputs - 1rem
+- relooked App demo page component margins
 
 2023-01-16
 

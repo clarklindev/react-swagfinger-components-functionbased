@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import { ChevronDown } from '../../icons/ChevronDown';
+import { ChevronUp } from '../../icons/ChevronUp';
+import { Icon } from '../Icon/Icon';
 
 const AccordionItemContainer = styled.div`
   display: block;
@@ -31,28 +34,6 @@ const AccordionItemTitle = styled.div`
   }
 `;
 
-const expandIcon = (
-  <svg
-    className='h-4 w-4 rotate-180'
-    fill='currentColor'
-    viewBox='0 0 16 16'
-    xmlns='http://www.w3.org/2000/svg'
-  >
-    <path d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'></path>
-  </svg>
-);
-
-const collapseIcon = (
-  <svg
-    className='h-4 w-4'
-    fill='currentColor'
-    viewBox='0 0 16 16'
-    xmlns='http://www.w3.org/2000/svg'
-  >
-    <path d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'></path>
-  </svg>
-);
-
 const AccordionItemContent = styled.div`
   padding: ${(props) => props.theme.global.padding};
   &.show {
@@ -76,7 +57,11 @@ export const AccordionItem = ({ data, isOpen, onClick }) => {
         className={isOpen ? 'show' : 'hide'}
       >
         {data.title}
-        {isOpen ? expandIcon : collapseIcon}
+        {
+          <Icon iconSize='30px' color='white'>
+            {isOpen ? ChevronUp : ChevronDown}
+          </Icon>
+        }
       </AccordionItemTitle>
       <AccordionItemContent className={isOpen ? 'show' : 'hide'}>
         {data.body}

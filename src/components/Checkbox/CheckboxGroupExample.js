@@ -24,9 +24,9 @@ export const CheckboxGroupExample = () => {
   };
 
   return (
-    <>
+    <div className='flex flex-col mb-10'>
       <Heading variation='h6'>Checkbox Group</Heading>
       <CheckboxGroup savedData={savedData} configure={configure} />
-    </>
+    </div>
   );
 };

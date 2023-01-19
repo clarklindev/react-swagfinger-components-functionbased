@@ -14,9 +14,9 @@ export const RadioButtonExample = () => {
   };
 
   return (
-    <>
+    <div className='flex flex-col mb-10'>
       <Heading variation='h6'>RadioButton</Heading>
       <RadioButton savedData={savedData} configure={configure} />
-    </>
+    </div>
   );
 };

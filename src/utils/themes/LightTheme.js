@@ -72,6 +72,12 @@ export const lightTheme = {
     borderColor: neutral[400],
   },
 
+  select: {
+    color: neutral[300],
+    backgroundColor: neutral[900],
+    borderColor: neutral[400] + transparency[10],
+  },
+
   icon: {
     backgroundColor: neutral[200] + transparency[50],
     fill: neutral[600],

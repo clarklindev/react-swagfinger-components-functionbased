@@ -8,9 +8,10 @@ const MultiRangeSliderContainer = styled.div`
 
 const SliderWrapper = styled.div`
   position: relative;
+  height: 20px;
 `;
 
-//this is the background track for all the scrollbars - you want to show use this instead of sliders' own track
+//this is the background track for all the scrollbars - you want to show this instead of sliders' own track
 const SliderTrack = styled.div.attrs((props) => ({
   style: {
     borderRadius: '2px',
@@ -37,21 +38,12 @@ export const MultiRangeSlider = ({ sliderValues, configure }) => {
   } = configure;
 
   const containerRef = useRef();
-  const [windowSize, setWindowSize] = useState({
-    width: undefined,
-    height: undefined,
-  });
 
   const [containerWidth, setContainerWidth] = useState();
 
   useEffect(() => {
     // Handler to call on window resize
     function handleResize() {
-      // Set window width/height to state
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
       setContainerWidth(containerRef.current.offsetWidth);
       // setContainerWidth(containerRef.current.offsetWidth);
     }

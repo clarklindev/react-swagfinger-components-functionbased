@@ -14,7 +14,7 @@ export const InputWithIconExample = () => {
       <InputWrapper>
         <Button
           modifiers={['nopointer']}
-          className='ml-2 mr-2'
+          className='ml-4'
           variation='icon'
           label={
             <Icon iconSize='30px' color='white'>

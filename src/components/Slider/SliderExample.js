@@ -14,9 +14,5 @@ export const SliderExample = () => {
     },
   };
 
-  return (
-    <div className='flex flex-col'>
-      <Slider savedData={savedData} configure={configure} />
-    </div>
-  );
+  return <Slider savedData={savedData} configure={configure} />;
 };

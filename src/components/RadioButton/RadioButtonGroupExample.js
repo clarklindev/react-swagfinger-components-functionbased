@@ -29,9 +29,9 @@ export const RadioButtonGroupExample = () => {
   };
 
   return (
-    <>
+    <div className='flex flex-col'>
       <Heading variation='h6'>RadioButton Group</Heading>
       <RadioButtonGroup savedData={savedData} configure={configure} />
-    </>
+    </div>
   );
 };

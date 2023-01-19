@@ -38,17 +38,15 @@ export const MultiRangeSliderExample = () => {
 
   return (
     <>
-      <div className='flex flex-col mb-10'>
-        <div className='flex flex-col'>
+      <div className='flex flex-col'>
+        <div className='flex flex-col mb-10'>
           <Heading variation='h6'>fixed-width / Multi-range slider</Heading>
           <MultiRangeSlider
             sliderValues={sliderValues1}
             configure={configure1}
           />
         </div>
-      </div>
 
-      <div className='flex flex-col mb-10'>
         <div className='flex flex-col'>
           <Heading variation='h6'>default / Multi-range slider</Heading>
           <MultiRangeSlider

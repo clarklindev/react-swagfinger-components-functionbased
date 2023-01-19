@@ -23,7 +23,7 @@ export const CheckboxIconExample = () => {
   };
 
   return (
-    <>
+    <div className='flex flex-col'>
       <Heading variation='h6'>CheckboxIcon</Heading>
       <div className='flex flex-row'>
         <CheckboxIcon savedData={savedData1} configure={configure1}>
@@ -59,6 +59,6 @@ export const CheckboxIconExample = () => {
           </svg>
         </CheckboxIcon>
       </div>
-    </>
+    </div>
   );
 };

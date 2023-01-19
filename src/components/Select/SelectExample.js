@@ -16,13 +16,12 @@ export const SelectExample = () => {
 
   const configure = {
     onChange: (event) => {
-      console.log('event.target.value: ', event.target.value);
       setSavedData(event.target.value);
     },
   };
 
   return (
-    <>
+    <div>
       <Select savedData={savedData} configure={configure}>
         {data.map((each, index) => (
           <option key={index} value={each.value}>
@@ -30,6 +29,6 @@ export const SelectExample = () => {
           </option>
         ))}
       </Select>
-    </>
+    </div>
   );
 };
