@@ -119,6 +119,11 @@ https://type-scale.com/
 - Relook margins on all inputs - 1rem
 - relooked App demo page component margins
 
+- Redo Checkbox icon using Icon class - note: its not a Button because Checkbox has its own event handler for event.target.checked
+- Icons can be left as svgs (dont need to touch)
+- Icon fill and stroke is set on the Icon class for when it is toggelled (see example)
+- Align Light theme with Dark theme properties
+
 2023-01-16
 
 ## Roadmap

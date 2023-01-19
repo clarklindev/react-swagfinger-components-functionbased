@@ -9,6 +9,7 @@ const WrapperContainer = styled.div.attrs((props) => ({
   overflow: hidden;
   box-sizing: border-box;
   height: auto;
+  max-height: ${(props) => props.theme.global.inputHeight};
   width: 100%;
   display: flex;
   flex-grow: 1;
@@ -22,6 +23,8 @@ const WrapperContainer = styled.div.attrs((props) => ({
 `;
 
 const InputElement = styled.input`
+  box-sizing: border-box;
+  max-height: ${(props) => props.theme.global.inputHeight};
   cursor: text;
   color: ${(props) => props.theme.input.color};
   border-radius: ${(props) => props.theme.global.borderRadius};

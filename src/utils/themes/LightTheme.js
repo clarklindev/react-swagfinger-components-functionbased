@@ -25,8 +25,8 @@ export const lightTheme = {
   },
 
   global: {
-    inputHeight: '40px',
-    padding: '10px',
+    inputHeight: '50px',
+    padding: '1rem',
     borderWidth: '1px',
     borderRadius: '5px',
     borderColor: neutral[300],

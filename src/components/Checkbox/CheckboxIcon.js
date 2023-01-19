@@ -22,38 +22,15 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
   width: 1px;
 `;
 
-const Icon = styled.div`
-  overflow: hidden;
-  width: 30px;
-  height: 30px;
-  box-sizing: border-box;
-  display: inline-flex;
-  align-content: center;
-  align-items: center;
-`;
-
-const StyledCheckboxIcon = styled.div`
-  box-sizing: border-box;
-  background-color: ${(props) => props.theme.backgroundColor};
-  ${Icon} {
-    svg {
-      fill: ${(props) => (props.checked ? props.activeColor : 'black')};
-      stroke: ${(props) => (props.checked ? props.activeColor : 'black')};
-      fill-opacity: ${(props) => (props.checked ? '1' : '0')};
-    }
-  }
-`;
-
 export const CheckboxIcon = ({ savedData, configure, children }) => {
   const checked = savedData;
-  const { onChange, activeColor } = configure;
+  const { onChange, icon = undefined } = configure;
+
   return (
     <CheckboxIconContainer className='CheckboxIcon'>
       <label>
         <HiddenCheckbox checked={checked} onChange={onChange} />
-        <StyledCheckboxIcon checked={checked} activeColor={activeColor}>
-          <Icon>{children}</Icon>
-        </StyledCheckboxIcon>
+        {icon ? icon : children}
       </label>
     </CheckboxIconContainer>
   );
