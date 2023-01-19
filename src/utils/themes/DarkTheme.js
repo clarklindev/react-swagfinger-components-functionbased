@@ -91,6 +91,7 @@ export const darkTheme = {
 
   counter: {
     borderColor: 'hotpink',
+    backgroundColor: neutral[900],
   },
 
   button: {

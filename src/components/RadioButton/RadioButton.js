@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { RadioButtonUnselectedIcon } from '../../icons/RadioButtonUnselectedIcon';
+import { RadioButtonSelectedIcon } from '../../icons/RadioButtonSelectedIcon';
+import { Icon } from '../Icon/Icon';
 
 const RadioButtonContainer = styled.div`
   label {
@@ -29,16 +32,6 @@ const HiddenRadioButton = styled.input.attrs({ type: 'radio' })`
   width: 1px;
 `;
 
-const Icon = styled.div`
-  overflow: hidden;
-  width: 30px;
-  height: 30px;
-  box-sizing: border-box;
-  display: flex;
-  align-content: center;
-  align-items: center;
-`;
-
 const StyledRadioButton = styled.div`
   display: inline-block;
   position: relative;
@@ -47,14 +40,6 @@ const StyledRadioButton = styled.div`
   width: 30px;
   height: 30px;
   cursor: pointer;
-`;
-
-const Svg = styled.svg`
-  display: block;
-  margin: auto;
-
-  fill: ${(props) => props.theme.color};
-  box-sizing: border-box;
 `;
 
 export const RadioButton = ({ savedData, configure }) => {
@@ -66,36 +51,10 @@ export const RadioButton = ({ savedData, configure }) => {
       <label>
         <HiddenRadioButton checked={checked} onChange={onChange} name={name} />
         <StyledRadioButton checked={checked}>
-          <Icon>
-            {checked === true ? (
-              <Svg
-                viewBox='0 0 512 512'
-                preserveAspectRatio='xMidYMid meet'
-                aria-hidden='true'
-                stroke='currentColor'
-              >
-                {/* fontawesome */}
-                <path
-                  className='checkedView'
-                  xmlns='http://www.w3.org/2000/svg'
-                  d='M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zm0-160c-53 0-96-43-96-96s43-96 96-96s96 43 96 96s-43 96-96 96z'
-                />
-              </Svg>
-            ) : (
-              <Svg
-                viewBox='0 0 512 512'
-                preserveAspectRatio='xMidYMid meet'
-                aria-hidden='true'
-                stroke='currentColor'
-              >
-                {/* fontawesome */}
-                <path
-                  className='defaultView'
-                  xmlns='http://www.w3.org/2000/svg'
-                  d='M256,512c141.4,0,256-114.6,256-256S397.4,0,256,0S0,114.6,0,256S114.6,512,256,512z'
-                />
-              </Svg>
-            )}
+          <Icon iconSize='30px' color='darkgrey'>
+            {checked === true
+              ? RadioButtonSelectedIcon
+              : RadioButtonUnselectedIcon}
           </Icon>
         </StyledRadioButton>
         <div className='Label'>{label}</div>

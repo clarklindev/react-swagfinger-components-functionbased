@@ -124,6 +124,7 @@ https://type-scale.com/
 - Icon fill and stroke is set on the Icon class for when it is toggelled (see example)
 - Align Light theme with Dark theme properties
 - fixed cursor pointer for some components
+- fixed up Radio Button - no icons in heroicons, made my own
 
 2023-01-16
 

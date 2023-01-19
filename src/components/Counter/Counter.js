@@ -13,22 +13,13 @@ const CounterContainer = styled.div`
   max-width: 150px;
   height: ${(props) => props.theme.global.inputHeight};
   color: ${(props) => props.theme.counter.borderColor};
-  Button[label='increment'] {
-    border-radius: 0;
-    border-top-right-radius: ${(props) => props.theme.global.borderRadius};
-    border-bottom-right-radius: ${(props) => props.theme.global.borderRadius};
-    background: ${(props) => props.theme.input.backgroundColor};
-  }
-  Button[label='decrement'] {
-    border-radius: 0;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    background: ${(props) => props.theme.input.backgroundColor};
-  }
 
+  Button {
+    background: ${(props) => props.theme.counter.backgroundColor};
+  }
   Input {
     border-color: inherit;
-    background: ${(props) => props.theme.input.backgroundColor};
+    background: ${(props) => props.theme.counter.backgroundColor};
   }
 `;
 

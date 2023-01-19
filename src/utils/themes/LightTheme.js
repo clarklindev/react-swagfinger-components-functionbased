@@ -91,6 +91,7 @@ export const lightTheme = {
 
   counter: {
     borderColor: 'hotpink',
+    backgroundColor: neutral[900],
   },
 
   button: {
