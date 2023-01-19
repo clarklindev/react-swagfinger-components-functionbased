@@ -3,40 +3,55 @@ import styled from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 import { MODIFIERS } from './modifiers';
 
-const StyledInput = styled.input.attrs((props) => ({
+const WrapperContainer = styled.div.attrs((props) => ({
   type: props.type,
 }))`
   overflow: hidden;
-
   box-sizing: border-box;
   height: auto;
-
-  border-radius: ${(props) => props.theme.global.borderRadius};
-  border: ${(props) => props.theme.global.borderWidth} solid
-    ${(props) => props.theme.global.borderColor};
-
-  background-color: ${(props) => props.theme.input.backgroundColor};
-  color: ${(props) => props.theme.input.color};
-  padding: ${(props) => props.theme.global.padding};
   width: 100%;
-  cursor: text;
   display: flex;
   flex-grow: 1;
   outline: none;
-
+  color: ${(props) => props.theme.input.color};
+  border-radius: ${(props) => props.theme.global.borderRadius};
+  border: ${(props) => props.theme.global.borderWidth} solid
+    ${(props) => props.theme.input.borderColor};
+  background-color: ${(props) => props.theme.input.backgroundColor};
   ${applyStyleModifiers(MODIFIERS)};
 `;
+
+const InputElement = styled.input`
+  cursor: text;
+  color: ${(props) => props.theme.input.color};
+  border-radius: ${(props) => props.theme.global.borderRadius};
+  border: ${(props) => props.theme.global.borderWidth} solid
+    ${(props) => props.theme.input.borderColor};
+  background-color: ${(props) => props.theme.input.backgroundColor};
+  outline: none;
+  width: 100%;
+  padding: ${(props) => props.theme.global.padding};
+  ${applyStyleModifiers(MODIFIERS)};
+`;
+
+export const InputWrapper = ({ configure = undefined, children }) => {
+  return (
+    <WrapperContainer modifiers={configure?.modifiers}>
+      {children}
+    </WrapperContainer>
+  );
+};
 
 export const Input = ({ configure, savedData }) => {
   const { type = 'text', onChange, modifiers = [], placeholder } = configure;
 
   return (
-    <StyledInput
+    <InputElement
       onChange={onChange}
       value={savedData}
       placeholder={placeholder}
       type={type}
-      modifiers={modifiers} //passes modifiers to styled component if any
+      modifiers={modifiers}
       readOnly={modifiers.includes('readonly')}
     />
   );

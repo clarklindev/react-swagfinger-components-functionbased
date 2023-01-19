@@ -1,21 +1,44 @@
 import React, { useState } from 'react';
-import { InputPassword } from './InputPassword';
+import { Input, InputWrapper } from './Input';
 import { Heading } from '../Typography/Typography';
+
+import { Button } from '../Button/Button';
+import { Icon } from '../Icon/Icon';
+
+import { ShowIcon } from '../../icons/ShowIcon';
+import { HideIcon } from '../../icons/HideIcon';
 
 export const InputPasswordExample = () => {
   const [savedData, setSavedData] = useState('');
-
-  const configure = {
-    onChange: (event) => {
-      console.log('password');
-      setSavedData(event.target.value);
-    },
-  };
+  const [passwordVisible, setPasswordVisible] = useState(false);
 
   return (
     <div className='flex flex-col mb-10'>
       <Heading variation='h6'>Password</Heading>
-      <InputPassword savedData={savedData} configure={configure} />
+      <InputWrapper>
+        <Input
+          savedData={savedData}
+          configure={{
+            modifiers: ['noborder', 'noborderrightradius'],
+            placeholder: 'placeholder',
+            type: passwordVisible ? 'text' : 'password',
+            onChange: (event) => {
+              console.log('noborder');
+              setSavedData(event.target.value);
+            },
+          }}
+        />
+        <Button
+          className='ml-2 mr-2'
+          variation='icon'
+          onClick={() => setPasswordVisible(!passwordVisible)}
+          label={
+            <Icon iconSize='30px' color='red'>
+              {passwordVisible ? HideIcon : ShowIcon}
+            </Icon>
+          }
+        />
+      </InputWrapper>
     </div>
   );
 };

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 import { MODIFIERS } from './modifiers';
-import { Icon } from '../Icon/Icon';
 
 const BaseButton = styled.button`
   box-sizing: border-box;
@@ -13,7 +12,7 @@ const BaseButton = styled.button`
   align-items: center;
   height: auto;
   cursor: pointer;
-  padding: 10px 15px;
+  padding: ${(props) => props.theme.global.padding};
   border-radius: ${(props) => props.theme.global.borderRadius};
   ${applyStyleModifiers(MODIFIERS)};
 `;
@@ -21,22 +20,28 @@ const BaseButton = styled.button`
 const ContainedButton = styled(BaseButton)`
   border: none;
   background-color: ${(props) =>
+    props.theme.color[props.backgroundColor]
+      ? props.theme.color[props.backgroundColor]
+      : props.backgroundColor
+      ? props.backgroundColor
+      : props.theme.button.contained.backgroundColor};
+
+  color: ${(props) =>
     props.theme.color[props.color]
       ? props.theme.color[props.color]
       : props.color
       ? props.color
-      : props.theme.button.contained.backgroundColor};
-  color: ${(props) => props.theme.button.contained.color};
+      : props.theme.button.contained.color};
   ${applyStyleModifiers(MODIFIERS)};
 `;
 
 const OutlinedButton = styled(BaseButton)`
   border: 1px solid
     ${(props) =>
-      props.theme.color[props.color]
-        ? props.theme.color[props.color]
-        : props.color
-        ? props.color
+      props.theme.color[props.borderColor]
+        ? props.theme.color[props.borderColor]
+        : props.borderColor
+        ? props.borderColor
         : props.theme.button.outlined.borderColor};
 
   background-color: transparent;
@@ -69,6 +74,8 @@ const TextButton = styled(BaseButton)`
       : props.color
       ? props.color
       : props.theme.button.text.color};
+  padding: 0px;
+
   &:disabled {
   }
 
@@ -80,6 +87,13 @@ const TextButton = styled(BaseButton)`
   ${applyStyleModifiers(MODIFIERS)};
 `;
 
+const IconButton = styled(BaseButton)`
+  padding: 0px;
+  border: 0px;
+  background: none;
+  ${applyStyleModifiers(MODIFIERS)};
+`;
+
 export const Button = ({
   variation = '',
   label = '',
@@ -87,8 +101,6 @@ export const Button = ({
   color = '',
   modifiers = [],
   size = '',
-  icon = '',
-  iconSize = '',
   children = '',
   className = '',
   ...rest
@@ -119,7 +131,6 @@ export const Button = ({
           className={[labelClasses, className].join(' ')}
           {...rest}
         >
-          {icon && <Icon iconSize={iconSize}>{icon}</Icon>}
           {label}
         </ContainedButton>
       );
@@ -131,7 +142,6 @@ export const Button = ({
           className={[labelClasses, className].join(' ')}
           {...rest}
         >
-          {icon && <Icon iconSize={iconSize}>{icon}</Icon>}
           {label}
         </OutlinedButton>
       );
@@ -143,10 +153,21 @@ export const Button = ({
           className={[labelClasses, className].join(' ')}
           {...rest}
         >
-          {icon && <Icon iconSize={iconSize}>{icon}</Icon>}
           {label}
         </TextButton>
       );
+    case 'icon':
+      return (
+        <IconButton
+          color={color}
+          modifiers={[...modifiers, size]}
+          className={[labelClasses, className].join(' ')}
+          {...rest}
+        >
+          {label}
+        </IconButton>
+      );
+
     default:
       return (
         <BaseButton
@@ -154,7 +175,6 @@ export const Button = ({
           className={[labelClasses, className].join(' ')}
           {...rest}
         >
-          {icon && <Icon iconSize={iconSize}>{icon}</Icon>}
           {label}
         </BaseButton>
       );

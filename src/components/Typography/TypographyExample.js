@@ -11,7 +11,7 @@ export const TypographyExample = () => {
         <Heading variation='h5'>H5 heading</Heading>
         <Heading variation='h6'>H6 heading</Heading>
       </div>
-      <p className='text-neutral-100'>
+      <p className='mb-0'>
         this is paragraph text - Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Vivamus in dui facilisis turpis bibendum aliquam. Fusce
         mattis leo feugiat nulla pulvinar, ac blandit turpis vulputate. Proin

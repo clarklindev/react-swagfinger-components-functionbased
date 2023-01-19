@@ -36,6 +36,7 @@ export const neutral = {
   700: '#2d2d2d',
   800: '#212121',
   900: '#1d1d1d',
+  1000: '#000000',
 };
 
 export const dev = {

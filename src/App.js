@@ -5,24 +5,21 @@ import { GlobalStyle, darkTheme, lightTheme } from './utils';
 
 import { ThemeProvider } from 'styled-components';
 import { Heading } from './components/Typography/Typography';
+import { TypographyExample } from './components/Typography/TypographyExample';
+import { LabelSomethingExample } from './components/LabelSomething/LabelSomethingExample';
+import { ButtonVariationExample } from './components/Button/ButtonVariationExample';
+import { ButtonModifiersExample } from './components/Button/ButtonModifiersExample';
+import { ButtonWithLabelSomethingExample } from './components/Button/ButtonWithLabelSomethingExample';
 
-import {
-  ButtonVariationExample,
-  ButtonModifiersExample,
-  ButtonWithIconExample,
-} from './components/Button/ButtonExample';
 import { SnackbarExample } from './components/Snackbar/SnackbarExample';
 import {
   InputExample,
-  InputReadOnlyExample,
   InputNoBorderExample,
-} from './components/Input/InputExample';
-import { InputPasswordExample } from './components/Input/InputPasswordExample';
-import {
-  InputWithIconRightExample,
-  InputWithIconLeftExample,
-} from './components/Input/InputWithIconExample';
-import { InputSearchExample } from './components/Input/InputSearchExample';
+  InputPasswordExample,
+  InputReadOnlyExample,
+  InputSearchExample,
+  InputWithIconExample,
+} from './components/Input';
 import { RadioButtonExample } from './components/RadioButton/RadioButtonExample';
 import { RadioButtonGroupExample } from './components/RadioButton/RadioButtonGroupExample';
 import { CheckboxExample } from './components/Checkbox/CheckboxExample';
@@ -33,7 +30,6 @@ import { SelectExample } from './components/Select/SelectExample';
 import { Block } from './components/Layout/Block';
 import { ToggleSwitchExample } from './components/Switch/ToggleSwitchExample';
 import { CheckboxIconExample } from './components/Checkbox/CheckboxIconExample';
-import { TypographyExample } from './components/Typography/TypographyExample';
 import { ListExample } from './components/List/ListExample';
 import {
   CardExample,
@@ -54,7 +50,7 @@ const App = () => {
     theme && (
       <ThemeProvider theme={theme}>
         <div
-          className='App flex-auto flex-col p-3'
+          className='App'
           style={{
             background: theme.background.backgroundColor,
             color: theme.color.DEFAULT,
@@ -74,11 +70,16 @@ const App = () => {
           </Block>
 
           <Block>
-            <Heading variation='h4'>03. Buttons</Heading>
+            <Heading variation='h4'>03. LabelSomething</Heading>
+            <LabelSomethingExample />
+          </Block>
+
+          <Block>
+            <Heading variation='h4'>04. Buttons</Heading>
             <div className='flex flex-col'>
               <ButtonVariationExample />
               <ButtonModifiersExample />
-              <ButtonWithIconExample />
+              <ButtonWithLabelSomethingExample />
             </div>
           </Block>
 
@@ -95,8 +96,7 @@ const App = () => {
               <InputExample />
               <InputReadOnlyExample />
               <InputNoBorderExample />
-              <InputWithIconRightExample />
-              <InputWithIconLeftExample />
+              <InputWithIconExample />
               <InputPasswordExample />
               <InputSearchExample />
             </div>

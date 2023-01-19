@@ -22,6 +22,15 @@ export const MODIFIERS = {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   `,
+  nopadding: (props) => css`
+    padding: 0;
+  `,
+  noleftpadding: (props) => css`
+    padding-left: 0;
+  `,
+  norightpadding: (props) => css`
+    padding-right: 0;
+  `,
 
   // inputsearch
   search: () => css`

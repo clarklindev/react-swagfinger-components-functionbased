@@ -44,10 +44,10 @@ const StyledCheckbox = styled.div`
   position: relative;
   box-sizing: border-box;
   border-radius: 3px;
-  border: 1px solid ${(props) => props.theme.borderColor};
+  border: 1px solid ${(props) => props.theme.checkbox.borderColor};
   width: 30px;
   height: 30px;
-  background-color: ${(props) => props.theme.backgroundColor};
+  background-color: ${(props) => props.theme.checkbox.backgroundColor};
 
   ${Icon} {
     visibility: ${(props) => (props.checked ? 'visible' : 'hidden')};

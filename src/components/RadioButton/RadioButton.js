@@ -55,16 +55,6 @@ const Svg = styled.svg`
 
   fill: ${(props) => props.theme.color};
   box-sizing: border-box;
-  path {
-    &.defaultView {
-      fill: ${(props) => props.theme.formElementBackground};
-      stroke: ${(props) => props.theme.neutral500};
-    }
-    &.checkedView {
-      fill: ${(props) => props.theme.formElementBackground};
-      stroke: ${(props) => props.theme.borderColor};
-    }
-  }
 `;
 
 export const RadioButton = ({ savedData, configure }) => {
@@ -82,6 +72,7 @@ export const RadioButton = ({ savedData, configure }) => {
                 viewBox='0 0 512 512'
                 preserveAspectRatio='xMidYMid meet'
                 aria-hidden='true'
+                stroke='currentColor'
               >
                 {/* fontawesome */}
                 <path
@@ -95,6 +86,7 @@ export const RadioButton = ({ savedData, configure }) => {
                 viewBox='0 0 512 512'
                 preserveAspectRatio='xMidYMid meet'
                 aria-hidden='true'
+                stroke='currentColor'
               >
                 {/* fontawesome */}
                 <path

@@ -20,6 +20,8 @@ export const lightTheme = {
     success: status.success,
     info: status.info,
     error: status.error,
+    white: neutral[100],
+    black: neutral[1000],
   },
 
   global: {
@@ -74,6 +76,11 @@ export const lightTheme = {
     backgroundColor: neutral[200] + transparency[50],
     fill: neutral[600],
     stroke: neutral[600],
+  },
+
+  checkbox: {
+    borderColor: neutral[200],
+    backgroundColor: neutral[100],
   },
 
   button: {

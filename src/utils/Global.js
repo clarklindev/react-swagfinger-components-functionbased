@@ -23,7 +23,9 @@ export const GlobalStyle = createGlobalStyle`
     
   }
 
-  p {margin-bottom: 1rem;}
+  p {
+    margin-bottom: 1rem;
+  }
 
   small, .text_small {font-size: 0.75rem;}
 

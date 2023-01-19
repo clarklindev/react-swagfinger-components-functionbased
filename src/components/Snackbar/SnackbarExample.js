@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Snackbar } from './Snackbar';
 import { Button } from '../Button/Button';
+import { Icon } from '../Icon/Icon';
 
 export const SnackbarExample = () => {
   const [showSnackbar, setShowSnackbar] = useState(false);
@@ -35,12 +36,13 @@ export const SnackbarExample = () => {
         </Snackbar>
       )}
       <Button
-        variation='text'
-        modifiers={['nopadding']}
-        size='30px'
-        iconSize='30px'
         onClick={onClickHandler}
-        icon={icon}
+        variation='icon'
+        label={
+          <Icon iconSize='30px' color='white'>
+            {icon}
+          </Icon>
+        }
       />
     </div>
   );

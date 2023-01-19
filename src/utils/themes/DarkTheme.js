@@ -20,13 +20,15 @@ export const darkTheme = {
     success: status.success,
     info: status.info,
     error: status.error,
+    white: neutral[100],
+    black: neutral[1000],
   },
 
   global: {
     inputHeight: '40px',
     padding: '10px',
     borderWidth: '1px',
-    borderRadius: '0px',
+    borderRadius: '5px',
     borderColor: neutral[300],
     placeholder: neutral[400],
 
@@ -66,16 +68,20 @@ export const darkTheme = {
 
   input: {
     color: neutral[300],
-    backgroundColor: '#000000',
+    backgroundColor: neutral[900],
     borderColor: neutral[400] + transparency[10],
   },
 
   icon: {
-    backgroundColor: 'red',
-    fill: 'yellow',
+    backgroundColor: neutral[200] + transparency[50],
+    fill: neutral[600],
     stroke: neutral[600],
   },
 
+  checkbox: {
+    borderColor: neutral[200],
+    backgroundColor: neutral[100],
+  },
   button: {
     //neutral component color
     base: {

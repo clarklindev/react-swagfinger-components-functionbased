@@ -18,7 +18,7 @@ export const CardExample = () => {
 
 export const CardWithDropshadowExample = () => {
   return (
-    <div className='flex flex-col mb-10'>
+    <div className='flex flex-col'>
       <Heading variation='h6'>drop shadow</Heading>
       <Card
         color='white'
