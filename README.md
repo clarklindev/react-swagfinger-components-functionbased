@@ -123,6 +123,7 @@ https://type-scale.com/
 - Icons can be left as svgs (dont need to touch)
 - Icon fill and stroke is set on the Icon class for when it is toggelled (see example)
 - Align Light theme with Dark theme properties
+- fixed cursor pointer for some components
 
 2023-01-16
 

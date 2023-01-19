@@ -29,7 +29,7 @@ export const InputPasswordExample = () => {
           }}
         />
         <Button
-          className='ml-2 mr-4'
+          className='mr-4'
           variation='icon'
           onClick={() => setPasswordVisible(!passwordVisible)}
           label={

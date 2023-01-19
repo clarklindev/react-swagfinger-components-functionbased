@@ -12,16 +12,16 @@ const SelectContainer = styled.select`
   box-sizing: border-box;
   appearance: none;
   margin: 0;
-  max-height: 50px;
+  max-height: ${(props) => props.theme.global.inputHeight};
   width: 100%;
   height: ${(props) => props.theme.global.inputHeight};
   color: ${(props) => props.theme.select.color};
   border: 1px solid ${(props) => props.theme.select.borderColor};
   background: ${(props) => props.theme.select.backgroundColor};
-  padding: 0 15px;
-  border-radius: 8px;
+  padding: ${(props) => props.theme.global.padding};
+  border-radius: ${(props) => props.theme.global.borderRadius};
   outline: none;
-  
+  cursor: pointer;  
   &:after {
     content: "V";
   }

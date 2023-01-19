@@ -43,12 +43,12 @@ const StyledCheckbox = styled.div`
   display: inline-block;
   position: relative;
   box-sizing: border-box;
-  border-radius: 3px;
+  border-radius: ${(props) => props.theme.global.borderRadius};
   border: 1px solid ${(props) => props.theme.checkbox.borderColor};
   width: 30px;
   height: 30px;
   background-color: ${(props) => props.theme.checkbox.backgroundColor};
-
+  cursor: pointer;
   ${Icon} {
     visibility: ${(props) => (props.checked ? 'visible' : 'hidden')};
   }

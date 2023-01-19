@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const CheckboxIconContainer = styled.div`
   label {
     display: inline-flex;
+    cursor: pointer;
   }
 `;
 
