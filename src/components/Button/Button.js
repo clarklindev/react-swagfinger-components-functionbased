@@ -131,7 +131,7 @@ export const Button = ({
           className={[labelClasses, className].join(' ')}
           {...rest}
         >
-          {label}
+          {label ? label : children}
         </ContainedButton>
       );
     case 'outlined':
@@ -142,7 +142,7 @@ export const Button = ({
           className={[labelClasses, className].join(' ')}
           {...rest}
         >
-          {label}
+          {label ? label : children}
         </OutlinedButton>
       );
     case 'text':
@@ -153,7 +153,7 @@ export const Button = ({
           className={[labelClasses, className].join(' ')}
           {...rest}
         >
-          {label}
+          {label ? label : children}
         </TextButton>
       );
     case 'icon':
@@ -164,7 +164,7 @@ export const Button = ({
           className={[labelClasses, className].join(' ')}
           {...rest}
         >
-          {label}
+          {label ? label : children}
         </IconButton>
       );
 
@@ -175,7 +175,7 @@ export const Button = ({
           className={[labelClasses, className].join(' ')}
           {...rest}
         >
-          {label}
+          {label ? label : children}
         </BaseButton>
       );
   }

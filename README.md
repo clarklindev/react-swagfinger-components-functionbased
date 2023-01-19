@@ -107,6 +107,19 @@ https://type-scale.com/
 
 ## updates
 
+2023-01-19
+
+- Input component - overhaul of whole component - separation of concerns (buttons / icons moved out of component)
+- InputWrapper which is part of Input component - you use this when you want to hide the input style that this component wraps
+- input examples
+- Icons moved to its own component
+- additional Button modifiers
+- LabelSomething class - use this to label anything - WithLabel class removed
+- Snackbar uses an icon component
+- colors added
+- themes with adjustments and additions
+- Button - Button content/label can be received as children
+
 2023-01-16
 
 ## Roadmap

@@ -25,8 +25,8 @@ export const darkTheme = {
   },
 
   global: {
-    inputHeight: '40px',
-    padding: '10px',
+    inputHeight: '50px',
+    padding: '15px',
     borderWidth: '1px',
     borderRadius: '5px',
     borderColor: neutral[300],
