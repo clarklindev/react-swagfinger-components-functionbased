@@ -88,6 +88,11 @@ export const darkTheme = {
     borderColor: neutral[200],
     backgroundColor: neutral[100],
   },
+
+  counter: {
+    borderColor: 'hotpink',
+  },
+
   button: {
     //neutral component color
     base: {

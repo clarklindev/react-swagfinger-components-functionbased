@@ -5,6 +5,13 @@ export const MODIFIERS = {
   noborder: () => css`
     border: none;
   `,
+  noborderleft: () => css`
+    border-left: none;
+  `,
+  noborderright: () => css`
+    border-right: none;
+  `,
+
   readonly: (props) => css`
     cursor: default;
   `,
@@ -30,6 +37,10 @@ export const MODIFIERS = {
   `,
   norightpadding: (props) => css`
     padding-right: 0;
+  `,
+
+  textcenter: (props) => css`
+    text-align: center;
   `,
 
   // inputsearch

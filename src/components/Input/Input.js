@@ -46,7 +46,13 @@ export const InputWrapper = ({ configure = undefined, children }) => {
 };
 
 export const Input = ({ configure, savedData }) => {
-  const { type = 'text', onChange, modifiers = [], placeholder } = configure;
+  const {
+    type = 'text',
+    onChange,
+    modifiers = [],
+    placeholder,
+    className,
+  } = configure;
 
   return (
     <InputElement
@@ -56,6 +62,7 @@ export const Input = ({ configure, savedData }) => {
       type={type}
       modifiers={modifiers}
       readOnly={modifiers.includes('readonly')}
+      className={className}
     />
   );
 };

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const IconContainer = styled.div`
   width: ${(props) => props.iconSize};
   height: ${(props) => props.iconSize};
+  display: flex;
 
   //color affects the svg if svg has currentColor set somewhere
   color: ${(props) =>

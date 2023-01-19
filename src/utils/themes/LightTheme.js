@@ -89,6 +89,10 @@ export const lightTheme = {
     backgroundColor: neutral[100],
   },
 
+  counter: {
+    borderColor: 'hotpink',
+  },
+
   button: {
     //neutral component color
     base: {

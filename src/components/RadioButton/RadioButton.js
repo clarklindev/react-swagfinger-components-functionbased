@@ -9,7 +9,7 @@ const RadioButtonContainer = styled.div`
 
     .Label {
       padding-left: 10px;
-      color: ${(props) => props.theme.color};
+      color: ${(props) => props.theme.color.DEFAULT};
     }
   }
 `;

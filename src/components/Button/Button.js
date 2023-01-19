@@ -43,7 +43,6 @@ const OutlinedButton = styled(BaseButton)`
         : props.borderColor
         ? props.borderColor
         : props.theme.button.outlined.borderColor};
-
   background-color: transparent;
 
   color: ${(props) =>

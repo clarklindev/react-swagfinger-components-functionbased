@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Icon } from '../Icon/Icon';
+import { CheckIcon } from '../../icons/CheckIcon';
+import { MinusSmallIcon } from '../../icons/MinusSmallIcon';
 
 const CheckboxContainer = styled.div`
   label {
@@ -29,18 +32,7 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
   width: 1px;
 `;
 
-const Icon = styled.div`
-  overflow: hidden;
-  width: 30px;
-  height: 30px;
-  box-sizing: border-box;
-  display: inline-flex;
-  align-content: center;
-  align-items: center;
-`;
-
 const StyledCheckbox = styled.div`
-  display: inline-block;
   position: relative;
   box-sizing: border-box;
   border-radius: ${(props) => props.theme.global.borderRadius};
@@ -49,9 +41,9 @@ const StyledCheckbox = styled.div`
   height: 30px;
   background-color: ${(props) => props.theme.checkbox.backgroundColor};
   cursor: pointer;
-  ${Icon} {
-    visibility: ${(props) => (props.checked ? 'visible' : 'hidden')};
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Svg = styled.svg`
@@ -71,25 +63,8 @@ export const Checkbox = ({ savedData, configure }) => {
       <label>
         <HiddenCheckbox checked={checked} onChange={onChange} />
         <StyledCheckbox checked={checked}>
-          <Icon>
-            {indeterminate === true ? (
-              <Svg
-                viewbox='0 0 20 20'
-                preserveAspectRatio='xMidYMid meet'
-                aria-hidden='true'
-              >
-                <polyline points='7 12 18 12' />
-              </Svg>
-            ) : (
-              <Svg
-                viewBox='0 0 512 512'
-                preserveAspectRatio='xMidYMid meet'
-                aria-hidden='true'
-              >
-                {/* fontawesome */}
-                <path d='M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z' />
-              </Svg>
-            )}
+          <Icon color='black' iconSize='25px'>
+            {indeterminate === true ? MinusSmallIcon : checked && CheckIcon}
           </Icon>
         </StyledCheckbox>
         <div className='Label'>{label}</div>
