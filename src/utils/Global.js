@@ -29,4 +29,8 @@ export const GlobalStyle = createGlobalStyle`
 
   small, .text_small {font-size: 0.75rem;}
 
+  //override default text selection color
+  ::selection { background: hotpink; /* WebKit/Blink Browsers */ }
+  ::-moz-selection { background: #hotpink; /* Gecko Browsers */ }
+
 `;
