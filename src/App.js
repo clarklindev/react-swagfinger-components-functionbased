@@ -38,6 +38,7 @@ import {
 import { TableExample } from './components/Table/TableExample';
 import { SliderExample } from './components/Slider/SliderExample';
 import { MultiRangeSliderExample } from './components/Slider/MultiRangeSliderExample';
+import { HoverExample } from './customhooks/HoverExample';
 
 const App = () => {
   const [theme, setTheme] = useState();
@@ -59,7 +60,7 @@ const App = () => {
           <Block>
             <Heading variation='h4'>01. Dark/Light mode</Heading>
             <div className='flex flex-col items-start gap-2'>
-              <button onClick={() => setTheme(lightTheme)}>light</button>
+              {/* <button onClick={() => setTheme(lightTheme)}>light</button> */}
               <button onClick={() => setTheme(darkTheme)}>dark</button>
             </div>
           </Block>
@@ -67,6 +68,11 @@ const App = () => {
           <Block>
             <Heading variation='h4'>02. Typography</Heading>
             <TypographyExample />
+          </Block>
+
+          <Block>
+            <Heading variation='h4'>03. Helper hooks</Heading>
+            <HoverExample />
           </Block>
 
           <Block>
