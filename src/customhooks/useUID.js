@@ -7,7 +7,7 @@ export function useUID(identifier = 'uid') {
 
   useEffect(() => {
     setId(`${identifier}-${idCounter++}`);
-  }, []);
+  }, [identifier]);
 
   return id;
 }

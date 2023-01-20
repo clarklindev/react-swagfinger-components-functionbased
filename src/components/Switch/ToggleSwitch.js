@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styled from 'styled-components';
-import { useUID } from '../../utils/helpers/UseUID';
+import { useUID } from '../../customhooks/useUID';
 
 const SwitchWrapper = styled.label`
   position: relative;
