@@ -5,9 +5,9 @@ export const HoverExample = () => {
 
   return (
     <div style={{ position: 'relative' }}>
-      <button {...attrs}>hello world</button>
+      <button {...attrs}>useHover() - see HoverExample</button>
       {hovering && (
-        <div style={{ position: 'absolute', top: 0, right: 0 }}>show me</div>
+        <div style={{ position: 'absolute', top: 0, right: 0 }}>hello</div>
       )}
     </div>
   );

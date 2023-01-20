@@ -11,5 +11,7 @@ export function useHover() {
     onMouseOut: mouseOut,
   };
 
+  //your component receives helper methods from useHover: onMouseOver() onMouseOut()
+  //and state: hovering
   return [hovering, attrs];
 }
