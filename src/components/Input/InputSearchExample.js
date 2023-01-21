@@ -60,7 +60,9 @@ export const InputSearchExample = () => {
             },
           }}
         />
-        {savedData.length ? rightIcon : undefined}
+
+        {/* WRONG - {savedData.length && rightIcon} - 0 is a falsy value, so when it is evaluated by &&, it returns 0 */}
+        {savedData.length > 0 && rightIcon}
       </InputWrapper>
     </div>
   );
