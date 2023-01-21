@@ -39,6 +39,7 @@ import { TableExample } from './components/Table/TableExample';
 import { SliderExample } from './components/Slider/SliderExample';
 import { MultiRangeSliderExample } from './components/Slider/MultiRangeSliderExample';
 import { UseHoverExample } from './customhooks/UseHoverExample';
+import { UseFocusExample } from './customhooks/UseFocusExample';
 
 const App = () => {
   const [theme, setTheme] = useState();
@@ -73,6 +74,7 @@ const App = () => {
           <Block>
             <Heading variation='h4'>03. Helper hooks</Heading>
             <UseHoverExample />
+            <UseFocusExample />
           </Block>
 
           <Block>
