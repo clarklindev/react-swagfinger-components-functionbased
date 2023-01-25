@@ -22,8 +22,12 @@ import {
 } from './components/Input';
 import { RadioButtonExample } from './components/RadioButton/RadioButtonExample';
 import { RadioButtonGroupExample } from './components/RadioButton/RadioButtonGroupExample';
+import { RadioButtonAndLabelSomethingExample } from './components/RadioButton/RadioButtonAndLabelSomethingExample';
+import { RadioButtonGroupAndLabelSomethingExample } from './components/RadioButton/RadioButtonGroupAndLabelSomethingExample';
 import { CheckboxExample } from './components/Checkbox/CheckboxExample';
 import { CheckboxGroupExample } from './components/Checkbox/CheckboxGroupExample';
+import { CheckboxAndLabelSomethingExample } from './components/Checkbox/CheckboxAndLabelSomethingExample';
+import { CheckboxGroupAndLabelSomethingExample } from './components/Checkbox/CheckboxGroupAndLabelSomethingExample';
 import { CounterExample } from './components/Counter/CounterExample';
 import { AccordionExample } from './components/Accordion/AccordionExample';
 import { SelectExample } from './components/Select/SelectExample';
@@ -125,6 +129,8 @@ const App = () => {
             <div className='flex flex-col'>
               <RadioButtonExample />
               <RadioButtonGroupExample />
+              <RadioButtonAndLabelSomethingExample />
+              <RadioButtonGroupAndLabelSomethingExample />
             </div>
           </Block>
 
@@ -133,6 +139,9 @@ const App = () => {
             <div className='flex flex-col'>
               <CheckboxExample />
               <CheckboxGroupExample />
+              <CheckboxAndLabelSomethingExample />
+              <CheckboxGroupAndLabelSomethingExample />
+
               <CheckboxIconExample />
             </div>
           </Block>

@@ -5,11 +5,14 @@ const AccordionContainer = styled.div`
   display: block;
 `;
 
-export const Accordion = ({ render, allowMultiOpen }) => {
+export const Accordion = ({ render, multiOpen }) => {
   const [activeItems, setActiveItems] = useState(); //set initial active items // activeItems holds item indexs to show
+  const [allowMultiOpen, setAllowMultiOpen] = useState();
+
   useEffect(() => {
     setActiveItems([]);
-  }, []);
+    setAllowMultiOpen(multiOpen);
+  }, [multiOpen]);
 
   const handleClick = (index) => {
     const found = activeItems.some((item) => item === index);

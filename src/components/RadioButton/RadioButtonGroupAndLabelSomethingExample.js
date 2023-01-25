@@ -5,7 +5,7 @@ import { RadioButton } from './RadioButton';
 import { Heading } from '../Typography/Typography';
 import { LabelSomething } from '../LabelSomething/LabelSomething';
 
-export const RadioButtonGroupExample = () => {
+export const RadioButtonGroupAndLabelSomethingExample = () => {
   // radioOptions: moved outside of configure object - possibility that savedData is pulled, eg. questions from backend async call
   const options = [
     { label: 'a', value: 'A' },
@@ -25,8 +25,8 @@ export const RadioButtonGroupExample = () => {
   };
 
   return (
-    <div className='flex flex-col mb-10'>
-      <Heading variation='h6'>RadioButton Group</Heading>
+    <div className='flex flex-col'>
+      <Heading variation='h6'>RadioButton Group + LabelSomething</Heading>
       <LabelSomething
         label='Label'
         labelPosition='top'
@@ -35,22 +35,29 @@ export const RadioButtonGroupExample = () => {
         something={
           <RadioButtonGroup
             configure={{
-              direction: 'column',
+              direction: 'row',
               spacing: '16px', //space between radios
             }}
           >
             {options.map((each, index) => {
               return (
-                <RadioButton
+                <LabelSomething
                   key={`RadioButtonGroup_Radio_ABC` + index}
-                  savedData={savedData[index]}
-                  configure={{
-                    name: 'Radio_ABC',
-                    label: each.label,
-                    iconSize: '30px',
-                    color: 'darkgrey',
-                    onChange: () => onChange(index, !savedData[index]),
-                  }}
+                  label={each.label}
+                  labelPosition='bottom'
+                  gap='2'
+                  align='center'
+                  something={
+                    <RadioButton
+                      savedData={savedData[index]}
+                      configure={{
+                        name: 'Radio_ABC',
+                        iconSize: '30px',
+                        color: 'darkgrey',
+                        onChange: () => onChange(index, !savedData[index]),
+                      }}
+                    />
+                  }
                 />
               );
             })}

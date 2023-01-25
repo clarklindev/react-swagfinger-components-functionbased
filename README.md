@@ -101,7 +101,54 @@ https://type-scale.com/
 
 ## updates
 
-2023-01-19
+2023-01-25
+
+- seems available gap- values are: gap-1, gap-2, gap-4, gap-5, gap-10
+- changed to use "gap-" syntax instead of 'className="gap-4"'
+
+- added RadioButtonAndLabelSomethingExample
+- added RadioButtonGroupAndLabelSomethingExample
+- added CheckboxAndLabelSomethingExample
+- added CheckboxGroupAndLabelSomethingExample
+
+- accordion - [allowMultiOpen, setAllowMultiOpen] useState moved into Accordion
+- accordion example - updated
+
+- button - default top/bottom padding set to 10px
+- button variation example - icons moved out and imported from icons/
+- ButtonWithLabelSomethingExample - icons moved out and imported from icons/
+  - Button removed className='gap-2'
+  - LabelSomething removed className - added gap=""
+- button modifiers - large - tweaks
+
+- Checkbox - wrapping container removed - label is the wrapping container
+
+  - default: flex-direction row
+  - can pass-in label
+  - can pass-in iconSize
+  - can pass-in color
+
+- CheckboxAndLabelSomethingExample
+- CheckboxGroup
+  - can set direction: row, row-reverse, column, column-reverse
+  - can set spacing - whatever units you want: px, rem
+  - receives children
+  - Checkbox moved outside component
+- CheckboxGroupAndLabelSomethingExample
+- CheckboxGroupExample
+- LabelSomething
+
+  - component allows you to place labels in top,left,right, bottom direction of "Something"
+  - labelClickable
+  - gap - can set the gap between the label and the something. eg. gap={1} gap={2} gap={4} gap={5} gap={10}
+  - can set align
+    ROADMAP: want to adjust labelPosition to "direction" more aligned with RadioButtonGroup and CheckboxGroup
+
+- RadioButton + RadioButtonGroup + all their examples align with checkbox (same implementation)
+- Select - padding top and bottom adjust
+- Themes - added global margin
+
+  2023-01-19
 
 - Input component - overhaul of whole component - separation of concerns (buttons / icons moved out of component)
 - InputWrapper which is part of Input component - you use this when you want to hide the input style that this component wraps

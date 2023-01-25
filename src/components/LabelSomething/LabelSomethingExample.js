@@ -1,30 +1,17 @@
 import { LabelSomething } from './LabelSomething';
 import { Icon } from '../Icon/Icon';
+import { SmileyIcon } from '../../icons/SmileyIcon';
 
 export const LabelSomethingExample = () => {
-  const icon = (
-    <svg
-      xmlns='http://www.w3.org/2000/svg'
-      fill='none'
-      viewBox='0 0 24 24'
-      strokeWidth={1.5}
-      stroke='currentColor'
-      className='w-6 h-6'
-    >
-      <path
-        strokeLinecap='round'
-        strokeLinejoin='round'
-        d='M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z'
-      />
-    </svg>
-  );
+  const icon = SmileyIcon;
 
   return (
     <div className='flex flex-col gap-10'>
       <LabelSomething
-        className='gap-1'
+        gap='2'
         label='left'
         labelPosition='left'
+        align='center'
         something={
           <Icon iconSize='30px' color='white'>
             {icon}
@@ -32,9 +19,10 @@ export const LabelSomethingExample = () => {
         }
       />
       <LabelSomething
-        className='gap-1'
+        gap='2'
         label='right'
         labelPosition='right'
+        align='center'
         something={
           <Icon iconSize='30px' color='white'>
             {icon}
@@ -42,9 +30,10 @@ export const LabelSomethingExample = () => {
         }
       />
       <LabelSomething
-        className='gap-1'
+        gap='2'
         label='top'
         labelPosition='top'
+        align='center'
         something={
           <Icon iconSize='30px' color='white'>
             {icon}
@@ -52,9 +41,10 @@ export const LabelSomethingExample = () => {
         }
       />
       <LabelSomething
-        className='gap-1'
+        gap='2'
         label='bottom'
         labelPosition='bottom'
+        align='center'
         something={
           <Icon iconSize='30px' color='white'>
             {icon}

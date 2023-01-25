@@ -4,17 +4,13 @@ import { Icon } from '../Icon/Icon';
 import { CheckIcon } from '../../icons/CheckIcon';
 import { MinusSmallIcon } from '../../icons/MinusSmallIcon';
 
-const CheckboxContainer = styled.div`
-  label {
-    display: inline-flex;
-    align-items: center;
-    align-content: center;
-
-    .Label {
-      padding-left: 10px;
-      color: ${(props) => props.theme.color};
-    }
-  }
+const CheckboxContainer = styled.label`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: auto;
+  height: auto;
+  gap: 1rem;
 `;
 
 // Hide checkbox visually but remain accessible to screen readers.
@@ -37,8 +33,8 @@ const StyledCheckbox = styled.div`
   box-sizing: border-box;
   border-radius: ${(props) => props.theme.global.borderRadius};
   border: 1px solid ${(props) => props.theme.checkbox.borderColor};
-  width: 30px;
-  height: 30px;
+  width: auto;
+  height: auto;
   background-color: ${(props) => props.theme.checkbox.backgroundColor};
   cursor: pointer;
   display: flex;
@@ -46,29 +42,26 @@ const StyledCheckbox = styled.div`
   align-items: center;
 `;
 
-const Svg = styled.svg`
-  display: block;
-  margin: auto;
-  width: 20px;
-  height: 20px;
-  fill: ${(props) => props.theme.color};
-  box-sizing: border-box;
-`;
-
 export const Checkbox = ({ savedData, configure }) => {
   const checked = savedData;
-  const { indeterminate = false, label, onChange } = configure;
+  const {
+    indeterminate = false,
+    onChange,
+    iconSize = '30px',
+    color = 'darkgrey',
+    name = '',
+    label = '',
+  } = configure;
   return (
     <CheckboxContainer className='Checkbox'>
-      <label>
-        <HiddenCheckbox checked={checked} onChange={onChange} />
-        <StyledCheckbox checked={checked}>
-          <Icon color='black' iconSize='25px'>
-            {indeterminate === true ? MinusSmallIcon : checked && CheckIcon}
-          </Icon>
-        </StyledCheckbox>
-        <div className='Label'>{label}</div>
-      </label>
+      <HiddenCheckbox checked={checked} onChange={onChange} name={name} />
+
+      <StyledCheckbox checked={checked}>
+        <Icon iconSize={iconSize} color={color}>
+          {indeterminate === true ? MinusSmallIcon : checked && CheckIcon}
+        </Icon>
+      </StyledCheckbox>
+      {label}
     </CheckboxContainer>
   );
 };

@@ -18,15 +18,10 @@ const SelectContainer = styled.select`
   color: ${(props) => props.theme.select.color};
   border: 1px solid ${(props) => props.theme.select.borderColor};
   background: ${(props) => props.theme.select.backgroundColor};
-  padding: ${(props) => props.theme.global.padding};
+  padding: 10px ${(props) => props.theme.global.padding};
   border-radius: ${(props) => props.theme.global.borderRadius};
   outline: none;
   cursor: pointer;  
-  &:after {
-    content: "V";
-  }
-
-
 }`;
 
 export const Select = ({ savedData, configure, children }) => {

@@ -12,7 +12,7 @@ const BaseButton = styled.button`
   align-items: center;
   height: auto;
   cursor: pointer;
-  padding: ${(props) => props.theme.global.padding};
+  padding: 10px ${(props) => props.theme.global.padding};
   border-radius: ${(props) => props.theme.global.borderRadius};
   ${applyStyleModifiers(MODIFIERS)};
 `;

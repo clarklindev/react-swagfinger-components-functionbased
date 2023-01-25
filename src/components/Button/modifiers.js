@@ -8,9 +8,9 @@ export const MODIFIERS = {
   `,
 
   large: () => css`
-    padding: 15px 32px;
-    height: 50px;
-    font-size: 1.5rem;
+    padding: 10px 1rem;
+    height: auto;
+    font-size: 1.2rem;
   `,
 
   padding: () => css`

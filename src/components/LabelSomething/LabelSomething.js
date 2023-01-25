@@ -1,32 +1,82 @@
+import styled from 'styled-components';
+
+const Label = styled.label``;
+const Div = styled.div``;
+
 export const LabelSomething = ({
   label,
-  labelPosition,
+  labelPosition = 'right',
   something,
-  className,
+  align = 'center',
+  className = '',
+  gap = '',
+  labelClickable = false,
   ...rest
 }) => {
-  let positionClasses = '';
+  let containerClasses = 'flex self-start';
 
+  let positionClasses = '';
   switch (labelPosition) {
     case 'top':
-      positionClasses = 'flex self-start items-center flex-col-reverse';
+      positionClasses = 'flex flex-col-reverse';
       break;
     case 'bottom':
-      positionClasses = 'flex self-start items-center flex-col';
+      positionClasses = 'flex flex-col';
       break;
     case 'left':
-      positionClasses = 'flex self-start items-center flex-row-reverse';
+      positionClasses = 'flex flex-row-reverse';
       break;
     default:
     case 'right':
-      positionClasses = 'flex self-start items-center flex-row';
+      positionClasses = 'flex flex-row';
       break;
   }
 
+  let alignClasses = '';
+  switch (align) {
+    default:
+    case 'center':
+      alignClasses = 'items-center';
+      break;
+    case 'top':
+    case 'start':
+      alignClasses = 'items-start';
+      break;
+    case 'end':
+    case 'bottom':
+      alignClasses = 'items-end';
+  }
+
+  let gapClasses = '';
+  switch (labelPosition) {
+    case 'left':
+    case 'right':
+      gapClasses = `gap-${gap}`;
+      break;
+    case 'top':
+    case 'bottom':
+      gapClasses = `gap-${gap}`;
+      break;
+    default:
+      break;
+  }
+
+  const Element =
+    labelClickable === true || labelClickable === 'true' ? Label : Div;
+
   return (
-    <div className={[positionClasses, className].join(' ')} {...rest}>
+    <Element
+      className={[
+        containerClasses,
+        positionClasses,
+        alignClasses,
+        className,
+        gapClasses,
+      ].join(' ')}
+      {...rest}
+    >
       {something}
-      {<span className='inline-block'>{label}</span>}
-    </div>
+      {label}
+    </Element>
   );
 };

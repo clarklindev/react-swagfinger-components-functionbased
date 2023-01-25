@@ -1,40 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
-import { RadioButton } from './RadioButton';
 
 const RadioButtonGroupContainer = styled.div`
-  display: block;
+  display: flex;
+  flex-direction: ${(props) =>
+    props.direction === 'column' ? 'column' : 'row'};
 
-  .Header {
-    margin-bottom: 10px;
-    color: ${(props) => props.theme.formElementLabel};
-  }
-
-  .RadioButton {
-    margin-bottom: 5px;
+  > * {
+    margin-bottom: ${(props) => props.direction === 'column' && props.spacing};
+    margin-right: ${(props) => props.direction === 'row' && props.spacing};
   }
 `;
 
-export const RadioButtonGroup = ({ savedData, configure }) => {
-  const { name, values, onChange, groupLabel } = configure;
+export const RadioButtonGroup = ({ configure, children }) => {
+  const { direction = 'column', spacing = '0px' } = configure;
 
   return (
-    <RadioButtonGroupContainer className='RadioButtonGroup'>
-      <div className='Header'>{groupLabel}</div>
-
-      {values.map((each, index) => {
-        return (
-          <RadioButton
-            key={`RadioButtonGroup_${name}` + index}
-            savedData={savedData[index]}
-            configure={{
-              label: each.label,
-              name: name,
-              onChange: () => onChange(index, !savedData[index]),
-            }}
-          />
-        );
-      })}
+    <RadioButtonGroupContainer
+      className={`RadioButtonGroup`}
+      direction={direction}
+      spacing={spacing}
+    >
+      {children}
     </RadioButtonGroupContainer>
   );
 };

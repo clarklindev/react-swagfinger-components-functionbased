@@ -4,17 +4,13 @@ import { RadioButtonUnselectedIcon } from '../../icons/RadioButtonUnselectedIcon
 import { RadioButtonSelectedIcon } from '../../icons/RadioButtonSelectedIcon';
 import { Icon } from '../Icon/Icon';
 
-const RadioButtonContainer = styled.div`
-  label {
-    display: inline-flex;
-    align-items: center;
-    align-content: center;
-
-    .Label {
-      padding-left: 10px;
-      color: ${(props) => props.theme.color.DEFAULT};
-    }
-  }
+const RadioButtonContainer = styled.label`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: auto;
+  height: auto;
+  gap: 1rem;
 `;
 
 // Hide radioButton visually but remain accessible to screen readers.
@@ -33,32 +29,32 @@ const HiddenRadioButton = styled.input.attrs({ type: 'radio' })`
 `;
 
 const StyledRadioButton = styled.div`
-  display: inline-block;
   position: relative;
   box-sizing: border-box;
-  border-radius: 8px;
-  width: 30px;
-  height: 30px;
   cursor: pointer;
 `;
 
 export const RadioButton = ({ savedData, configure }) => {
   const checked = savedData;
-  const { name, label, onChange } = configure;
+  const {
+    name = '',
+    onChange,
+    color = 'darkgrey',
+    iconSize = '30px',
+    label = '',
+  } = configure;
 
   return (
     <RadioButtonContainer>
-      <label>
-        <HiddenRadioButton checked={checked} onChange={onChange} name={name} />
-        <StyledRadioButton checked={checked}>
-          <Icon iconSize='30px' color='darkgrey'>
-            {checked === true
-              ? RadioButtonSelectedIcon
-              : RadioButtonUnselectedIcon}
-          </Icon>
-        </StyledRadioButton>
-        <div className='Label'>{label}</div>
-      </label>
+      <HiddenRadioButton checked={checked} onChange={onChange} name={name} />
+      <StyledRadioButton checked={checked}>
+        <Icon iconSize={iconSize} color={color}>
+          {checked === true
+            ? RadioButtonSelectedIcon
+            : RadioButtonUnselectedIcon}
+        </Icon>
+      </StyledRadioButton>
+      {label}
     </RadioButtonContainer>
   );
 };
