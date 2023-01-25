@@ -1,5 +1,5 @@
 import { Button } from './Button';
-import { Heading } from '../Typography/Typography';
+import { Heading } from '../Typography';
 
 export const ButtonModifiersExample = () => {
   return (

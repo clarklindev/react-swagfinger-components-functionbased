@@ -4,14 +4,15 @@ import './App.css';
 import { GlobalStyle, darkTheme, lightTheme } from './utils';
 
 import { ThemeProvider } from 'styled-components';
-import { Heading } from './components/Typography/Typography';
-import { TypographyExample } from './components/Typography/TypographyExample';
-import { LabelSomethingExample } from './components/LabelSomething/LabelSomethingExample';
-import { ButtonVariationExample } from './components/Button/ButtonVariationExample';
-import { ButtonModifiersExample } from './components/Button/ButtonModifiersExample';
-import { ButtonWithLabelSomethingExample } from './components/Button/ButtonWithLabelSomethingExample';
 
-import { SnackbarExample } from './components/Snackbar/SnackbarExample';
+import { Heading, TypographyExample } from './components/Typography';
+import { LabelSomethingExample } from './components/LabelSomething';
+import {
+  ButtonVariationExample,
+  ButtonModifiersExample,
+  ButtonWithLabelSomethingExample,
+} from './components/Button';
+import { SnackbarExample } from './components/Snackbar';
 import {
   InputExample,
   InputNoBorderExample,
@@ -20,30 +21,29 @@ import {
   InputSearchExample,
   InputWithIconExample,
 } from './components/Input';
-import { RadioButtonExample } from './components/RadioButton/RadioButtonExample';
-import { RadioButtonGroupExample } from './components/RadioButton/RadioButtonGroupExample';
-import { RadioButtonAndLabelSomethingExample } from './components/RadioButton/RadioButtonAndLabelSomethingExample';
-import { RadioButtonGroupAndLabelSomethingExample } from './components/RadioButton/RadioButtonGroupAndLabelSomethingExample';
-import { CheckboxExample } from './components/Checkbox/CheckboxExample';
-import { CheckboxGroupExample } from './components/Checkbox/CheckboxGroupExample';
-import { CheckboxAndLabelSomethingExample } from './components/Checkbox/CheckboxAndLabelSomethingExample';
-import { CheckboxGroupAndLabelSomethingExample } from './components/Checkbox/CheckboxGroupAndLabelSomethingExample';
-import { CounterExample } from './components/Counter/CounterExample';
-import { AccordionExample } from './components/Accordion/AccordionExample';
-import { SelectExample } from './components/Select/SelectExample';
-import { Block } from './components/Layout/Block';
-import { ToggleSwitchExample } from './components/Switch/ToggleSwitchExample';
-import { CheckboxIconExample } from './components/Checkbox/CheckboxIconExample';
-import { ListExample } from './components/List/ListExample';
 import {
-  CardExample,
-  CardWithDropshadowExample,
-} from './components/Card/CardExample';
-import { TableExample } from './components/Table/TableExample';
-import { SliderExample } from './components/Slider/SliderExample';
-import { MultiRangeSliderExample } from './components/Slider/MultiRangeSliderExample';
-import { UseHoverExample } from './customhooks/UseHoverExample';
-import { UseFocusExample } from './customhooks/UseFocusExample';
+  RadioButtonExample,
+  RadioButtonGroupExample,
+  RadioButtonGroupAndLabelSomethingExample,
+  RadioButtonAndLabelSomethingExample,
+} from './components/RadioButton';
+import {
+  CheckboxExample,
+  CheckboxGroupExample,
+  CheckboxAndLabelSomethingExample,
+  CheckboxGroupAndLabelSomethingExample,
+} from './components/Checkbox';
+import { CounterExample } from './components/Counter';
+import { AccordionExample } from './components/Accordion';
+import { SelectExample } from './components/Select';
+import { Block } from './components/Layout';
+import { ToggleSwitchExample } from './components/Switch';
+import { CheckboxIconExample } from './components/Checkbox';
+import { ListExample } from './components/List';
+import { CardExample, CardWithDropshadowExample } from './components/Card';
+import { TableExample } from './components/Table';
+import { SliderExample, MultiRangeSliderExample } from './components/Slider';
+import { UseHoverExample, UseFocusExample } from './customhooks';
 
 const App = () => {
   const [theme, setTheme] = useState();

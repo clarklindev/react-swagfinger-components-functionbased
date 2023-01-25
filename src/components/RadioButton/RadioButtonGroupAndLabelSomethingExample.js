@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { RadioButtonGroup } from './RadioButtonGroup';
 import { RadioButton } from './RadioButton';
 
-import { Heading } from '../Typography/Typography';
-import { LabelSomething } from '../LabelSomething/LabelSomething';
+import { Heading } from '../Typography';
+import { LabelSomething } from '../LabelSomething';
 
 export const RadioButtonGroupAndLabelSomethingExample = () => {
   // radioOptions: moved outside of configure object - possibility that savedData is pulled, eg. questions from backend async call

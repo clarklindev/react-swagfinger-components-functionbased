@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Input, InputWrapper } from './Input';
-import { Heading } from '../Typography/Typography';
+import { Heading } from '../Typography';
 
-import { Button } from '../Button/Button';
-import { Icon } from '../Icon/Icon';
+import { Button } from '../Button';
+import { Icon } from '../Icon';
 import { SearchIcon } from '../../icons/SearchIcon';
 import { ClearIcon } from '../../icons/ClearIcon';
 

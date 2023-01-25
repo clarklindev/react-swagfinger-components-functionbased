@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Snackbar } from './Snackbar';
-import { Button } from '../Button/Button';
-import { Icon } from '../Icon/Icon';
+import { Button } from '../Button';
+import { Icon } from '../Icon';
 import { CopyIcon } from '../../icons/CopyIcon';
 
 export const SnackbarExample = () => {

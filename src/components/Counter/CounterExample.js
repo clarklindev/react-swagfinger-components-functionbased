@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Counter } from './Counter';
-import { Heading } from '../Typography/Typography';
+import { Heading } from '../Typography';
 
 export const CounterExample = () => {
   const [savedData, setSavedData] = useState('0');

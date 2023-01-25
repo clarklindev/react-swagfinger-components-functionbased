@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from './Button';
-import { Heading } from '../Typography/Typography';
-import { Icon } from '../Icon/Icon';
+import { Heading } from '../Typography';
+import { Icon } from '../Icon';
 import { ShoppingCartIcon } from '../../icons/ShoppingCartIcon';
 
 export const ButtonVariationExample = () => {

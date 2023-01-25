@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Checkbox } from './Checkbox';
-import { Heading } from '../Typography/Typography';
+import { Heading } from '../Typography';
 
 export const CheckboxExample = () => {
   const [savedData, setSavedData] = useState(false);

@@ -1,7 +1,7 @@
 import { Button } from './Button';
-import { Heading } from '../Typography/Typography';
-import { LabelSomething } from '../LabelSomething/LabelSomething';
-import { Icon } from '../Icon/Icon';
+import { Heading } from '../Typography';
+import { LabelSomething } from '../LabelSomething';
+import { Icon } from '../Icon';
 import { ThumbsUpIcon } from '../../icons/ThumbsUpIcon';
 
 export const ButtonWithLabelSomethingExample = () => {

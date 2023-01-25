@@ -1,4 +1,4 @@
-import { Heading } from '../Typography/Typography';
+import { Heading } from '../Typography';
 import { Card } from './Card';
 
 export const CardExample = () => {

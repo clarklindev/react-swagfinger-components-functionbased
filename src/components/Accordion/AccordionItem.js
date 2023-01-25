@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { ChevronDown } from '../../icons/ChevronDown';
 import { ChevronUp } from '../../icons/ChevronUp';
-import { Icon } from '../Icon/Icon';
+import { Icon } from '../Icon';
 
 const AccordionItemContainer = styled.div`
   display: block;

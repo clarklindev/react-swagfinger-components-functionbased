@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { CheckboxIcon } from './CheckboxIcon';
-import { Heading } from '../Typography/Typography';
+import { Heading } from '../Typography';
 import { BookmarkIcon } from '../../icons/BookmarkIcon';
 import { HeartIcon } from '../../icons/HeartIcon';
-import { Icon } from '../Icon/Icon';
+import { Icon } from '../Icon';
 
 export const CheckboxIconExample = () => {
   const [savedData1, setSavedData1] = useState(false);

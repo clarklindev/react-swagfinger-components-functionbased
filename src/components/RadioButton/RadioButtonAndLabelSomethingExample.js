@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { RadioButton } from './RadioButton';
-import { Heading } from '../Typography/Typography';
-import { LabelSomething } from '../LabelSomething/LabelSomething';
+import { Heading } from '../Typography';
+import { LabelSomething } from '../LabelSomething';
 export const RadioButtonAndLabelSomethingExample = () => {
   const [savedData, setSavedData] = useState(false);
 

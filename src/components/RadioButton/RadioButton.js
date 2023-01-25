@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { RadioButtonUnselectedIcon } from '../../icons/RadioButtonUnselectedIcon';
 import { RadioButtonSelectedIcon } from '../../icons/RadioButtonSelectedIcon';
-import { Icon } from '../Icon/Icon';
+import { Icon } from '../Icon';
 
 const RadioButtonContainer = styled.label`
   display: flex;

@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { CheckboxGroup } from './CheckboxGroup';
 import { Checkbox } from './Checkbox';
 
-import { Heading } from '../Typography/Typography';
-import { LabelSomething } from '../LabelSomething/LabelSomething';
+import { Heading } from '../Typography';
+import { LabelSomething } from '../LabelSomething';
 
 export const CheckboxGroupExample = () => {
   const [savedData, updateSavedData] = useState([false, false, false]);

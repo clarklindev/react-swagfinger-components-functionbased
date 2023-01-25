@@ -1,5 +1,5 @@
 import { LabelSomething } from './LabelSomething';
-import { Icon } from '../Icon/Icon';
+import { Icon } from '../Icon';
 import { SmileyIcon } from '../../icons/SmileyIcon';
 
 export const LabelSomethingExample = () => {

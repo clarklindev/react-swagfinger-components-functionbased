@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { MultiRangeSlider } from './MultiRangeSlider';
-import { Heading } from '../Typography/Typography';
+import { Heading } from '../Typography';
 
 //NOTE: track is non clickable... so use <Slider> if only single slider
 export const MultiRangeSliderExample = () => {

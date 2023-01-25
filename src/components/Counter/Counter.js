@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Input } from '../Input/Input';
+import { Input } from '../Input';
 import { MinusIcon } from '../../icons/MinusIcon';
 import { PlusIcon } from '../../icons/PlusIcon';
-import { Button } from '../Button/Button';
-import { Icon } from '../Icon/Icon';
+import { Button } from '../Button';
+import { Icon } from '../Icon';
 
 const CounterContainer = styled.div`
   display: flex;
