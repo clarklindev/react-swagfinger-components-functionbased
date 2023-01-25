@@ -23,13 +23,6 @@ const CounterContainer = styled.div`
   }
 `;
 
-const Svg = styled.svg`
-  width: 20px;
-  height: 20px;
-  overflow: hidden;
-  fill: ${(props) => props.theme.color};
-`;
-
 export const Counter = ({ savedData, configure }) => {
   const { onChange } = configure;
   const decrement = (event) => {
