@@ -30,7 +30,7 @@ export const RadioButtonGroupExample = () => {
       <LabelSomething
         label='Label'
         labelPosition='top'
-        gap='5'
+        gap='2'
         align='start'
         something={
           <RadioButtonGroup
