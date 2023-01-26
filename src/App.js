@@ -8,6 +8,7 @@ import { ThemeProvider } from 'styled-components';
 import { Heading, TypographyExample } from './components/Typography';
 import { LabelSomethingExample } from './components/LabelSomething';
 import {
+  ButtonExample,
   ButtonVariationExample,
   ButtonModifiersExample,
   ButtonWithLabelSomethingExample,
@@ -32,13 +33,13 @@ import {
   CheckboxGroupExample,
   CheckboxAndLabelSomethingExample,
   CheckboxGroupAndLabelSomethingExample,
+  CheckboxIconExample,
 } from './components/Checkbox';
 import { CounterExample } from './components/Counter';
 import { AccordionExample } from './components/Accordion';
 import { SelectExample } from './components/Select';
 import { Block } from './components/Layout';
 import { ToggleSwitchExample } from './components/Switch';
-import { CheckboxIconExample } from './components/Checkbox';
 import { ListExample } from './components/List';
 import { CardExample, CardWithDropshadowExample } from './components/Card';
 import { TableExample } from './components/Table';
@@ -89,6 +90,7 @@ const App = () => {
           <Block>
             <Heading variation='h4'>05. Buttons</Heading>
             <div className='flex flex-col'>
+              <ButtonExample />
               <ButtonVariationExample />
               <ButtonModifiersExample />
               <ButtonWithLabelSomethingExample />

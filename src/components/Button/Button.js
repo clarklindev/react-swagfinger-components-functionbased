@@ -8,8 +8,9 @@ const BaseButton = styled.button`
   background-color: ${(props) => props.theme.button.base.backgroundColor};
   color: ${(props) => props.theme.button.base.color};
   outline: none;
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
   height: auto;
   cursor: pointer;
   padding: 10px ${(props) => props.theme.global.padding};
