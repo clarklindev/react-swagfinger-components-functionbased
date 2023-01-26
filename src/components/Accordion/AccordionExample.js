@@ -5,7 +5,6 @@ import { Heading } from '../Typography';
 
 export const AccordionExample = () => {
   const [data, setData] = useState([]); //savedData is when we are saving data, 'data' is presented data that is not updated, we 'setData' on init with useEffect()
-
   useEffect(() => {
     setData([
       {
@@ -29,6 +28,8 @@ export const AccordionExample = () => {
 
   return (
     <>
+      {/*------------------------------------------------------------------------------------------------------- */}
+
       <div className='flex flex-col mb-10'>
         <Heading variation='h6'>without multiopen</Heading>
         <Accordion
@@ -49,10 +50,35 @@ export const AccordionExample = () => {
           }}
         />
       </div>
-      <div className='flex flex-col'>
+      {/*------------------------------------------------------------------------------------------------------- */}
+
+      <div className='flex flex-col mb-10'>
         <Heading variation='h6'>with multiopen</Heading>
         <Accordion
           multiOpen={true}
+          render={({ activeItems, handleClick }) => {
+            return data.map((item, index) => {
+              return (
+                <AccordionItem
+                  key={`AccordionItem_${index}`}
+                  onClick={() => {
+                    handleClick(index);
+                  }}
+                  data={item}
+                  isOpen={activeItems.some((item) => item === index)}
+                />
+              );
+            });
+          }}
+        />
+      </div>
+      {/*------------------------------------------------------------------------------------------------------- */}
+
+      <div className='flex flex-col'>
+        <Heading variation='h6'>starting with open items</Heading>
+        <Accordion
+          multiOpen={true}
+          startActiveItems={[0, 1]}
           render={({ activeItems, handleClick }) => {
             return data.map((item, index) => {
               return (
