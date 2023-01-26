@@ -6,7 +6,7 @@ const RadioButtonGroupContainer = styled.div`
   flex-direction: ${(props) =>
     props.direction === 'column' ? 'column' : 'row'};
 
-  > * {
+  > *:not(:last-child) {
     margin-bottom: ${(props) => props.direction === 'column' && props.spacing};
     margin-right: ${(props) => props.direction === 'row' && props.spacing};
   }

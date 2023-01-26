@@ -16,7 +16,7 @@ const CheckboxGroupContainer = styled.div`
     }
   }};
 
-  > * {
+  > *:not(:last-child) {
     margin-bottom: ${(props) =>
       (props.direction === 'column' || props.direction === 'column-reverse') &&
       props.spacing};
