@@ -46,6 +46,7 @@ export const CheckboxGroupExample = () => {
                     name: 'Checkbox_ABC',
                     iconSize: '30px',
                     color: 'darkgrey',
+
                     onChange: () => onChange(index, !savedData[index]),
                   }}
                 />

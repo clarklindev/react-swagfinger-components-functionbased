@@ -28,6 +28,7 @@ const CheckboxGroupContainer = styled.div`
 
 export const CheckboxGroup = ({ configure, children }) => {
   const { direction = 'column', spacing = '0px' } = configure;
+
   return (
     <CheckboxGroupContainer
       className={`RadioButtonGroup`}

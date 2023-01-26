@@ -53,15 +53,6 @@ const OutlinedButton = styled(BaseButton)`
       ? props.color
       : props.theme.button.outlined.color};
 
-  &:disabled {
-  }
-
-  &:hover {
-  }
-
-  &:active {
-  }
-
   ${applyStyleModifiers(MODIFIERS)};
 `;
 
@@ -75,14 +66,6 @@ const TextButton = styled(BaseButton)`
       ? props.color
       : props.theme.button.text.color};
   padding: 0px;
-
-  &:disabled {
-  }
-
-  &:hover {
-  }
-  &:active {
-  }
 
   ${applyStyleModifiers(MODIFIERS)};
 `;

@@ -11,7 +11,8 @@ export const ButtonWithLabelSomethingExample = () => {
     <div className='flex flex-col'>
       <Heading variation='h6'>Button + LabelSomething</Heading>
 
-      {/* aligned with tailwindcss - flex-row items are auto-stretch so for them to be variable height, need to use items-end or items-start */}
+      {/* aligned with tailwindcss - flex-row items are height auto-stretch so for them to be variable height, need to use items-end or items-start */}
+      {/*------------------------------------------------------------------------------------------------------- */}
       <div className='flex flex-row mb-10 gap-x-5 items-end'>
         {/* contained */}
         <Button
@@ -86,6 +87,7 @@ export const ButtonWithLabelSomethingExample = () => {
           }
         />
       </div>
+      {/*------------------------------------------------------------------------------------------------------- */}
 
       {/* outlined */}
       <div className='flex flex-row mb-10 gap-x-5 items-end'>
@@ -161,6 +163,7 @@ export const ButtonWithLabelSomethingExample = () => {
           }
         />
       </div>
+      {/*------------------------------------------------------------------------------------------------------- */}
 
       {/* text */}
       <div className='flex flex-row gap-x-5 items-end'>
