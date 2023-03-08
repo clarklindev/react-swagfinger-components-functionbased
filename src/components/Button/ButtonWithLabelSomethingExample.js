@@ -21,7 +21,7 @@ export const ButtonWithLabelSomethingExample = () => {
           color='white'
           label={
             <LabelSomething
-              gap='2'
+              spacing='2'
               label='left'
               labelPosition='left'
               something={
@@ -39,7 +39,7 @@ export const ButtonWithLabelSomethingExample = () => {
           color='white'
           label={
             <LabelSomething
-              gap='2'
+              spacing='2'
               label='top'
               labelPosition='top'
               something={
@@ -57,7 +57,7 @@ export const ButtonWithLabelSomethingExample = () => {
           color='white'
           label={
             <LabelSomething
-              gap='2'
+              spacing='2'
               label='bottom'
               labelPosition='bottom'
               something={
@@ -75,7 +75,7 @@ export const ButtonWithLabelSomethingExample = () => {
           color='white'
           label={
             <LabelSomething
-              gap='2'
+              spacing='2'
               label='right'
               labelPosition='right'
               something={
@@ -97,7 +97,7 @@ export const ButtonWithLabelSomethingExample = () => {
           color='red'
           label={
             <LabelSomething
-              gap='2'
+              spacing='2'
               label='left'
               labelPosition='left'
               something={
@@ -115,7 +115,7 @@ export const ButtonWithLabelSomethingExample = () => {
           color='red'
           label={
             <LabelSomething
-              gap='2'
+              spacing='2'
               label='top'
               labelPosition='top'
               something={
@@ -133,7 +133,7 @@ export const ButtonWithLabelSomethingExample = () => {
           color='red'
           label={
             <LabelSomething
-              gap='2'
+              spacing='2'
               label='bottom'
               labelPosition='bottom'
               something={
@@ -151,7 +151,7 @@ export const ButtonWithLabelSomethingExample = () => {
           color='red'
           label={
             <LabelSomething
-              gap='2'
+              spacing='2'
               label='right'
               labelPosition='right'
               something={
@@ -172,7 +172,7 @@ export const ButtonWithLabelSomethingExample = () => {
           color='grey'
           label={
             <LabelSomething
-              gap='2'
+              spacing='2'
               label='left'
               labelPosition='left'
               something={
@@ -189,7 +189,7 @@ export const ButtonWithLabelSomethingExample = () => {
           color='grey'
           label={
             <LabelSomething
-              gap='2'
+              spacing='2'
               label='top'
               labelPosition='top'
               something={
@@ -206,7 +206,7 @@ export const ButtonWithLabelSomethingExample = () => {
           color='grey'
           label={
             <LabelSomething
-              gap='2'
+              spacing='2'
               label='bottom'
               labelPosition='bottom'
               something={
@@ -223,7 +223,7 @@ export const ButtonWithLabelSomethingExample = () => {
           color='grey'
           label={
             <LabelSomething
-              gap='2'
+              spacing='2'
               label='right'
               labelPosition='right'
               something={

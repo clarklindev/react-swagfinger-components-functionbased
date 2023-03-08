@@ -30,7 +30,7 @@ export const RadioButtonGroupAndLabelSomethingExample = () => {
       <LabelSomething
         label='Label'
         labelPosition='top'
-        gap='2'
+        spacing='2'
         align='start'
         something={
           <RadioButtonGroup
@@ -45,7 +45,7 @@ export const RadioButtonGroupAndLabelSomethingExample = () => {
                   key={`RadioButtonGroup_Radio_ABC` + index}
                   label={each.label}
                   labelPosition='bottom'
-                  gap='2'
+                  spacing='2'
                   align='center'
                   something={
                     <RadioButton

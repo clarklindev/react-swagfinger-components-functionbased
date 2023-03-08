@@ -18,7 +18,7 @@ export const useFocus = () => {
     onBlur: handleBlur,
   };
 
-  //your component receives helper methods from useHover: onMouseOver() onMouseOut()
+  //your component receives helper methods from useFocus: onFocus() onBlur()
   //and state: hovering
   return [isFocused, attrs];
 };

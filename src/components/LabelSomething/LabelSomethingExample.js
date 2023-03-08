@@ -8,8 +8,8 @@ export const LabelSomethingExample = () => {
   return (
     <div className='flex flex-col gap-10'>
       <LabelSomething
-        gap='2'
-        label='left'
+        spacing='2'
+        label='label'
         labelPosition='left'
         align='center'
         something={
@@ -19,8 +19,8 @@ export const LabelSomethingExample = () => {
         }
       />
       <LabelSomething
-        gap='2'
-        label='right'
+        spacing='2'
+        label='label'
         labelPosition='right'
         align='center'
         something={
@@ -30,8 +30,8 @@ export const LabelSomethingExample = () => {
         }
       />
       <LabelSomething
-        gap='2'
-        label='top'
+        spacing='5'
+        label='label'
         labelPosition='top'
         align='center'
         something={
@@ -41,8 +41,8 @@ export const LabelSomethingExample = () => {
         }
       />
       <LabelSomething
-        gap='2'
-        label='bottom'
+        spacing={10}
+        label='label'
         labelPosition='bottom'
         align='center'
         something={

@@ -12,7 +12,7 @@ export const RadioButtonAndLabelSomethingExample = () => {
         label='label'
         labelPosition='bottom'
         labelClickable='true'
-        gap='2'
+        spacing='2'
         something={
           <RadioButton
             savedData={savedData}

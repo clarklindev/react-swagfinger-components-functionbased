@@ -10,7 +10,7 @@ export const CheckboxAndLabelSomethingExample = () => {
     <div className='flex flex-col mb-10'>
       <Heading variation='h6'>Checkbox + LabelSomething</Heading>
       <LabelSomething
-        gap='2'
+        spacing='2'
         label='label'
         labelPosition='bottom'
         something={

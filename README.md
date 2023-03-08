@@ -118,7 +118,7 @@ https://type-scale.com/
 - button variation example - icons moved out and imported from icons/
 - ButtonWithLabelSomethingExample - icons moved out and imported from icons/
   - Button removed className='gap-2'
-  - LabelSomething removed className - added gap=""
+  - LabelSomething removed className - added spacing=""
 - button modifiers - large - tweaks
 
 - Checkbox - wrapping container removed - label is the wrapping container
@@ -140,7 +140,7 @@ https://type-scale.com/
 
   - component allows you to place labels in top,left,right, bottom direction of "Something"
   - labelClickable
-  - gap - can set the gap between the label and the something. eg. gap={1} gap={2} gap={4} gap={5} gap={10}
+  - gap - can set the gap between the label and the something. eg. spacing={1} spacing={2} spacing={4} spacing={5} spacing={10}
   - can set align
     ROADMAP: want to adjust labelPosition to "direction" more aligned with RadioButtonGroup and CheckboxGroup
 

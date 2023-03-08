@@ -27,7 +27,7 @@ export const CheckboxGroupAndLabelSomethingExample = () => {
       <LabelSomething
         label='label'
         labelPosition='top'
-        gap='2'
+        spacing='2'
         align='start'
         something={
           <CheckboxGroup
@@ -42,7 +42,7 @@ export const CheckboxGroupAndLabelSomethingExample = () => {
                   key={'CheckboxGroup_Checkbox_ABC' + index}
                   label={each.label}
                   labelPosition='bottom'
-                  gap='2'
+                  spacing='2'
                   align='center'
                   something={
                     <Checkbox

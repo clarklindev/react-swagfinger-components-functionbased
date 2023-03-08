@@ -8,8 +8,7 @@ export const LabelSomething = ({
   labelPosition = 'right',
   something,
   align = 'center',
-  className = '',
-  gap = '',
+  spacing = '',
   labelClickable = false,
   ...rest
 }) => {
@@ -18,26 +17,23 @@ export const LabelSomething = ({
   let positionClasses = '';
   switch (labelPosition) {
     case 'top':
-      positionClasses = 'flex flex-col-reverse';
+      positionClasses = 'flex-col-reverse';
       break;
     case 'bottom':
-      positionClasses = 'flex flex-col';
+      positionClasses = 'flex-col';
       break;
     case 'left':
-      positionClasses = 'flex flex-row-reverse';
+      positionClasses = 'flex-row-reverse';
+      break;
+    case 'right':
+      positionClasses = 'flex-row';
       break;
     default:
-    case 'right':
-      positionClasses = 'flex flex-row';
-      break;
+      positionClasses = 'flex-row';
   }
 
   let alignClasses = '';
   switch (align) {
-    default:
-    case 'center':
-      alignClasses = 'items-center';
-      break;
     case 'top':
     case 'start':
       alignClasses = 'items-start';
@@ -45,20 +41,30 @@ export const LabelSomething = ({
     case 'end':
     case 'bottom':
       alignClasses = 'items-end';
-  }
-
-  let gapClasses = '';
-  switch (labelPosition) {
-    case 'left':
-    case 'right':
-      gapClasses = `gap-${gap}`;
       break;
-    case 'top':
-    case 'bottom':
-      gapClasses = `gap-${gap}`;
+    case 'center':
+      alignClasses = 'items-center';
       break;
     default:
+      alignClasses = 'items-center';
+  }
+
+  let spacingClasses = '';
+  switch (labelPosition) {
+    case 'left':
+      spacingClasses = `space-x-reverse space-x-6`;
       break;
+    case 'top':
+      spacingClasses = `space-y-reverse space-y-6`;
+      break;
+    case 'bottom':
+      spacingClasses = `space-y-6`;
+      break;
+    case 'right':
+      spacingClasses = `space-x-6`;
+      break;
+    default:
+      spacingClasses = `space-x-6`;
   }
 
   const Element =
@@ -70,13 +76,12 @@ export const LabelSomething = ({
         containerClasses,
         positionClasses,
         alignClasses,
-        className,
-        gapClasses,
+        spacingClasses,
       ].join(' ')}
       {...rest}
     >
       {something}
-      {label}
+      {<div>label</div>}
     </Element>
   );
 };

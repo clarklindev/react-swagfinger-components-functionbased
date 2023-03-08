@@ -27,7 +27,7 @@ export const CheckboxGroupExample = () => {
       <LabelSomething
         label='label'
         labelPosition='top'
-        gap='2'
+        spacing='2'
         align='start'
         something={
           <CheckboxGroup

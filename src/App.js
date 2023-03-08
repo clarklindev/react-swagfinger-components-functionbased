@@ -209,6 +209,7 @@ const App = () => {
             <Heading variation='h4'>19. Table</Heading>
             <TableExample />
           </Block>
+
           {/* <Block>
             <Heading variation='h4'>20. Navbar</Heading>
           </Block>
@@ -221,7 +222,7 @@ const App = () => {
           <Block>
             <Heading variation='h4'>23. Dialog (aka Modal)</Heading>
           </Block>
-          <Block>
+         <Block>
             <Heading variation='h4'>24. Progress</Heading>
           </Block>
           <Block>

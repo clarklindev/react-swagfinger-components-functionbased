@@ -4,16 +4,12 @@ export const GlobalStyle = createGlobalStyle`
   html{
     box-sizing: border-box;
     font-size: 16px;
-    padding: 0;
-    margin: 0;
   }
 
   body {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     line-height: 1.75;
-    padding:0;
-    margin:0;
   }
 
   p{

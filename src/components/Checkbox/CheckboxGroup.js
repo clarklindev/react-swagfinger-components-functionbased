@@ -4,15 +4,15 @@ const CheckboxGroupContainer = styled.div`
   display: flex;
   flex-direction: ${(props) => {
     switch (props.direction) {
-      default:
-      case 'row':
-        return 'row';
       case 'column':
         return 'column';
       case 'column-reverse':
         return 'column-reverse';
       case 'row-reverse':
         return 'row-reverse';
+      default:
+      case 'row':
+        return 'row';
     }
   }};
 
