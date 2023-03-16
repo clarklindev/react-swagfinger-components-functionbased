@@ -1,5 +1,8 @@
 # Getting Started with Create React App and Redux
 
+NOTE: this project is archieved and replaced with "swagfinger-ui" which doesnt use REACT CLI
+
+
 #### test url
 
 https://swagfinger-portfolio-react-components-functionbased.vercel.app/
